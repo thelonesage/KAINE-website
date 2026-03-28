@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KAINE.io | Data Intelligence for E-Commerce</title>
+    <meta name="description" content="KAINE.io is an AI-powered data consultancy helping e-commerce businesses in Nigeria and Africa make smarter decisions with their data." />
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'kaine-black': '#0A0A0A',
+              'offwhite': '#F5F4F0',
+              'mid': '#111827',
+              'amber': '#D4A843',
+              'gray': '#9CA3AF',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="bg-kaine-black font-sans">
+
+    <!-- ========== NAVIGATION BAR ========== -->
+    <header class="sticky top-0 z-50 w-full bg-kaine-black">
+      <div class="max-w-[1100px] mx-auto px-6 py-4 md:py-6 flex items-center justify-between">
+
+        <!-- Left: KAINE Logo -->
+        <a href="/" class="flex flex-col items-start gap-1 no-underline">
+          <span class="text-offwhite font-bold uppercase tracking-widest text-xl leading-none">
+            KAINE
+          </span>
+          <!-- Amber decorative line -->
+          <span class="block h-0.5 bg-amber" style="width: 40%;"></span>
+        </a>
+
+        <!-- Right: Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="#services"
+            class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
+          >
+            Services
+          </a>
+          <a
+            href="#about"
+            class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
+          >
+            About
+          </a>
+          <a
+            href="#start"
+            class="text-amber font-semibold text-[15px] hover:opacity-80 transition-opacity duration-200 no-underline"
+          >
+            Start
+          </a>
+          <!-- WhatsApp icon -->
+          <a
+            href="https://wa.me/2347049262141"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-offwhite hover:text-amber transition-colors duration-200"
+            aria-label="Chat on WhatsApp"
+          >
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </a>
+        </nav>
+
+        <!-- Mobile: Hamburger button -->
+        <button
+          id="menu-btn"
+          class="md:hidden flex flex-col gap-1.5 p-1 focus:outline-none"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
+          <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
+          <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-kaine-black overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+      >
+        <nav class="flex flex-col px-6 pb-6 gap-5">
+          <a
+            href="#services"
+            class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
+          >
+            Services
+          </a>
+          <a
+            href="#about"
+            class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
+          >
+            About
+          </a>
+          <a
+            href="#start"
+            class="text-amber font-semibold text-[15px] hover:opacity-80 transition-opacity duration-200 no-underline"
+          >
+            Start
+          </a>
+          <!-- WhatsApp icon -->
+          <a
+            href="https://wa.me/2347049262141"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200"
+            aria-label="Chat on WhatsApp"
+          >
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            <span>WhatsApp</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- ========== END NAVIGATION BAR ========== -->
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Hamburger menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
+
+        if (isOpen) {
+          mobileMenu.style.maxHeight = '0px';
+          menuBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          // Use scrollHeight so the transition animates to the exact content height
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+          menuBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Close mobile menu when a link inside it is clicked
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.style.maxHeight = '0px';
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    </script>
+  </body>
+</html>
