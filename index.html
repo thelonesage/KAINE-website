@@ -101,6 +101,7 @@
         id="mobile-menu"
         class="md:hidden bg-kaine-black overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
         aria-hidden="true"
+        inert
       >
         <nav class="flex flex-col px-6 pb-6 gap-5">
           <a
@@ -221,11 +222,13 @@
           mobileMenu.style.maxHeight = '0px';
           menuBtn.setAttribute('aria-expanded', 'false');
           mobileMenu.setAttribute('aria-hidden', 'true');
+          mobileMenu.setAttribute('inert', '');
         } else {
           // Use scrollHeight so the transition animates to the exact content height
           mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
           menuBtn.setAttribute('aria-expanded', 'true');
           mobileMenu.setAttribute('aria-hidden', 'false');
+          mobileMenu.removeAttribute('inert');
         }
       });
 
@@ -235,6 +238,7 @@
           mobileMenu.style.maxHeight = '0px';
           menuBtn.setAttribute('aria-expanded', 'false');
           mobileMenu.setAttribute('aria-hidden', 'true');
+          mobileMenu.setAttribute('inert', '');
         });
       });
 
@@ -244,6 +248,7 @@
           mobileMenu.style.maxHeight = '0px';
           menuBtn.setAttribute('aria-expanded', 'false');
           mobileMenu.setAttribute('aria-hidden', 'true');
+          mobileMenu.setAttribute('inert', '');
         }
       });
     </script>
