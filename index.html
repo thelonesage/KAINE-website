@@ -38,7 +38,7 @@
   <body class="bg-kaine-black font-sans">
 
     <!-- ========== NAVIGATION BAR ========== -->
-    <header class="sticky top-0 z-50 w-full bg-kaine-black">
+    <header class="sticky top-0 z-50 w-full bg-kaine-black border-b border-[#1F2937]">
       <div class="max-w-[1100px] mx-auto px-6 py-4 md:py-6 flex items-center justify-between">
 
         <!-- Left: KAINE Logo -->
@@ -47,7 +47,7 @@
             KAINE
           </span>
           <!-- Amber decorative line -->
-          <span class="block h-0.5 bg-amber" style="width: 40%;"></span>
+          <span class="block h-0.5 bg-amber w-[40%]"></span>
         </a>
 
         <!-- Right: Desktop Navigation Links -->
@@ -85,9 +85,10 @@
         <!-- Mobile: Hamburger button -->
         <button
           id="menu-btn"
-          class="md:hidden flex flex-col gap-1.5 p-1 focus:outline-none"
+          class="md:hidden flex flex-col gap-1.5 p-1 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none"
           aria-label="Toggle menu"
           aria-expanded="false"
+          aria-controls="mobile-menu"
         >
           <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
           <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
@@ -99,6 +100,7 @@
       <div
         id="mobile-menu"
         class="md:hidden bg-kaine-black overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+        aria-hidden="true"
       >
         <nav class="flex flex-col px-6 pb-6 gap-5">
           <a
@@ -135,9 +137,78 @@
     </header>
     <!-- ========== END NAVIGATION BAR ========== -->
 
+    <!-- ========== HERO SECTION ========== -->
+    <section class="bg-kaine-black py-16 md:py-24 md:min-h-screen" aria-label="Hero">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-center gap-12">
+          <div class="w-full md:w-[55%]">
+            <h1 class="text-offwhite font-bold text-4xl md:text-6xl leading-[1.2] tracking-[-0.02em]">
+              Your revenue is inconsistent. Your <span class="text-amber">data</span> knows why.
+            </h1>
+            <p class="mt-6 max-w-[480px] text-gray text-[17px] md:text-[20px] leading-[1.6]">
+              KAINE.io runs structured diagnostics on your e-commerce business — powered by AI, interpreted by experts — and tells you exactly what to do next.
+            </p>
+            <div class="mt-10 flex flex-col md:flex-row gap-4">
+              <a
+                href="#start"
+                class="inline-flex items-center justify-center px-8 py-4 rounded text-[15px] font-semibold bg-amber text-kaine-black transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E5BC5D] no-underline"
+              >
+                Get Your Free Diagnosis
+              </a>
+              <a
+                href="https://wa.me/2347049262141"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center px-8 py-4 rounded text-[15px] font-semibold border border-offwhite text-offwhite hover:border-amber hover:text-amber transition-all duration-200 no-underline"
+              >
+                Talk to us on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="hidden md:block md:w-[45%]">
+            <div class="w-full bg-mid rounded-lg border-l-2 border-amber p-8" role="img" aria-label="Revenue pattern showing inconsistent performance over 6 months">
+              <p class="text-gray text-[13px] font-medium mb-6">
+                Revenue Pattern — Last 6 Months
+              </p>
+              <div class="flex items-end gap-3 h-40">
+                <div class="h-full flex flex-col justify-end items-center gap-2">
+                  <div class="w-8 h-[45%] bg-[#1F2937] rounded-t"></div>
+                  <span class="text-[#6B7280] text-xs font-medium">Jan</span>
+                </div>
+                <div class="h-full flex flex-col justify-end items-center gap-2">
+                  <div class="w-8 h-[60%] bg-[#1F2937] rounded-t"></div>
+                  <span class="text-[#6B7280] text-xs font-medium">Feb</span>
+                </div>
+                <div class="h-full flex flex-col justify-end items-center gap-2">
+                  <div class="w-8 h-[38%] bg-[#1F2937] rounded-t"></div>
+                  <span class="text-[#6B7280] text-xs font-medium">Mar</span>
+                </div>
+                <div class="h-full flex flex-col justify-end items-center gap-2">
+                  <div class="w-8 h-[75%] bg-[#1F2937] rounded-t"></div>
+                  <span class="text-[#6B7280] text-xs font-medium">Apr</span>
+                </div>
+                <div class="h-full flex flex-col justify-end items-center gap-2">
+                  <div class="w-8 h-[55%] bg-[#1F2937] rounded-t"></div>
+                  <span class="text-[#6B7280] text-xs font-medium">May</span>
+                </div>
+                <div class="h-full flex flex-col justify-end items-center gap-2">
+                  <div class="w-8 h-full bg-amber rounded-t"></div>
+                  <span class="text-[#6B7280] text-xs font-medium">Jun</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========== END HERO SECTION ========== -->
+
     <script>
       // Initialize Lucide icons
-      lucide.createIcons();
+      if (window.lucide) {
+        lucide.createIcons();
+      }
 
       // Hamburger menu toggle
       const menuBtn = document.getElementById('menu-btn');
@@ -149,10 +220,12 @@
         if (isOpen) {
           mobileMenu.style.maxHeight = '0px';
           menuBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
         } else {
           // Use scrollHeight so the transition animates to the exact content height
           mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
           menuBtn.setAttribute('aria-expanded', 'true');
+          mobileMenu.setAttribute('aria-hidden', 'false');
         }
       });
 
@@ -161,7 +234,17 @@
         link.addEventListener('click', () => {
           mobileMenu.style.maxHeight = '0px';
           menuBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
         });
+      });
+
+      const mdBreakpoint = window.matchMedia('(min-width: 768px)');
+      mdBreakpoint.addEventListener('change', (e) => {
+        if (e.matches) {
+          mobileMenu.style.maxHeight = '0px';
+          menuBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+        }
       });
     </script>
   </body>
