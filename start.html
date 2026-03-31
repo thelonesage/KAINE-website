@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start | KAINE.io</title>
+    <meta name="description" content="Start your KAINE.io diagnostic. Tell us about your business and get an expert data-backed read within 24 hours." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'kaine-black': '#0A0A0A',
+              'offwhite': '#F5F4F0',
+              'mid': '#111827',
+              'amber': '#D4A843',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-kaine-black font-sans text-offwhite min-h-screen">
+    <main class="min-h-screen flex items-center justify-center px-6 py-16">
+      <section class="w-full max-w-[640px]">
+        <div class="inline-flex flex-col items-start gap-1">
+          <span class="text-offwhite font-bold uppercase tracking-widest text-xl leading-none">KAINE</span>
+          <span class="block h-0.5 bg-amber w-8"></span>
+        </div>
+        <p class="mt-2 text-[13px] text-[#6B7280]">kaine.io</p>
+
+        <h1 class="mt-12 text-[32px] font-bold text-offwhite leading-[1.2]">
+          Tell us about your business. We'll tell you what the data reveals.
+        </h1>
+        <p class="mt-3 text-[17px] text-[#9CA3AF] leading-[1.6]">
+          Takes 3 minutes. We review every submission personally.
+        </p>
+
+        <form action="https://formspree.io/f/REPLACE_WITH_YOUR_ID" method="POST" class="mt-12 space-y-6">
+          <div>
+            <label for="name" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">YOUR NAME</label>
+            <input id="name" type="text" name="name" placeholder="Clinton Ofoedu" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
+          </div>
+
+          <div>
+            <label for="business" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">BUSINESS NAME</label>
+            <input id="business" type="text" name="business" placeholder="Your store or brand name" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
+          </div>
+
+          <div>
+            <label for="revenue" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">MONTHLY REVENUE (APPROXIMATE)</label>
+            <select id="revenue" name="revenue" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal focus:border-amber focus:outline-none transition-colors duration-200" required>
+              <option value="" disabled selected>Select a range</option>
+              <option>Under ₦1M/month</option>
+              <option>₦1M – ₦3M/month</option>
+              <option>₦3M – ₦7M/month</option>
+              <option>Above ₦7M/month</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="channels" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">WHERE DO YOU SELL?</label>
+            <input id="channels" type="text" name="channels" placeholder="e.g. Instagram, WhatsApp, Jumia, your website" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
+          </div>
+
+          <div>
+            <label for="tools" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">WHAT TOOLS DO YOU USE FOR PAYMENT OR ORDERS?</label>
+            <input id="tools" type="text" name="tools" placeholder="e.g. Paystack, Bumpa, Selar, manual" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
+          </div>
+
+          <div>
+            <label for="problem" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">WHAT IS THE BIGGEST PROBLEM IN YOUR BUSINESS RIGHT NOW?</label>
+            <textarea id="problem" name="problem" rows="4" placeholder="Describe what's not working, what feels off, or what question you most need answered about your business." class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required></textarea>
+          </div>
+
+          <div>
+            <label for="email" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">YOUR EMAIL ADDRESS</label>
+            <input id="email" type="email" name="email" placeholder="you@yourbusiness.com" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full md:w-auto inline-flex items-center justify-center px-12 py-4 rounded text-[15px] font-semibold bg-amber text-kaine-black hover:bg-[#E5BC5D] hover:-translate-y-0.5 transition-all duration-200">
+              Submit — Get My Free Diagnosis
+            </button>
+            <p class="mt-4 text-[13px] italic text-[#6B7280] leading-[1.6]">
+              We review every submission personally. No automated responses. No spam. Your data stays confidential.
+            </p>
+          </div>
+        </form>
+
+        <div class="mt-16 text-center">
+          <a href="index.html" class="text-[13px] text-[#6B7280] hover:text-amber transition-colors duration-200 no-underline">
+            ← Back to KAINE.io
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
