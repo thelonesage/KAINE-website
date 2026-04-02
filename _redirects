@@ -1,0 +1,8 @@
+/start    /start.html    200
+/services    /services.html    200
+/contact    /contact.html    200
+/about    /about.html    200
+/the-diagnostic    /the-diagnostic.html    200
+/the-monthly-pulse    /the-monthly-pulse.html    200
+/the-growth-audit    /the-growth-audit.html    200
+/*    /404.html    404

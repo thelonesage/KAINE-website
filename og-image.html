@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1200" />
+    <title>OG Image Preview - KAINE.io</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #0A0A0A;
+      }
+      .container {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #0A0A0A;
+        display: flex;
+        align-items: center;
+        padding: 80px;
+        gap: 60px;
+      }
+      .left {
+        width: 60%;
+      }
+      .logo {
+        font-size: 48px;
+        font-weight: 700;
+        color: #F5F4F0;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .logo-underline {
+        width: 64px;
+        height: 4px;
+        background: #D4A843;
+        margin-top: 8px;
+      }
+      .headline {
+        margin-top: 32px;
+        font-size: 36px;
+        font-weight: 700;
+        color: #F5F4F0;
+        line-height: 1.2;
+      }
+      .headline span {
+        color: #D4A843;
+      }
+      .tagline {
+        margin-top: 16px;
+        font-size: 18px;
+        font-weight: 400;
+        color: #9CA3AF;
+      }
+      .right {
+        width: 40%;
+      }
+      .chart-card {
+        background: #111827;
+        border-radius: 8px;
+        border-left: 4px solid #D4A843;
+        padding: 32px;
+      }
+      .chart-label {
+        font-size: 13px;
+        font-weight: 500;
+        color: #9CA3AF;
+        letter-spacing: 0.05em;
+        margin-bottom: 16px;
+      }
+      .bars-container {
+        display: flex;
+        align-items: flex-end;
+        gap: 8px;
+        height: 120px;
+      }
+      .bar-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .bar {
+        width: 28px;
+        border-radius: 4px 4px 0 0;
+        background: #1E293B;
+      }
+      .bar.highlight {
+        background: #D4A843;
+      }
+      .bar-label {
+        font-size: 11px;
+        color: #6B7280;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Side -->
+      <div class="left">
+        <div class="logo">KAINE</div>
+        <div class="logo-underline"></div>
+        <h1 class="headline">
+          Your revenue is inconsistent. Your <span>data</span> knows why.
+        </h1>
+        <p class="tagline">Data Consultancy for E-Commerce Businesses in Africa.</p>
+      </div>
+
+      <!-- Right Side -->
+      <div class="right">
+        <div class="chart-card">
+          <div class="chart-label">Revenue Pattern</div>
+          <div class="bars-container">
+            <div class="bar-wrapper">
+              <div class="bar" style="height: 45%;"></div>
+              <span class="bar-label">Jan</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar" style="height: 60%;"></div>
+              <span class="bar-label">Feb</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar" style="height: 38%;"></div>
+              <span class="bar-label">Mar</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar" style="height: 75%;"></div>
+              <span class="bar-label">Apr</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar" style="height: 55%;"></div>
+              <span class="bar-label">May</span>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar highlight" style="height: 100%;"></div>
+              <span class="bar-label">Jun</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="color: #6B7280; font-size: 14px; padding: 20px; text-align: center; background: #111827;">
+      <strong>Instructions:</strong> Open this file in your browser at full size (1200×630), take a screenshot of just the image area above (not including this text), and save it as <code>og-image.png</code> in your project folder.
+    </p>
+  </body>
+</html>
