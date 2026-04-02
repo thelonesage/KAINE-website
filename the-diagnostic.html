@@ -542,7 +542,7 @@
 
             <div class="space-y-2">
               <p class="text-[12px] font-medium tracking-[0.08em] uppercase text-[#6B7280]">COMPANY</p>
-              <a href="index.html#about" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">About</a>
+              <a href="about.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">About</a>
               <a href="index.html#start" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Start</a>
               <a href="contact.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Contact</a>
             </div>
@@ -634,6 +634,91 @@
           mobileMenu.setAttribute('aria-hidden', 'true');
           mobileMenu.setAttribute('inert', '');
         }
+      });
+
+      // Search functionality
+      const searchData = [
+        { title: 'The Diagnostic', url: 'the-diagnostic.html', desc: 'Full business diagnostic · ₦150K–₦250K' },
+        { title: 'The Monthly Pulse', url: 'the-monthly-pulse.html', desc: 'Ongoing data intelligence · ₦80K–₦120K/mo' },
+        { title: 'The Growth Audit', url: 'the-growth-audit.html', desc: 'Strategic growth audit · ₦300K–₦450K' },
+        { title: 'All Services', url: 'services.html', desc: 'View all KAINE.io services' },
+        { title: 'Data Analytics', url: 'services.html#data-analytics', desc: 'Transform raw data into insights' },
+        { title: 'Business Intelligence', url: 'services.html#business-intelligence', desc: 'Dashboards & reporting systems' },
+        { title: 'Consultation', url: 'services.html#consultation', desc: 'Strategic data consulting' },
+        { title: 'About KAINE', url: 'about.html', desc: 'Our story and mission' },
+        { title: 'Contact Us', url: 'contact.html', desc: 'Get in touch with KAINE.io' },
+        { title: 'Start Free Diagnostic', url: 'index.html#start', desc: 'Begin your free business diagnostic' },
+      ];
+
+      function setupSearch(inputId, resultsId) {
+        const input = document.getElementById(inputId);
+        const results = document.getElementById(resultsId);
+        if (!input || !results) return;
+
+        input.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          if (query.length < 2) {
+            results.classList.add('hidden');
+            return;
+          }
+          const matches = searchData.filter(item => 
+            item.title.toLowerCase().includes(query) || 
+            item.desc.toLowerCase().includes(query)
+          );
+          if (matches.length === 0) {
+            results.innerHTML = '<p class="px-4 py-3 text-[14px] text-[#6B7280]">No results found</p>';
+          } else {
+            results.innerHTML = matches.map(item => `
+              <a href="${item.url}" class="block px-4 py-3 hover:bg-kaine-black/50 transition-colors duration-150 no-underline">
+                <p class="text-offwhite text-[14px] font-medium">${item.title}</p>
+                <p class="text-[#6B7280] text-[12px] mt-0.5">${item.desc}</p>
+              </a>
+            `).join('');
+          }
+          results.classList.remove('hidden');
+        });
+
+        input.addEventListener('blur', () => {
+          setTimeout(() => results.classList.add('hidden'), 200);
+        });
+        input.addEventListener('focus', () => {
+          if (input.value.trim().length >= 2) results.classList.remove('hidden');
+        });
+      }
+
+      setupSearch('site-search', 'search-results');
+      setupSearch('mobile-site-search', 'mobile-search-results');
+
+      // Form submission handling
+      document.querySelectorAll('form[action*="formspree"]').forEach(form => {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const btn = form.querySelector('button[type="submit"]');
+          const originalText = btn.textContent;
+          btn.textContent = 'Submitting...';
+          btn.disabled = true;
+
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+              form.innerHTML = '<div class="bg-green-900/30 border border-green-500/50 rounded-lg p-6 text-center"><p class="text-green-400 text-[18px] font-semibold">Thank you!</p><p class="text-[#9CA3AF] text-[15px] mt-2">Your submission has been received. We\'ll respond within 24 hours.</p></div>';
+            } else {
+              throw new Error('Submission failed');
+            }
+          } catch (error) {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'mt-4 bg-red-900/30 border border-red-500/50 rounded-lg p-4 text-center';
+            errorDiv.innerHTML = '<p class="text-red-400 text-[14px]">Something went wrong. Please try again or contact us on WhatsApp.</p>';
+            form.appendChild(errorDiv);
+            setTimeout(() => errorDiv.remove(), 5000);
+          }
+        });
       });
     </script>
   </body>
