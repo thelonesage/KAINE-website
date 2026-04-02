@@ -48,19 +48,35 @@
   <body class="bg-kaine-black font-sans">
 
     <!-- ========== NAVIGATION BAR ========== -->
-    <header class="sticky top-0 z-50 w-full bg-kaine-black border-b border-gray-800">
-      <div class="max-w-[1100px] mx-auto px-6 py-4 md:py-6 flex items-center justify-between">
+    <header class="sticky top-0 z-50 w-full bg-kaine-black/80 backdrop-blur-xl border-b border-gray-800/50" style="-webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);">
+      <div class="max-w-[1100px] mx-auto px-6 py-4 md:py-5 flex items-center justify-between gap-4">
 
         <!-- Left: KAINE Logo -->
-        <a href="index.html" class="flex flex-col items-start gap-1 no-underline">
+        <a href="index.html" class="flex flex-col items-start gap-1 no-underline flex-shrink-0">
           <span class="text-offwhite font-bold uppercase tracking-widest text-xl leading-none">
             KAINE
           </span>
           <span class="block h-0.5 bg-amber w-[40%]"></span>
         </a>
 
+        <!-- Center: Search Bar (Desktop) -->
+        <div class="hidden md:flex flex-1 max-w-[320px] mx-8">
+          <div class="relative w-full">
+            <input
+              type="text"
+              id="site-search"
+              placeholder="Search services, pages..."
+              class="w-full bg-mid/80 border border-[#1F2937] rounded-full px-4 py-2 pl-10 text-offwhite text-[14px] placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200"
+            />
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <div id="search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-[#1F2937] rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
+          </div>
+        </div>
+
         <!-- Right: Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-8">
+        <nav class="hidden md:flex items-center gap-8 flex-shrink-0">
           <a
             href="services.html"
             class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
@@ -75,7 +91,7 @@
           </a>
           <a
             href="contact.html"
-            class="text-amber font-medium text-[15px] transition-colors duration-200 no-underline"
+            class="text-amber font-semibold text-[15px] transition-colors duration-200 no-underline"
           >
             Contact
           </a>
@@ -98,11 +114,24 @@
       <!-- Mobile Dropdown Menu -->
       <div
         id="mobile-menu"
-        class="md:hidden bg-kaine-black overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+        class="md:hidden bg-kaine-black/95 backdrop-blur-xl overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
         aria-hidden="true"
         inert
       >
         <nav class="flex flex-col px-6 pb-6 gap-5">
+          <!-- Mobile Search -->
+          <div class="relative">
+            <input
+              type="text"
+              id="mobile-site-search"
+              placeholder="Search..."
+              class="w-full bg-mid/80 border border-[#1F2937] rounded-full px-4 py-3 pl-10 text-offwhite text-[14px] placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200"
+            />
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <div id="mobile-search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-[#1F2937] rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
+          </div>
           <a
             href="services.html"
             class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
@@ -117,7 +146,7 @@
           </a>
           <a
             href="contact.html"
-            class="text-amber font-medium text-[15px] transition-colors duration-200 no-underline"
+            class="text-amber font-semibold text-[15px] transition-colors duration-200 no-underline"
           >
             Contact
           </a>
@@ -159,7 +188,7 @@
               href="https://wa.me/2347049262141"
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-6 inline-flex items-center justify-center px-6 py-3 rounded text-[15px] font-semibold bg-amber text-kaine-black hover:bg-[#E5BC5D] hover:-translate-y-0.5 transition-all duration-200 no-underline"
+              class="mt-6 inline-flex items-center justify-center px-6 py-4 rounded text-[15px] font-semibold bg-amber text-kaine-black hover:bg-[#E5BC5D] hover:-translate-y-0.5 transition-all duration-200 no-underline"
             >
               Message us on WhatsApp
             </a>
@@ -180,7 +209,7 @@
             </p>
             <a
               href="mailto:ofoeduclinton17@gmail.com"
-              class="mt-6 inline-flex items-center justify-center px-6 py-3 rounded text-[15px] font-semibold bg-amber text-kaine-black hover:bg-[#E5BC5D] hover:-translate-y-0.5 transition-all duration-200 no-underline"
+              class="mt-6 inline-flex items-center justify-center px-6 py-4 rounded text-[15px] font-semibold bg-amber text-kaine-black hover:bg-[#E5BC5D] hover:-translate-y-0.5 transition-all duration-200 no-underline"
             >
               Send us an email
             </a>
@@ -205,7 +234,7 @@
             </p>
             <a
               href="index.html#start"
-              class="mt-6 inline-flex items-center justify-center px-6 py-3 rounded text-[15px] font-semibold bg-amber text-kaine-black hover:bg-[#E5BC5D] hover:-translate-y-0.5 transition-all duration-200 no-underline"
+              class="mt-6 inline-flex items-center justify-center px-6 py-4 rounded text-[15px] font-semibold bg-amber text-kaine-black hover:bg-[#E5BC5D] hover:-translate-y-0.5 transition-all duration-200 no-underline"
             >
               Start the free diagnostic
             </a>
