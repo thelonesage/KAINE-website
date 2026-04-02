@@ -57,6 +57,7 @@
         </p>
 
         <form action="https://formspree.io/f/xlgolkvj" method="POST" class="mt-12 space-y-6">
+          <input type="hidden" name="service" value="Free Diagnostic (Start Page)">
           <div>
             <label for="name" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">YOUR NAME</label>
             <input id="name" type="text" name="name" placeholder="Clinton Ofoedu" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
@@ -115,5 +116,39 @@
         </div>
       </section>
     </main>
+
+    <script>
+      // Form submission handling
+      document.querySelectorAll('form[action*="formspree"]').forEach(form => {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const btn = form.querySelector('button[type="submit"]');
+          const originalText = btn.textContent;
+          btn.textContent = 'Submitting...';
+          btn.disabled = true;
+
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+              form.innerHTML = '<div class="bg-green-900/30 border border-green-500/50 rounded-lg p-6 text-center"><p class="text-green-400 text-[18px] font-semibold">Thank you!</p><p class="text-[#9CA3AF] text-[15px] mt-2">Your submission has been received. We\'ll respond within 24 hours.</p></div>';
+            } else {
+              throw new Error('Submission failed');
+            }
+          } catch (error) {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'mt-4 bg-red-900/30 border border-red-500/50 rounded-lg p-4 text-center';
+            errorDiv.innerHTML = '<p class="text-red-400 text-[14px]">Something went wrong. Please try again or contact us on WhatsApp.</p>';
+            form.appendChild(errorDiv);
+            setTimeout(() => errorDiv.remove(), 5000);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
