@@ -48,54 +48,42 @@
   <body class="bg-kaine-black font-sans">
 
     <!-- ========== NAVIGATION BAR ========== -->
-    <header class="sticky top-0 z-50 w-full bg-kaine-black/80 backdrop-blur-xl border-b border-gray-800/50" style="-webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);">
-      <div class="max-w-[1100px] mx-auto px-6 py-4 md:py-5 flex items-center justify-between gap-4">
+    <header class="sticky top-0 z-50 w-full bg-kaine-black/80 backdrop-blur-xl border-b border-gray-800/30" style="-webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);">
+      <div class="max-w-[1280px] mx-auto px-6 py-2.5 md:py-3 flex items-center justify-between gap-4">
 
         <!-- Left: KAINE Logo -->
-        <a href="index.html" class="flex flex-col items-start gap-1 no-underline flex-shrink-0">
-          <span class="text-offwhite font-bold uppercase tracking-widest text-xl leading-none">
+        <a href="index.html" class="flex flex-col items-start gap-0.5 no-underline flex-shrink-0">
+          <span class="text-offwhite font-bold uppercase tracking-widest text-lg leading-none">
             KAINE
           </span>
-          <!-- Amber decorative line -->
-          <span class="block h-0.5 bg-amber w-[40%]"></span>
+          <span class="block h-[2px] bg-amber w-[40%]"></span>
         </a>
 
         <!-- Center: Search Bar (Desktop) -->
-        <div class="hidden md:flex flex-1 max-w-[320px] mx-8">
+        <div class="hidden md:flex flex-1 max-w-[280px] mx-6">
           <div class="relative w-full">
             <input
               type="text"
               id="site-search"
-              placeholder="Search services, pages..."
-              class="w-full bg-mid/80 border border-[#1F2937] rounded-full px-4 py-2 pl-10 text-offwhite text-[14px] placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200"
+              placeholder="Search..."
+              class="w-full bg-mid/60 border border-gray-800/50 rounded-full px-4 py-1.5 pl-9 text-offwhite text-[13px] placeholder:text-gray-500 focus:border-amber/50 focus:outline-none transition-colors duration-200"
             />
-            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
-            <!-- Search Results Dropdown -->
-            <div id="search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-[#1F2937] rounded-lg shadow-xl overflow-hidden hidden z-50">
-            </div>
+            <div id="search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-gray-800 rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
           </div>
         </div>
 
         <!-- Right: Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-8 flex-shrink-0">
-          <a
-            href="services.html"
-            class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
-          >
+        <nav class="hidden md:flex items-center gap-6 flex-shrink-0">
+          <a href="services.html" class="text-offwhite/80 font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">
             Services
           </a>
-          <a
-            href="about.html"
-            class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
-          >
+          <a href="about.html" class="text-offwhite/80 font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">
             About
           </a>
-          <a
-            href="contact.html"
-            class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
-          >
+          <a href="contact.html" class="text-offwhite/80 font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">
             Contact
           </a>
         </nav>
@@ -103,14 +91,14 @@
         <!-- Mobile: Hamburger button -->
         <button
           id="menu-btn"
-          class="md:hidden flex flex-col gap-1.5 p-1 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none"
+          class="md:hidden flex flex-col gap-1 p-1 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none"
           aria-label="Toggle menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
         >
-          <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
-          <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
-          <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
+          <span class="block w-5 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
+          <span class="block w-5 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
+          <span class="block w-5 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
         </button>
       </div>
 
@@ -121,36 +109,26 @@
         aria-hidden="true"
         inert
       >
-        <nav class="flex flex-col px-6 pb-6 gap-5">
-          <!-- Mobile Search -->
+        <nav class="flex flex-col px-6 pb-4 gap-4">
           <div class="relative">
             <input
               type="text"
               id="mobile-site-search"
               placeholder="Search..."
-              class="w-full bg-mid/80 border border-[#1F2937] rounded-full px-4 py-3 pl-10 text-offwhite text-[14px] placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200"
+              class="w-full bg-mid/60 border border-gray-800/50 rounded-full px-4 py-2.5 pl-10 text-offwhite text-[14px] placeholder:text-gray-500 focus:border-amber/50 focus:outline-none transition-colors duration-200"
             />
-            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
-            <div id="mobile-search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-[#1F2937] rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
+            <div id="mobile-search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-gray-800 rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
           </div>
-          <a
-            href="services.html"
-            class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
-          >
+          <a href="services.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">
             Services
           </a>
-          <a
-            href="about.html"
-            class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
-          >
+          <a href="about.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">
             About
           </a>
-          <a
-            href="contact.html"
-            class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
-          >
+          <a href="contact.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">
             Contact
           </a>
         </nav>
@@ -159,63 +137,97 @@
     <!-- ========== END NAVIGATION BAR ========== -->
 
     <!-- ========== HERO SECTION ========== -->
-    <section class="bg-kaine-black py-16 md:py-24 md:min-h-screen" aria-label="Hero">
-      <div class="max-w-[1100px] mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-center gap-12">
+    <section class="bg-kaine-black py-16 md:py-24 md:min-h-screen relative overflow-hidden" aria-label="Hero">
+      <!-- Subtle animated background -->
+      <div class="absolute inset-0 opacity-[0.03]">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #D4A843 1px, transparent 0); background-size: 40px 40px;"></div>
+      </div>
+      <!-- Floating data elements -->
+      <div class="absolute top-20 right-[10%] w-32 h-32 border border-amber/10 rounded-full animate-pulse hidden lg:block"></div>
+      <div class="absolute bottom-32 right-[20%] w-20 h-20 border border-amber/5 rounded-lg rotate-12 hidden lg:block"></div>
+      <div class="absolute top-1/3 left-[5%] w-16 h-16 border border-amber/5 rounded-full hidden lg:block"></div>
+      
+      <div class="max-w-[1280px] mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row md:items-center gap-12 lg:gap-20">
           <div class="w-full md:w-[55%]">
-            <h1 class="text-offwhite font-bold text-4xl md:text-6xl leading-[1.2] tracking-[-0.02em]">
+            <h1 class="text-offwhite font-bold text-4xl md:text-5xl lg:text-6xl leading-[1.15] tracking-[-0.02em]">
               Your revenue is inconsistent. Your <span class="text-amber">data</span> knows why.
             </h1>
-            <p class="mt-6 max-w-[480px] text-gray text-[17px] md:text-[20px] leading-[1.6]">
-              KAINE.io runs structured diagnostics on your e-commerce business — powered by AI, interpreted by experts — and tells you exactly what to do next.
+            <p class="mt-6 max-w-[520px] text-gray text-[16px] md:text-[18px] leading-[1.7]">
+              AI-powered diagnostics for e-commerce. Get clear answers, not more dashboards.
             </p>
-            <div class="mt-10 flex flex-col md:flex-row gap-4">
+            <div class="mt-10 flex flex-col sm:flex-row gap-3">
               <a
                 href="#start"
-                class="inline-flex items-center justify-center px-8 py-4 rounded text-[15px] font-semibold bg-amber text-kaine-black transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#E5BC5D] no-underline"
+                class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[14px] font-semibold bg-amber text-kaine-black transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber/20 no-underline"
               >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 Get Your Free Diagnosis
               </a>
               <a
                 href="https://wa.me/2347049262141"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center px-8 py-4 rounded text-[15px] font-semibold border border-offwhite text-offwhite hover:border-amber hover:text-amber transition-all duration-200 no-underline"
+                class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[14px] font-semibold border border-offwhite/30 text-offwhite hover:border-amber hover:text-amber transition-all duration-200 no-underline"
               >
-                Talk to us on WhatsApp
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
               </a>
             </div>
           </div>
 
           <div class="hidden md:block md:w-[45%]">
-            <div class="w-full bg-mid rounded-lg border-l-2 border-amber p-8" aria-label="Revenue pattern showing inconsistent performance over 6 months">
-              <p class="text-gray text-[13px] font-medium mb-6">
-                Revenue Pattern — Last 6 Months
-              </p>
-              <div class="flex items-end gap-3 h-40">
-                <div class="h-full flex flex-col justify-end items-center gap-2">
-                  <div class="w-8 h-[45%] bg-slate-800 rounded-t"></div>
-                  <span class="text-slate-500 text-xs font-medium">Jan</span>
+            <div class="relative">
+              <!-- Animated chart card -->
+              <div class="w-full bg-mid/80 backdrop-blur-sm rounded-xl border border-gray-800/50 p-6 shadow-2xl" aria-label="Revenue pattern visualization">
+                <div class="flex items-center justify-between mb-6">
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-amber/10 flex items-center justify-center">
+                      <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    </div>
+                    <span class="text-offwhite text-[13px] font-medium">Revenue Pattern</span>
+                  </div>
+                  <span class="text-gray-500 text-[11px]">Last 6 months</span>
                 </div>
-                <div class="h-full flex flex-col justify-end items-center gap-2">
-                  <div class="w-8 h-[60%] bg-slate-800 rounded-t"></div>
-                  <span class="text-slate-500 text-xs font-medium">Feb</span>
+                <div class="flex items-end gap-2 h-32">
+                  <div class="flex-1 flex flex-col items-center gap-1.5 group">
+                    <div class="w-full h-[45%] bg-gradient-to-t from-gray-800 to-gray-700 rounded-t transition-all group-hover:from-amber/30 group-hover:to-amber/20"></div>
+                    <span class="text-gray-600 text-[10px]">J</span>
+                  </div>
+                  <div class="flex-1 flex flex-col items-center gap-1.5 group">
+                    <div class="w-full h-[60%] bg-gradient-to-t from-gray-800 to-gray-700 rounded-t transition-all group-hover:from-amber/30 group-hover:to-amber/20"></div>
+                    <span class="text-gray-600 text-[10px]">F</span>
+                  </div>
+                  <div class="flex-1 flex flex-col items-center gap-1.5 group">
+                    <div class="w-full h-[38%] bg-gradient-to-t from-gray-800 to-gray-700 rounded-t transition-all group-hover:from-amber/30 group-hover:to-amber/20"></div>
+                    <span class="text-gray-600 text-[10px]">M</span>
+                  </div>
+                  <div class="flex-1 flex flex-col items-center gap-1.5 group">
+                    <div class="w-full h-[75%] bg-gradient-to-t from-gray-800 to-gray-700 rounded-t transition-all group-hover:from-amber/30 group-hover:to-amber/20"></div>
+                    <span class="text-gray-600 text-[10px]">A</span>
+                  </div>
+                  <div class="flex-1 flex flex-col items-center gap-1.5 group">
+                    <div class="w-full h-[55%] bg-gradient-to-t from-gray-800 to-gray-700 rounded-t transition-all group-hover:from-amber/30 group-hover:to-amber/20"></div>
+                    <span class="text-gray-600 text-[10px]">M</span>
+                  </div>
+                  <div class="flex-1 flex flex-col items-center gap-1.5 group">
+                    <div class="w-full h-full bg-gradient-to-t from-amber to-amber/80 rounded-t shadow-lg shadow-amber/20"></div>
+                    <span class="text-amber text-[10px] font-medium">J</span>
+                  </div>
                 </div>
-                <div class="h-full flex flex-col justify-end items-center gap-2">
-                  <div class="w-8 h-[38%] bg-slate-800 rounded-t"></div>
-                  <span class="text-slate-500 text-xs font-medium">Mar</span>
+                <!-- Insight badge -->
+                <div class="mt-4 flex items-center gap-2 px-3 py-2 rounded-lg bg-amber/10 border border-amber/20">
+                  <svg class="w-3.5 h-3.5 text-amber flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                  <span class="text-[11px] text-amber">Pattern detected: 42% variance</span>
                 </div>
-                <div class="h-full flex flex-col justify-end items-center gap-2">
-                  <div class="w-8 h-[75%] bg-slate-800 rounded-t"></div>
-                  <span class="text-slate-500 text-xs font-medium">Apr</span>
-                </div>
-                <div class="h-full flex flex-col justify-end items-center gap-2">
-                  <div class="w-8 h-[55%] bg-slate-800 rounded-t"></div>
-                  <span class="text-slate-500 text-xs font-medium">May</span>
-                </div>
-                <div class="h-full flex flex-col justify-end items-center gap-2">
-                  <div class="w-8 h-full bg-amber rounded-t"></div>
-                  <span class="text-slate-500 text-xs font-medium">Jun</span>
+              </div>
+              <!-- Floating stat cards -->
+              <div class="absolute -top-4 -right-4 bg-mid border border-gray-800/50 rounded-lg px-3 py-2 shadow-xl">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center">
+                    <svg class="w-3 h-3 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/></svg>
+                  </div>
+                  <span class="text-[11px] text-gray-400">Why the dip?</span>
                 </div>
               </div>
             </div>
@@ -225,55 +237,62 @@
     </section>
     <!-- ========== END HERO SECTION ========== -->
 <!-- ========== THE MIRROR SECTION ========== -->
-<section class="bg-offwhite py-24 md:py-32" aria-label="The Mirror">
-  <div class="max-w-[1100px] mx-auto px-6">
+<section class="bg-offwhite py-20 md:py-28" aria-label="The Mirror">
+  <div class="max-w-[1280px] mx-auto px-6">
 
     <!-- Section label -->
-    <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber mb-12">
+    <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-amber mb-3">
       Sound familiar?
     </p>
 
-    <!-- Mirror statements -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+    <!-- Mirror statements with icons -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
 
       <!-- Statement 1 -->
-      <div class="border-l-2 border-amber pl-6">
-        <p class="text-kaine-black text-[20px] md:text-[22px] font-semibold leading-[1.4] mb-3">
-          Your revenue changes every month — and you don't know why.
+      <div class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-amber/20 transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 transition-colors">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/></svg>
+        </div>
+        <p class="text-kaine-black text-[18px] font-semibold leading-[1.35] mb-2">
+          Revenue changes monthly — you don't know why
         </p>
-        <p class="text-[#6B7280] text-[15px] leading-[1.6]">
-          Some months are strong. Others collapse without warning. The numbers move but the reason stays hidden.
+        <p class="text-gray-500 text-[14px] leading-[1.6]">
+          Some months are strong. Others collapse. The reason stays hidden.
         </p>
       </div>
 
       <!-- Statement 2 -->
-      <div class="border-l-2 border-amber pl-6">
-        <p class="text-kaine-black text-[20px] md:text-[22px] font-semibold leading-[1.4] mb-3">
-          You're spending on ads but you can't tell which ones are actually working.
+      <div class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-amber/20 transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 transition-colors">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <p class="text-kaine-black text-[18px] font-semibold leading-[1.35] mb-2">
+          Ad spend isn't translating to sales
         </p>
-        <p class="text-[#6B7280] text-[15px] leading-[1.6]">
-          You see reach. You see impressions. But which naira of spend turned into a paying customer? That answer doesn't exist yet.
+        <p class="text-gray-500 text-[14px] leading-[1.6]">
+          Reach and impressions look good. But which naira became a customer?
         </p>
       </div>
 
       <!-- Statement 3 -->
-      <div class="border-l-2 border-amber pl-6">
-        <p class="text-kaine-black text-[20px] md:text-[22px] font-semibold leading-[1.4] mb-3">
-          You know something is off. You just can't put your finger on exactly what.
+      <div class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-amber/20 transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 transition-colors">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <p class="text-kaine-black text-[18px] font-semibold leading-[1.35] mb-2">
+          Something feels off — but what?
         </p>
-        <p class="text-[#6B7280] text-[15px] leading-[1.6]">
-          The business is running. Orders are coming in. But it doesn't feel like it's working the way it should. That feeling is data trying to reach you.
+        <p class="text-gray-500 text-[14px] leading-[1.6]">
+          The business runs. Orders come in. But it doesn't feel right.
         </p>
       </div>
 
     </div>
 
     <!-- Bottom statement -->
-    <div class="mt-16 pt-12 border-t border-[#E5E7EB]">
-      <p class="text-kaine-black text-[22px] md:text-[28px] font-semibold leading-[1.4] max-w-[680px]">
-        You're not running the business blind because you don't care.
-        You're running it blind because no one has shown you
-        <span class="text-amber">what your data actually says.</span>
+    <div class="mt-12 pt-10 border-t border-gray-200 text-center">
+      <p class="text-kaine-black text-[20px] md:text-[24px] font-semibold leading-[1.4] max-w-[700px] mx-auto">
+        You're not blind because you don't care. You're blind because no one showed you <span class="text-amber">what your data says.</span>
       </p>
     </div>
 
@@ -282,80 +301,78 @@
 <!-- ========== END THE MIRROR SECTION ========== -->
  <!-- ========== WHAT WE DO SECTION ========== -->
 <section class="bg-kaine-black py-16 md:py-24" aria-label="What We Do">
-  <div class="max-w-[1100px] mx-auto px-6">
+  <div class="max-w-[1280px] mx-auto px-6">
 
-    <!-- Section label -->
-    <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber mb-4">
-      WHAT WE DO
-    </p>
-
-    <!-- Headline -->
-    <h2 class="text-offwhite font-bold text-[28px] md:text-[40px] leading-[1.2] max-w-[820px]">
-      We turn your business data into decisions you can act on today.
-    </h2>
-
-    <!-- Subheadline -->
-    <p class="mt-4 text-[17px] text-[#9CA3AF] leading-[1.6] max-w-[680px]">
-      KAINE.io delivers three core services to e-commerce businesses in Nigeria and Africa. Each one is designed around a specific stage of the problem — from first diagnosis to ongoing intelligence.
-    </p>
+    <!-- Section header -->
+    <div class="text-center mb-14">
+      <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-amber mb-3">
+        WHAT WE DO
+      </p>
+      <h2 class="text-offwhite font-bold text-[28px] md:text-[36px] leading-[1.2] max-w-[600px] mx-auto">
+        Turn your data into decisions
+      </h2>
+      <p class="mt-3 text-[15px] text-gray-400 leading-[1.6] max-w-[500px] mx-auto">
+        Three services. One goal: clarity that drives growth.
+      </p>
+    </div>
 
     <!-- Service Cards -->
-    <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 
       <!-- Card 1: The Diagnostic -->
-      <article class="bg-mid rounded-lg p-8 border-l-2 border-amber">
-        <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber">
-          THE DIAGNOSTIC
-        </p>
-        <p class="mt-1 text-[13px] text-[#6B7280]">
-          ₦150,000 – ₦250,000 · Fixed Fee
-        </p>
-        <h3 class="mt-4 text-offwhite text-[20px] font-semibold leading-[1.4]">
-          A full diagnostic of your e-commerce business — what's working, what's not, and exactly what to do next.
+      <article class="group relative bg-gradient-to-b from-mid to-mid/80 rounded-2xl p-7 border border-gray-800/50 hover:border-amber/30 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber to-amber/50"></div>
+        <div class="w-11 h-11 rounded-xl bg-amber/10 flex items-center justify-center mb-5 group-hover:bg-amber/20 transition-colors">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <p class="text-amber text-[11px] font-semibold tracking-wider uppercase">THE DIAGNOSTIC</p>
+        <p class="mt-1 text-gray-500 text-[12px]">₦150K – ₦250K · One-time</p>
+        <h3 class="mt-3 text-offwhite text-[18px] font-semibold leading-[1.35]">
+          Full business analysis with actionable next steps
         </h3>
-        <p class="mt-3 text-[15px] text-[#9CA3AF] leading-[1.6]">
-          We connect to your data sources, clean and analyse your records, surface the patterns that explain your revenue behaviour, and deliver a structured report with ranked, evidence-backed recommendations. One engagement. One clear answer.
+        <p class="mt-2 text-[13px] text-gray-400 leading-[1.6]">
+          We connect to your data, surface patterns, and deliver evidence-backed recommendations.
         </p>
-        <a href="the-diagnostic.html" class="mt-6 inline-block text-[14px] font-semibold text-amber hover:text-[#E5BC5D] transition-colors duration-200 no-underline">
-          Learn more →
+        <a href="the-diagnostic.html" class="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-amber hover:text-[#E5BC5D] transition-colors no-underline">
+          Learn more <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </a>
       </article>
 
       <!-- Card 2: The Monthly Pulse -->
-      <article class="bg-mid rounded-lg p-8 border-l-2 border-amber">
-        <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber">
-          THE MONTHLY PULSE
-        </p>
-        <p class="mt-1 text-[13px] text-[#6B7280]">
-          ₦80,000 – ₦120,000 · Per Month
-        </p>
-        <h3 class="mt-4 text-offwhite text-[20px] font-semibold leading-[1.4]">
-          Ongoing data intelligence — so you always know what is happening in your business and why.
+      <article class="group relative bg-gradient-to-b from-mid to-mid/80 rounded-2xl p-7 border border-gray-800/50 hover:border-amber/30 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber to-amber/50"></div>
+        <div class="w-11 h-11 rounded-xl bg-amber/10 flex items-center justify-center mb-5 group-hover:bg-amber/20 transition-colors">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <p class="text-amber text-[11px] font-semibold tracking-wider uppercase">THE MONTHLY PULSE</p>
+        <p class="mt-1 text-gray-500 text-[12px]">₦80K – ₦120K · Monthly</p>
+        <h3 class="mt-3 text-offwhite text-[18px] font-semibold leading-[1.35]">
+          Ongoing intelligence delivered every month
         </h3>
-        <p class="mt-3 text-[15px] text-[#9CA3AF] leading-[1.6]">
-          A monthly retainer that keeps your business data continuously monitored. Every month you receive a structured pulse report: what changed, what caused it, what needs your attention, and what to do. No guesswork. No surprises.
+        <p class="mt-2 text-[13px] text-gray-400 leading-[1.6]">
+          Monthly reports on what changed, what caused it, and what needs your attention.
         </p>
-        <a href="the-monthly-pulse.html" class="mt-6 inline-block text-[14px] font-semibold text-amber hover:text-[#E5BC5D] transition-colors duration-200 no-underline">
-          Learn more →
+        <a href="the-monthly-pulse.html" class="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-amber hover:text-[#E5BC5D] transition-colors no-underline">
+          Learn more <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </a>
       </article>
 
       <!-- Card 3: The Growth Audit -->
-      <article class="bg-mid rounded-lg p-8 border-l-2 border-amber">
-        <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber">
-          THE GROWTH AUDIT
-        </p>
-        <p class="mt-1 text-[13px] text-[#6B7280]">
-          ₦300,000 – ₦450,000 · Fixed Fee
-        </p>
-        <h3 class="mt-4 text-offwhite text-[20px] font-semibold leading-[1.4]">
-          A deep strategic audit of your growth levers — for businesses ready to scale with evidence.
+      <article class="group relative bg-gradient-to-b from-mid to-mid/80 rounded-2xl p-7 border border-gray-800/50 hover:border-amber/30 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber to-amber/50"></div>
+        <div class="w-11 h-11 rounded-xl bg-amber/10 flex items-center justify-center mb-5 group-hover:bg-amber/20 transition-colors">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+        </div>
+        <p class="text-amber text-[11px] font-semibold tracking-wider uppercase">THE GROWTH AUDIT</p>
+        <p class="mt-1 text-gray-500 text-[12px]">₦300K – ₦450K · One-time</p>
+        <h3 class="mt-3 text-offwhite text-[18px] font-semibold leading-[1.35]">
+          Deep strategic audit for scaling businesses
         </h3>
-        <p class="mt-3 text-[15px] text-[#9CA3AF] leading-[1.6]">
-          A comprehensive engagement that goes beyond the diagnostic. We map your entire customer journey, identify your highest-value growth opportunities, model revenue scenarios, and deliver a full growth strategy backed by your own data. Built for founders who are done guessing at scale.
+        <p class="mt-2 text-[13px] text-gray-400 leading-[1.6]">
+          Customer journey mapping, growth opportunities, and a full strategy backed by data.
         </p>
-        <a href="the-growth-audit.html" class="mt-6 inline-block text-[14px] font-semibold text-amber hover:text-[#E5BC5D] transition-colors duration-200 no-underline">
-          Learn more →
+        <a href="the-growth-audit.html" class="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-amber hover:text-[#E5BC5D] transition-colors no-underline">
+          Learn more <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </a>
       </article>
 
@@ -366,113 +383,114 @@
 <!-- ========== END WHAT WE DO SECTION ========== -->
 
 <!-- ========== HOW WE WORK SECTION ========== -->
-<section class="bg-offwhite py-16 md:py-24" aria-label="How We Work">
-  <div class="max-w-[1100px] mx-auto px-6">
+<section class="bg-offwhite py-16 md:py-24 overflow-hidden" aria-label="How We Work">
+  <div class="max-w-[1280px] mx-auto px-6">
 
-    <!-- Section label -->
-    <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber mb-4">
-      HOW WE WORK
-    </p>
+    <!-- Section header -->
+    <div class="text-center mb-14">
+      <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-amber mb-3">
+        HOW WE WORK
+      </p>
+      <h2 class="text-kaine-black font-bold text-[28px] md:text-[36px] leading-[1.2]">
+        From question to clarity in 5 steps
+      </h2>
+    </div>
 
-    <!-- Headline -->
-    <h2 class="text-kaine-black font-bold text-[28px] md:text-[40px] leading-[1.2] max-w-[820px]">
-      Structured. Evidence-backed. Delivered for founders, not data scientists.
-    </h2>
-
-    <!-- Subheadline -->
-    <p class="mt-4 text-[17px] text-[#6B7280] leading-[1.6] max-w-[560px]">
-      Every KAINE.io engagement follows the same rigorous process — regardless of service level. This is how we work.
-    </p>
-
-    <!-- Steps -->
-    <div class="mt-14 max-w-[720px]">
-
-      <!-- Step 1 -->
-      <div class="flex gap-6">
-        <div class="flex flex-col items-center">
-          <span class="text-amber font-bold text-[32px] leading-none">01</span>
-          <div class="flex-1 w-px bg-[#E5E7EB] mt-4"></div>
+    <!-- Horizontal Flowchart -->
+    <div class="relative">
+      <!-- Connection line (desktop) -->
+      <div class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-amber/20 via-amber to-amber/20"></div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
+        
+        <!-- Step 1 -->
+        <div class="relative group">
+          <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">
+              1
+            </div>
+            <div class="mt-4 lg:mt-6">
+              <div class="flex items-center gap-2 lg:justify-center mb-2">
+                <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <h3 class="text-kaine-black text-[15px] font-semibold">Submit Form</h3>
+              </div>
+              <p class="text-gray-500 text-[13px] leading-[1.5]">3-minute intake. We start here.</p>
+            </div>
+          </div>
         </div>
-        <div class="pb-10">
-          <h3 class="text-kaine-black text-[18px] font-semibold leading-[1.4]">
-            You submit the diagnostic form.
-          </h3>
-          <p class="mt-2 text-[15px] text-[#6B7280] leading-[1.6]">
-            You fill in our structured intake form — your business, your channels, your tools, and the problem you're trying to solve. Takes 3 minutes. This is where we start.
-          </p>
+
+        <!-- Step 2 -->
+        <div class="relative group">
+          <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">
+              2
+            </div>
+            <div class="mt-4 lg:mt-6">
+              <div class="flex items-center gap-2 lg:justify-center mb-2">
+                <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <h3 class="text-kaine-black text-[15px] font-semibold">Human Review</h3>
+              </div>
+              <p class="text-gray-500 text-[13px] leading-[1.5]">No bots. We read within 24hrs.</p>
+            </div>
+          </div>
         </div>
+
+        <!-- Step 3 -->
+        <div class="relative group">
+          <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">
+              3
+            </div>
+            <div class="mt-4 lg:mt-6">
+              <div class="flex items-center gap-2 lg:justify-center mb-2">
+                <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <h3 class="text-kaine-black text-[15px] font-semibold">Connect Data</h3>
+              </div>
+              <p class="text-gray-500 text-[13px] leading-[1.5]">Share records. Messy is fine.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative group">
+          <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">
+              4
+            </div>
+            <div class="mt-4 lg:mt-6">
+              <div class="flex items-center gap-2 lg:justify-center mb-2">
+                <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <h3 class="text-kaine-black text-[15px] font-semibold">AI Analysis</h3>
+              </div>
+              <p class="text-gray-500 text-[13px] leading-[1.5]">Patterns found. Insights ranked.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="relative group">
+          <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">
+              5
+            </div>
+            <div class="mt-4 lg:mt-6">
+              <div class="flex items-center gap-2 lg:justify-center mb-2">
+                <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <h3 class="text-kaine-black text-[15px] font-semibold">Get Report</h3>
+              </div>
+              <p class="text-gray-500 text-[13px] leading-[1.5]">Clear actions. No jargon.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <!-- Step 2 -->
-      <div class="flex gap-6">
-        <div class="flex flex-col items-center">
-          <span class="text-amber font-bold text-[32px] leading-none">02</span>
-          <div class="flex-1 w-px bg-[#E5E7EB] mt-4"></div>
-        </div>
-        <div class="pb-10">
-          <h3 class="text-kaine-black text-[18px] font-semibold leading-[1.4]">
-            We review your submission personally.
-          </h3>
-          <p class="mt-2 text-[15px] text-[#6B7280] leading-[1.6]">
-            No automation. No chatbot. A human reads your submission within 24 hours and sends you an initial read on your situation — what we see and what we'd need to dig into.
-          </p>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="flex gap-6">
-        <div class="flex flex-col items-center">
-          <span class="text-amber font-bold text-[32px] leading-none">03</span>
-          <div class="flex-1 w-px bg-[#E5E7EB] mt-4"></div>
-        </div>
-        <div class="pb-10">
-          <h3 class="text-kaine-black text-[18px] font-semibold leading-[1.4]">
-            We connect to your data.
-          </h3>
-          <p class="mt-2 text-[15px] text-[#6B7280] leading-[1.6]">
-            You share your transaction records, ad performance data, order history — whatever you have. Messy is fine. Incomplete is fine. We have cleaned worse. We sign a confidentiality agreement before anything is shared.
-          </p>
-        </div>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="flex gap-6">
-        <div class="flex flex-col items-center">
-          <span class="text-amber font-bold text-[32px] leading-none">04</span>
-          <div class="flex-1 w-px bg-[#E5E7EB] mt-4"></div>
-        </div>
-        <div class="pb-10">
-          <h3 class="text-kaine-black text-[18px] font-semibold leading-[1.4]">
-            We run the analysis.
-          </h3>
-          <p class="mt-2 text-[15px] text-[#6B7280] leading-[1.6]">
-            Our AI-augmented analytical pipeline cleans your data, detects patterns, runs diagnostic queries across your customer, product, and marketing data, and surfaces findings ranked by business impact. The human layer then interprets, contextualises, and translates.
-          </p>
-        </div>
-      </div>
-
-      <!-- Step 5 -->
-      <div class="flex gap-6">
-        <div class="flex flex-col items-center">
-          <span class="text-amber font-bold text-[32px] leading-none">05</span>
-        </div>
-        <div>
-          <h3 class="text-kaine-black text-[18px] font-semibold leading-[1.4]">
-            You receive your deliverable.
-          </h3>
-          <p class="mt-2 text-[15px] text-[#6B7280] leading-[1.6]">
-            A structured report written for a founder — not a data scientist. Executive summary, key findings, and specific recommendations you can act on immediately. For retainer clients, this repeats every month.
-          </p>
-        </div>
-      </div>
-
     </div>
 
     <!-- CTA Button -->
     <div class="mt-14 text-center">
       <a
         href="#start"
-        class="inline-flex items-center justify-center px-8 py-4 rounded text-[15px] font-semibold bg-amber text-kaine-black transition-all duration-200 hover:bg-[#E5BC5D] hover:-translate-y-0.5 no-underline"
+        class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[14px] font-semibold bg-amber text-kaine-black transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber/20 no-underline"
       >
         Start With a Free Diagnostic
       </a>
@@ -484,274 +502,291 @@
 
 <!-- ========== WHO THIS IS FOR SECTION ========== -->
 <section id="about" class="bg-mid py-16 md:py-24" aria-label="Who This Is For">
-  <div class="max-w-[1100px] mx-auto px-6">
-    <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber">
-      WHO THIS IS FOR
-    </p>
-    <h2 class="mt-3 text-offwhite font-bold text-[28px] md:text-[40px] leading-[1.2]">
-      Built for one type of business. Yours.
-    </h2>
-    <p class="mt-4 text-[17px] text-[#9CA3AF] leading-[1.6] max-w-[560px]">
-      KAINE.io is not for everyone. It is for e-commerce founders who are past the early stage, generating real revenue, and ready to stop making expensive decisions without evidence.
-    </p>
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-amber mb-3">
+        WHO THIS IS FOR
+      </p>
+      <h2 class="text-offwhite font-bold text-[28px] md:text-[36px] leading-[1.2]">
+        Built for growth-stage e-commerce
+      </h2>
+    </div>
 
-    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
-      <article class="bg-kaine-black rounded-lg p-8 border-l-2 border-amber">
-        <h3 class="text-offwhite text-[20px] md:text-[22px] font-semibold leading-[1.4]">
-          You've been operating for at least a year
-        </h3>
-        <p class="mt-3 text-[15px] text-[#9CA3AF] leading-[1.6]">
-          You have transaction history, customer data, and marketing spend records. You have enough data to work with — even if it's messy.
-        </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
+      <article class="group bg-kaine-black/50 backdrop-blur rounded-xl p-5 border border-gray-800/30 hover:border-amber/30 transition-all duration-300 text-center">
+        <div class="w-12 h-12 rounded-full bg-amber/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-amber/20 transition-colors">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-offwhite text-[15px] font-semibold leading-[1.35] mb-1">1+ Year Operating</h3>
+        <p class="text-gray-500 text-[12px] leading-[1.5]">You have data to work with</p>
       </article>
 
-      <article class="bg-kaine-black rounded-lg p-8 border-l-2 border-amber">
-        <h3 class="text-offwhite text-[20px] md:text-[22px] font-semibold leading-[1.4]">
-          You're generating real revenue
-        </h3>
-        <p class="mt-3 text-[15px] text-[#9CA3AF] leading-[1.6]">
-          Between ₦10M and ₦80M annually. You're not pre-revenue. You're post-guesswork — or you should be.
-        </p>
+      <article class="group bg-kaine-black/50 backdrop-blur rounded-xl p-5 border border-gray-800/30 hover:border-amber/30 transition-all duration-300 text-center">
+        <div class="w-12 h-12 rounded-full bg-amber/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-amber/20 transition-colors">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-offwhite text-[15px] font-semibold leading-[1.35] mb-1">₦10M–₦80M/yr</h3>
+        <p class="text-gray-500 text-[12px] leading-[1.5]">Real revenue, real decisions</p>
       </article>
 
-      <article class="bg-kaine-black rounded-lg p-8 border-l-2 border-amber">
-        <h3 class="text-offwhite text-[20px] md:text-[22px] font-semibold leading-[1.4]">
-          You're spending on marketing and not sure it's working
-        </h3>
-        <p class="mt-3 text-[15px] text-[#9CA3AF] leading-[1.6]">
-          You're running ads, posting content, or paying someone to. But the ROI is unclear and the attribution is a mystery.
-        </p>
+      <article class="group bg-kaine-black/50 backdrop-blur rounded-xl p-5 border border-gray-800/30 hover:border-amber/30 transition-all duration-300 text-center">
+        <div class="w-12 h-12 rounded-full bg-amber/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-amber/20 transition-colors">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+        </div>
+        <h3 class="text-offwhite text-[15px] font-semibold leading-[1.35] mb-1">Ad Spend Active</h3>
+        <p class="text-gray-500 text-[12px] leading-[1.5]">Unclear ROI on marketing</p>
       </article>
 
-      <article class="bg-kaine-black rounded-lg p-8 border-l-2 border-amber">
-        <h3 class="text-offwhite text-[20px] md:text-[22px] font-semibold leading-[1.4]">
-          You feel like something isn't adding up
-        </h3>
-        <p class="mt-3 text-[15px] text-[#9CA3AF] leading-[1.6]">
-          Sales are coming in but growth feels inconsistent. You sense there's something the numbers aren't telling you. You're right.
-        </p>
+      <article class="group bg-kaine-black/50 backdrop-blur rounded-xl p-5 border border-gray-800/30 hover:border-amber/30 transition-all duration-300 text-center">
+        <div class="w-12 h-12 rounded-full bg-amber/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-amber/20 transition-colors">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3 class="text-offwhite text-[15px] font-semibold leading-[1.35] mb-1">Ready for Answers</h3>
+        <p class="text-gray-500 text-[12px] leading-[1.5]">Something feels off</p>
       </article>
     </div>
 
-    <p class="mt-12 text-center text-[17px] italic text-[#6B7280] leading-[1.6]">
-      If this is you — your data is ready. We just need to look at it.
+    <p class="mt-10 text-center text-[15px] text-gray-400">
+      If this is you — your data is ready. <span class="text-amber">We just need to look at it.</span>
     </p>
   </div>
 </section>
 <!-- ========== END WHO THIS IS FOR SECTION ========== -->
 
 <!-- ========== THE DIAGNOSTIC FORM SECTION ========== -->
-<section id="start" class="bg-kaine-black py-16 md:py-24" aria-label="Get Started">
-  <div class="max-w-[1100px] mx-auto px-6">
-    <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber">
-      GET STARTED
-    </p>
-    <h2 class="mt-3 text-offwhite font-bold text-[28px] md:text-[40px] leading-[1.2] max-w-[900px]">
-      Tell us about your business. We'll tell you what the data reveals.
-    </h2>
-    <p class="mt-4 text-[17px] text-[#9CA3AF] leading-[1.6] max-w-[520px]">
-      Fill in the form below. We review every submission personally and respond within 24 hours with our initial read on your situation.
-    </p>
-
-    <form action="https://formspree.io/f/xlgolkvj" method="POST" class="mt-12 max-w-[640px] space-y-6">
-      <input type="hidden" name="service" value="Free Diagnostic (Homepage)">
+<section id="start" class="bg-kaine-black py-16 md:py-24 relative" aria-label="Get Started">
+  <!-- Subtle background pattern -->
+  <div class="absolute inset-0 opacity-[0.02]">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #D4A843 1px, transparent 0); background-size: 32px 32px;"></div>
+  </div>
+  
+  <div class="max-w-[1280px] mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      
+      <!-- Left: Form info -->
       <div>
-        <label for="name" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">YOUR NAME</label>
-        <input id="name" type="text" name="name" placeholder="Clinton Ofoedu" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
-      </div>
-
-      <div>
-        <label for="business" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">BUSINESS NAME</label>
-        <input id="business" type="text" name="business" placeholder="Your store or brand name" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
-      </div>
-
-      <div>
-        <label for="revenue" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">MONTHLY REVENUE (APPROXIMATE)</label>
-        <select id="revenue" name="revenue" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal focus:border-amber focus:outline-none transition-colors duration-200" required>
-          <option value="" disabled selected>Select a range</option>
-          <option>Under ₦1M/month</option>
-          <option>₦1M – ₦3M/month</option>
-          <option>₦3M – ₦7M/month</option>
-          <option>Above ₦7M/month</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="channels" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">WHERE DO YOU SELL?</label>
-        <input id="channels" type="text" name="channels" placeholder="e.g. Instagram, WhatsApp, Jumia, your website" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
-      </div>
-
-      <div>
-        <label for="tools" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">WHAT TOOLS DO YOU USE FOR PAYMENT OR ORDERS?</label>
-        <input id="tools" type="text" name="tools" placeholder="e.g. Paystack, Bumpa, Selar, manual" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
-      </div>
-
-      <div>
-        <label for="problem" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">WHAT IS THE BIGGEST PROBLEM IN YOUR BUSINESS RIGHT NOW?</label>
-        <textarea id="problem" name="problem" rows="4" placeholder="Describe what's not working, what feels off, or what question you most need answered about your business." class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required></textarea>
-      </div>
-
-      <div>
-        <label for="email" class="block mb-2 text-[13px] font-medium tracking-[0.04em] text-[#9CA3AF]">YOUR EMAIL ADDRESS</label>
-        <input id="email" type="email" name="email" placeholder="you@yourbusiness.com" class="w-full bg-mid border border-[#1F2937] rounded px-4 py-[14px] text-offwhite text-[15px] font-normal placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200" required />
-      </div>
-
-      <div class="pt-2">
-        <button type="submit" class="w-full md:w-auto inline-flex items-center justify-center px-12 py-4 rounded text-[15px] font-semibold bg-amber text-kaine-black hover:bg-[#E5BC5D] hover:-translate-y-0.5 transition-all duration-200">
-          Submit — Get My Free Diagnosis
-        </button>
-        <p class="mt-4 text-[13px] italic text-[#6B7280] leading-[1.6]">
-          We review every submission personally. No automated responses. No spam. Your data stays confidential.
+        <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-amber mb-3">
+          GET STARTED
         </p>
+        <h2 class="text-offwhite font-bold text-[28px] md:text-[36px] leading-[1.2]">
+          Tell us about your business
+        </h2>
+        <p class="mt-4 text-[15px] text-gray-400 leading-[1.6] max-w-[400px]">
+          3 minutes to fill. 24 hours to response. Zero commitment.
+        </p>
+        
+        <!-- Trust indicators -->
+        <div class="mt-8 flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-amber/10 flex items-center justify-center">
+              <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <span class="text-gray-400 text-[13px]">Data stays confidential</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-amber/10 flex items-center justify-center">
+              <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            </div>
+            <span class="text-gray-400 text-[13px]">Human review, no bots</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-amber/10 flex items-center justify-center">
+              <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <span class="text-gray-400 text-[13px]">Free initial diagnostic</span>
+          </div>
+        </div>
       </div>
-    </form>
+      
+      <!-- Right: Form -->
+      <div class="bg-mid/50 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-gray-800/30">
+        <form action="https://formspree.io/f/xlgolkvj" method="POST" class="space-y-5">
+          <input type="hidden" name="service" value="Free Diagnostic (Homepage)">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block mb-1.5 text-[11px] font-semibold tracking-[0.05em] text-gray-500 uppercase">Name</label>
+              <input id="name" type="text" name="name" placeholder="Clinton Ofoedu" class="w-full bg-kaine-black/50 border border-gray-800 rounded-lg px-4 py-3 text-offwhite text-[14px] placeholder:text-gray-600 focus:border-amber/50 focus:outline-none transition-colors" required />
+            </div>
+            <div>
+              <label for="business" class="block mb-1.5 text-[11px] font-semibold tracking-[0.05em] text-gray-500 uppercase">Business</label>
+              <input id="business" type="text" name="business" placeholder="Your brand name" class="w-full bg-kaine-black/50 border border-gray-800 rounded-lg px-4 py-3 text-offwhite text-[14px] placeholder:text-gray-600 focus:border-amber/50 focus:outline-none transition-colors" required />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="revenue" class="block mb-1.5 text-[11px] font-semibold tracking-[0.05em] text-gray-500 uppercase">Monthly Revenue</label>
+              <select id="revenue" name="revenue" class="w-full bg-kaine-black/50 border border-gray-800 rounded-lg px-4 py-3 text-offwhite text-[14px] focus:border-amber/50 focus:outline-none transition-colors" required>
+                <option value="" disabled selected>Select range</option>
+                <option>Under ₦1M</option>
+                <option>₦1M – ₦3M</option>
+                <option>₦3M – ₦7M</option>
+                <option>Above ₦7M</option>
+              </select>
+            </div>
+            <div>
+              <label for="channels" class="block mb-1.5 text-[11px] font-semibold tracking-[0.05em] text-gray-500 uppercase">Sales Channels</label>
+              <input id="channels" type="text" name="channels" placeholder="Instagram, WhatsApp..." class="w-full bg-kaine-black/50 border border-gray-800 rounded-lg px-4 py-3 text-offwhite text-[14px] placeholder:text-gray-600 focus:border-amber/50 focus:outline-none transition-colors" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="tools" class="block mb-1.5 text-[11px] font-semibold tracking-[0.05em] text-gray-500 uppercase">Payment/Order Tools</label>
+            <input id="tools" type="text" name="tools" placeholder="Paystack, Bumpa, Selar..." class="w-full bg-kaine-black/50 border border-gray-800 rounded-lg px-4 py-3 text-offwhite text-[14px] placeholder:text-gray-600 focus:border-amber/50 focus:outline-none transition-colors" required />
+          </div>
+
+          <div>
+            <label for="problem" class="block mb-1.5 text-[11px] font-semibold tracking-[0.05em] text-gray-500 uppercase">Main Challenge</label>
+            <textarea id="problem" name="problem" rows="3" placeholder="What's the biggest problem in your business right now?" class="w-full bg-kaine-black/50 border border-gray-800 rounded-lg px-4 py-3 text-offwhite text-[14px] placeholder:text-gray-600 focus:border-amber/50 focus:outline-none transition-colors resize-none" required></textarea>
+          </div>
+
+          <div>
+            <label for="email" class="block mb-1.5 text-[11px] font-semibold tracking-[0.05em] text-gray-500 uppercase">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@business.com" class="w-full bg-kaine-black/50 border border-gray-800 rounded-lg px-4 py-3 text-offwhite text-[14px] placeholder:text-gray-600 focus:border-amber/50 focus:outline-none transition-colors" required />
+          </div>
+
+          <button type="submit" class="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-[14px] font-semibold bg-amber text-kaine-black hover:shadow-lg hover:shadow-amber/20 hover:-translate-y-0.5 transition-all duration-200">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Get My Free Diagnosis
+          </button>
+        </form>
+      </div>
+      
+    </div>
   </div>
 </section>
 <!-- ========== END THE DIAGNOSTIC FORM SECTION ========== -->
 
 <!-- ========== TRUST SIGNALS SECTION ========== -->
-<section class="bg-offwhite py-16 md:py-24" aria-label="Why KAINE.io">
-  <div class="max-w-[1100px] mx-auto px-6">
-    <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber">
-      WHY KAINE.io
-    </p>
-    <h2 class="mt-3 text-kaine-black font-bold text-[28px] md:text-[40px] leading-[1.2]">
-      Built by a founder. For founders.
-    </h2>
+<section class="bg-offwhite py-16 md:py-20" aria-label="Why KAINE.io">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-amber mb-3">
+        WHY KAINE.io
+      </p>
+      <h2 class="text-kaine-black font-bold text-[28px] md:text-[36px] leading-[1.2]">
+        Built by a founder. For founders.
+      </h2>
+    </div>
 
-    <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
-      <article class="border-l-2 border-amber pl-6">
-        <p class="text-[13px] font-semibold tracking-[0.08em] uppercase text-amber">
-          RED BULL BASEMENT NIGERIA 2026
-        </p>
-        <h3 class="mt-2 text-kaine-black text-[18px] font-semibold leading-[1.5]">
-          Pitch accepted. Global AI innovation competition backed by Microsoft and AMD.
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <article class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-amber/20 transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        </div>
+        <p class="text-amber text-[11px] font-semibold tracking-wider uppercase mb-1">RED BULL BASEMENT 2026</p>
+        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">
+          Global AI Competition
         </h3>
-        <p class="mt-2 text-[15px] text-[#6B7280] leading-[1.6]">
-          KAINE.io was submitted to and accepted by Red Bull Basement Nigeria 2026 — a global competition for first-time founders building with AI.
+        <p class="text-gray-500 text-[13px] leading-[1.5]">
+          Accepted by Red Bull Basement Nigeria — backed by Microsoft and AMD.
         </p>
       </article>
 
-      <article class="border-l-2 border-amber pl-6">
-        <p class="text-[13px] font-semibold tracking-[0.08em] uppercase text-amber">
-          GENERAL INTELLIGENCE COMPANY FELLOWSHIP
-        </p>
-        <h3 class="mt-2 text-kaine-black text-[18px] font-semibold leading-[1.5]">
-          Fellowship application submitted March 2026.
+      <article class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-amber/20 transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <p class="text-amber text-[11px] font-semibold tracking-wider uppercase mb-1">GI COMPANY FELLOWSHIP</p>
+        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">
+          AI Agent Deployment
         </h3>
-        <p class="mt-2 text-[15px] text-[#6B7280] leading-[1.6]">
-          Applied to the General Intelligence Company Fellowship — a programme for builders deploying AI agents to real business problems.
+        <p class="text-gray-500 text-[13px] leading-[1.5]">
+          Applied to the fellowship for builders deploying AI to real business problems.
         </p>
       </article>
 
-      <article class="border-l-2 border-amber pl-6">
-        <p class="text-[13px] font-semibold tracking-[0.08em] uppercase text-amber">
-          DATA CONFIDENTIALITY
-        </p>
-        <h3 class="mt-2 text-kaine-black text-[18px] font-semibold leading-[1.5]">
-          Your business data stays yours. Always.
+      <article class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-amber/20 transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <p class="text-amber text-[11px] font-semibold tracking-wider uppercase mb-1">DATA CONFIDENTIALITY</p>
+        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">
+          Your Data Stays Yours
         </h3>
-        <p class="mt-2 text-[15px] text-[#6B7280] leading-[1.6]">
-          Every engagement is governed by a service agreement. We do not share, sell, or retain your business data beyond the scope of your engagement.
+        <p class="text-gray-500 text-[13px] leading-[1.5]">
+          Every engagement is governed by a service agreement. We never share or sell your data.
         </p>
       </article>
     </div>
 
-    <div class="mt-16 bg-white rounded-lg p-8 border-l-2 border-amber shadow-[0_2px_12px_rgba(0,0,0,0.06)] max-w-[900px]">
-      <p class="text-[17px] italic text-kaine-black leading-[1.6]">
-        I built KAINE.io because I watched e-commerce founders in Nigeria make expensive decisions in the dark — not because they didn't care, but because nobody had shown them what their data actually said. That is the problem this company exists to solve.
+    <!-- Founder quote -->
+    <div class="mt-12 bg-gradient-to-br from-kaine-black to-mid rounded-2xl p-8 md:p-10 text-center max-w-[800px] mx-auto">
+      <svg class="w-8 h-8 text-amber/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+      <p class="text-[17px] md:text-[19px] text-offwhite/90 leading-[1.6] italic">
+        I built KAINE.io because I watched founders make expensive decisions in the dark — not because they didn't care, but because nobody showed them what their data said.
       </p>
-      <p class="mt-4 text-[15px] font-semibold text-kaine-black">Clinton Ofoedu</p>
-      <p class="text-[13px] text-[#6B7280]">Founder, KAINE.io</p>
+      <div class="mt-6 flex items-center justify-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-amber/20 flex items-center justify-center">
+          <span class="text-amber font-bold text-sm">CO</span>
+        </div>
+        <div class="text-left">
+          <p class="text-offwhite text-[14px] font-semibold">Clinton Ofoedu</p>
+          <p class="text-gray-500 text-[12px]">Founder, KAINE.io</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 <!-- ========== END TRUST SIGNALS SECTION ========== -->
 
 <!-- ========== FOOTER SECTION ========== -->
-<footer class="bg-kaine-black border-t border-[#1F2937] py-12 md:py-16" aria-label="Footer">
-  <div class="max-w-[1100px] mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+<footer class="bg-kaine-black border-t border-gray-800/30 py-12" aria-label="Footer">
+  <div class="max-w-[1280px] mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
       <div>
-        <a href="index.html" class="inline-flex flex-col items-start gap-1 no-underline">
-          <span class="text-offwhite font-bold uppercase tracking-widest text-xl leading-none">KAINE</span>
-          <span class="block h-0.5 bg-amber w-8"></span>
+        <a href="index.html" class="inline-flex flex-col items-start gap-0.5 no-underline">
+          <span class="text-offwhite font-bold uppercase tracking-widest text-lg leading-none">KAINE</span>
+          <span class="block h-[2px] bg-amber w-8"></span>
         </a>
-        <p class="mt-3 text-[13px] text-[#6B7280]">
+        <p class="mt-3 text-[12px] text-gray-500 max-w-[200px]">
           Data Consultancy for E-Commerce Businesses in Africa.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12">
         <div class="space-y-2">
-          <p class="text-[12px] font-medium tracking-[0.08em] uppercase text-[#6B7280]">SERVICES</p>
-          <a href="the-diagnostic.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">The Diagnostic</a>
-          <a href="the-monthly-pulse.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">The Monthly Pulse</a>
-          <a href="the-growth-audit.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">The Growth Audit</a>
-          <a href="services.html#data-analytics" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Data Analytics</a>
-          <a href="services.html#business-intelligence" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Business Intelligence</a>
-          <a href="services.html#consultation" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Consultation</a>
+          <p class="text-[11px] font-semibold tracking-[0.08em] uppercase text-gray-600 mb-3">SERVICES</p>
+          <a href="the-diagnostic.html" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">The Diagnostic</a>
+          <a href="the-monthly-pulse.html" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">The Monthly Pulse</a>
+          <a href="the-growth-audit.html" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">The Growth Audit</a>
         </div>
 
         <div class="space-y-2">
-          <p class="text-[12px] font-medium tracking-[0.08em] uppercase text-[#6B7280]">COMPANY</p>
-          <a href="about.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">About</a>
-          <a href="index.html#start" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Start</a>
-          <a href="contact.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Contact</a>
+          <p class="text-[11px] font-semibold tracking-[0.08em] uppercase text-gray-600 mb-3">COMPANY</p>
+          <a href="about.html" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">About</a>
+          <a href="index.html#start" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">Start</a>
+          <a href="contact.html" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">Contact</a>
         </div>
 
         <div class="space-y-2">
-          <p class="text-[12px] font-medium tracking-[0.08em] uppercase text-[#6B7280]">CONNECT</p>
-          <div class="flex flex-row gap-4 mt-3">
-            <!-- WhatsApp -->
-            <a href="https://wa.me/2347049262141" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="WhatsApp">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366">
-                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.44 21.52 10.19 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.22-.45-4.56-1.24l-.32-.19-3.01.8.81-2.95-.21-.33C3.46 15.25 3 13.67 3 12 3 7.03 7.03 3 12 3s9 4.03 9 9-4.03 9-9 9zm4.93-6.44c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.68.87-.83 1.05-.15.18-.31.2-.57.07-.27-.13-1.13-.42-2.15-1.33-.8-.71-1.33-1.59-1.49-1.85-.15-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.46-.82-2-.22-.52-.44-.45-.6-.46-.16 0-.34-.02-.52-.02s-.47.07-.72.34c-.24.27-.93.91-.93 2.22s.95 2.57 1.08 2.75c.13.18 1.87 2.86 4.54 4.01.63.27 1.13.44 1.51.56.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.27.22-.62.22-1.16.15-1.27-.06-.11-.24-.18-.51-.31z"/>
-              </svg>
+          <p class="text-[11px] font-semibold tracking-[0.08em] uppercase text-gray-600 mb-3">CONNECT</p>
+          <div class="flex flex-row gap-3">
+            <a href="https://wa.me/2347049262141" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-800/50 hover:bg-amber/20 transition-colors" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.44 21.52 10.19 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.22-.45-4.56-1.24l-.32-.19-3.01.8.81-2.95-.21-.33C3.46 15.25 3 13.67 3 12 3 7.03 7.03 3 12 3s9 4.03 9 9-4.03 9-9 9zm4.93-6.44c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.68.87-.83 1.05-.15.18-.31.2-.57.07-.27-.13-1.13-.42-2.15-1.33-.8-.71-1.33-1.59-1.49-1.85-.15-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.46-.82-2-.22-.52-.44-.45-.6-.46-.16 0-.34-.02-.52-.02s-.47.07-.72.34c-.24.27-.93.91-.93 2.22s.95 2.57 1.08 2.75c.13.18 1.87 2.86 4.54 4.01.63.27 1.13.44 1.51.56.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.27.22-.62.22-1.16.15-1.27-.06-.11-.24-.18-.51-.31z"/></svg>
             </a>
-            <!-- LinkedIn -->
-            <a href="https://linkedin.com/in/clinton-ofoedu-a47476274" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="LinkedIn">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#0A66C2">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
+            <a href="https://linkedin.com/in/clinton-ofoedu-a47476274" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-800/50 hover:bg-amber/20 transition-colors" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
-            <!-- X/Twitter -->
-            <a href="https://x.com/thelonesage" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="X/Twitter">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#F5F4F0">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
+            <a href="https://twitter.com/thelonesage" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-800/50 hover:bg-amber/20 transition-colors" aria-label="Twitter/X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5F4F0"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <!-- Facebook -->
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="Facebook">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </a>
-            <!-- Instagram -->
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="Instagram">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#E1306C">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-              </svg>
-            </a>
-            <!-- Gmail -->
-            <a href="mailto:ofoeduclinton17@gmail.com" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="Email">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#EA4335">
-                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
-              </svg>
+            <a href="mailto:contact@kaine.io" class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-800/50 hover:bg-amber/20 transition-colors" aria-label="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mt-12 pt-8 border-t border-[#1F2937] flex flex-col md:flex-row items-center md:justify-between gap-4">
-      <p class="text-[13px] text-[#6B7280]">© 2026 KAINE.io. All rights reserved.</p>
-      <p class="text-[13px] text-[#6B7280]">Built in Nigeria.</p>
+    <div class="mt-10 pt-6 border-t border-gray-800/30 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-[11px] text-gray-600">© 2026 KAINE.io. All rights reserved.</p>
+      <p class="text-[11px] text-gray-600">Lagos, Nigeria</p>
     </div>
   </div>
 </footer>
 <!-- ========== END FOOTER SECTION ========== -->
-
     <script>
       // Initialize Lucide icons
       if (window.lucide) {
@@ -771,7 +806,6 @@
           mobileMenu.setAttribute('aria-hidden', 'true');
           mobileMenu.setAttribute('inert', '');
         } else {
-          // Use scrollHeight so the transition animates to the exact content height
           mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
           menuBtn.setAttribute('aria-expanded', 'true');
           mobileMenu.setAttribute('aria-hidden', 'false');
@@ -779,7 +813,6 @@
         }
       });
 
-      // Close mobile menu when a link inside it is clicked
       mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           mobileMenu.style.maxHeight = '0px';
