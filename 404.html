@@ -49,19 +49,33 @@
   <body class="bg-kaine-black font-sans">
 
     <!-- ========== NAVIGATION BAR ========== -->
-    <header class="sticky top-0 z-50 w-full bg-kaine-black border-b border-gray-800">
+    <header class="sticky top-0 z-50 w-full bg-kaine-black/80 backdrop-blur-xl border-b border-gray-800" style="-webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);">
       <div class="max-w-[1100px] mx-auto px-6 py-4 md:py-6 flex items-center justify-between">
 
         <!-- Left: KAINE Logo -->
-        <a href="index.html" class="flex flex-col items-start gap-1 no-underline">
+        <a href="index.html" class="flex flex-col items-start gap-1 no-underline flex-shrink-0">
           <span class="text-offwhite font-bold uppercase tracking-widest text-xl leading-none">
             KAINE
           </span>
           <span class="block h-0.5 bg-amber w-[40%]"></span>
         </a>
 
+        <!-- Center: Search Bar (Desktop) -->
+        <div class="hidden md:flex flex-1 justify-center mx-8">
+          <div class="relative w-full max-w-[320px]">
+            <input
+              type="text"
+              id="nav-search"
+              placeholder="Search..."
+              class="w-full px-4 py-2 pl-10 rounded-lg bg-kaine-black/60 border border-gray-700 text-offwhite text-[14px] placeholder-gray-500 focus:outline-none focus:border-amber focus:ring-1 focus:ring-amber transition-all duration-200"
+            />
+            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"></i>
+            <div id="search-results" class="hidden absolute top-full left-0 right-0 mt-2 bg-mid/95 backdrop-blur-lg border border-gray-700 rounded-lg overflow-hidden shadow-xl z-50"></div>
+          </div>
+        </div>
+
         <!-- Right: Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center gap-8">
+        <nav class="hidden md:flex items-center gap-8 flex-shrink-0">
           <a
             href="services.html"
             class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
@@ -99,11 +113,23 @@
       <!-- Mobile Dropdown Menu -->
       <div
         id="mobile-menu"
-        class="md:hidden bg-kaine-black overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+        class="md:hidden bg-kaine-black/95 backdrop-blur-xl overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
         aria-hidden="true"
         inert
+        style="-webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);"
       >
         <nav class="flex flex-col px-6 pb-6 gap-5">
+          <!-- Mobile Search -->
+          <div class="relative">
+            <input
+              type="text"
+              id="mobile-search"
+              placeholder="Search..."
+              class="w-full px-4 py-3 pl-10 rounded-lg bg-kaine-black/60 border border-gray-700 text-offwhite text-[14px] placeholder-gray-500 focus:outline-none focus:border-amber focus:ring-1 focus:ring-amber transition-all duration-200"
+            />
+            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"></i>
+            <div id="mobile-search-results" class="hidden absolute top-full left-0 right-0 mt-2 bg-mid/95 backdrop-blur-lg border border-gray-700 rounded-lg overflow-hidden shadow-xl z-50"></div>
+          </div>
           <a
             href="services.html"
             class="text-offwhite font-medium text-[15px] hover:text-amber transition-colors duration-200 no-underline"
@@ -282,6 +308,57 @@
           mobileMenu.setAttribute('inert', '');
         }
       });
+
+      // Search functionality
+      const searchData = [
+        { title: 'Home', url: 'index.html', description: 'KAINE homepage - e-commerce data consultancy' },
+        { title: 'Services', url: 'services.html', description: 'Our consulting services overview' },
+        { title: 'The Diagnostic', url: 'the-diagnostic.html', description: 'Free 30-minute strategy session' },
+        { title: 'The Monthly Pulse', url: 'the-monthly-pulse.html', description: 'Ongoing analytics and insights' },
+        { title: 'The Growth Audit', url: 'the-growth-audit.html', description: 'Deep-dive performance analysis' },
+        { title: 'About KAINE', url: 'about.html', description: 'Learn about our mission and approach' },
+        { title: 'Contact', url: 'contact.html', description: 'Get in touch with us' },
+        { title: 'Get Started', url: 'start.html', description: 'Start your journey with KAINE' }
+      ];
+
+      function initSearch(inputId, resultsId) {
+        const searchInput = document.getElementById(inputId);
+        const searchResults = document.getElementById(resultsId);
+        if (!searchInput || !searchResults) return;
+
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          if (query.length < 2) {
+            searchResults.classList.add('hidden');
+            return;
+          }
+
+          const matches = searchData.filter(item => 
+            item.title.toLowerCase().includes(query) || 
+            item.description.toLowerCase().includes(query)
+          );
+
+          if (matches.length > 0) {
+            searchResults.innerHTML = matches.map(item => 
+              `<a href="${item.url}" class="block px-4 py-2 hover:bg-kaine-black/50 text-offwhite">
+                <div class="font-medium">${item.title}</div>
+                <div class="text-xs text-offwhite/60">${item.description}</div>
+              </a>`
+            ).join('');
+            searchResults.classList.remove('hidden');
+          } else {
+            searchResults.innerHTML = '<div class="px-4 py-2 text-offwhite/60">No results found</div>';
+            searchResults.classList.remove('hidden');
+          }
+        });
+
+        searchInput.addEventListener('blur', () => {
+          setTimeout(() => searchResults.classList.add('hidden'), 200);
+        });
+      }
+
+      initSearch('nav-search', 'search-results');
+      initSearch('mobile-search', 'mobile-search-results');
     </script>
   </body>
 </html>

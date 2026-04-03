@@ -389,6 +389,57 @@
           mobileMenu.setAttribute('inert', '');
         }
       });
+
+      // Search functionality
+      const searchData = [
+        { title: 'Home', url: 'index.html', description: 'KAINE homepage - e-commerce data consultancy' },
+        { title: 'Services', url: 'services.html', description: 'Our consulting services overview' },
+        { title: 'The Diagnostic', url: 'the-diagnostic.html', description: 'Free 30-minute strategy session' },
+        { title: 'The Monthly Pulse', url: 'the-monthly-pulse.html', description: 'Ongoing analytics and insights' },
+        { title: 'The Growth Audit', url: 'the-growth-audit.html', description: 'Deep-dive performance analysis' },
+        { title: 'About KAINE', url: 'about.html', description: 'Learn about our mission and approach' },
+        { title: 'Contact', url: 'contact.html', description: 'Get in touch with us' },
+        { title: 'Get Started', url: 'start.html', description: 'Start your journey with KAINE' }
+      ];
+
+      function initSearch(inputId, resultsId) {
+        const searchInput = document.getElementById(inputId);
+        const searchResults = document.getElementById(resultsId);
+        if (!searchInput || !searchResults) return;
+
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          if (query.length < 2) {
+            searchResults.classList.add('hidden');
+            return;
+          }
+
+          const matches = searchData.filter(item => 
+            item.title.toLowerCase().includes(query) || 
+            item.description.toLowerCase().includes(query)
+          );
+
+          if (matches.length > 0) {
+            searchResults.innerHTML = matches.map(item => 
+              `<a href="${item.url}" class="block px-4 py-2 hover:bg-kaine-black/50 text-offwhite">
+                <div class="font-medium">${item.title}</div>
+                <div class="text-xs text-offwhite/60">${item.description}</div>
+              </a>`
+            ).join('');
+            searchResults.classList.remove('hidden');
+          } else {
+            searchResults.innerHTML = '<div class="px-4 py-2 text-offwhite/60">No results found</div>';
+            searchResults.classList.remove('hidden');
+          }
+        });
+
+        searchInput.addEventListener('blur', () => {
+          setTimeout(() => searchResults.classList.add('hidden'), 200);
+        });
+      }
+
+      initSearch('nav-search', 'search-results');
+      initSearch('mobile-search', 'mobile-search-results');
     </script>
   </body>
 </html>
