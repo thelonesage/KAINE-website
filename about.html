@@ -60,16 +60,18 @@
         </a>
 
         <!-- Center: Search Bar (Desktop) -->
-        <div class="hidden md:flex flex-1 justify-center mx-8">
-          <div class="relative w-full max-w-[320px]">
+        <div class="hidden md:flex flex-1 max-w-[320px] mx-8">
+          <div class="relative w-full">
             <input
               type="text"
-              id="nav-search"
-              placeholder="Search..."
-              class="w-full px-4 py-2 pl-10 rounded-lg bg-kaine-black/60 border border-gray-700 text-offwhite text-[14px] placeholder-gray-500 focus:outline-none focus:border-amber focus:ring-1 focus:ring-amber transition-all duration-200"
+              id="site-search"
+              placeholder="Search services, pages..."
+              class="w-full bg-mid/80 border border-[#1F2937] rounded-full px-4 py-2 pl-10 text-offwhite text-[14px] placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200"
             />
-            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"></i>
-            <div id="search-results" class="hidden absolute top-full left-0 right-0 mt-2 bg-mid/95 backdrop-blur-lg border border-gray-700 rounded-lg overflow-hidden shadow-xl z-50"></div>
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <div id="search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-[#1F2937] rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
           </div>
         </div>
 
@@ -122,12 +124,14 @@
           <div class="relative">
             <input
               type="text"
-              id="mobile-search"
+              id="mobile-site-search"
               placeholder="Search..."
-              class="w-full px-4 py-3 pl-10 rounded-lg bg-kaine-black/60 border border-gray-700 text-offwhite text-[14px] placeholder-gray-500 focus:outline-none focus:border-amber focus:ring-1 focus:ring-amber transition-all duration-200"
+              class="w-full bg-mid/80 border border-[#1F2937] rounded-full px-4 py-3 pl-10 text-offwhite text-[14px] placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200"
             />
-            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"></i>
-            <div id="mobile-search-results" class="hidden absolute top-full left-0 right-0 mt-2 bg-mid/95 backdrop-blur-lg border border-gray-700 rounded-lg overflow-hidden shadow-xl z-50"></div>
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <div id="mobile-search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-[#1F2937] rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
           </div>
           <a
             href="services.html"
@@ -500,8 +504,8 @@
         });
       }
 
-      initSearch('nav-search', 'search-results');
-      initSearch('mobile-search', 'mobile-search-results');
+      initSearch('site-search', 'search-results');
+      initSearch('mobile-site-search', 'mobile-search-results');
     </script>
   </body>
 </html>
