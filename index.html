@@ -942,18 +942,33 @@
     </div>
 
     <!-- Founder quote -->
-    <div class="mt-12 bg-gradient-to-br from-kaine-black to-mid rounded-2xl p-8 md:p-10 text-center max-w-[800px] mx-auto">
-      <svg class="w-8 h-8 text-amber/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-      <p class="text-[17px] md:text-[19px] text-offwhite/90 leading-[1.6] italic">
-        I built KAINE.io because I watched founders make expensive decisions in the dark — not because they didn't care, but because nobody showed them what their data said.
-      </p>
-      <div class="mt-6 flex items-center justify-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-amber/20 flex items-center justify-center">
-          <span class="text-amber font-bold text-sm">CO</span>
-        </div>
-        <div class="text-left">
-          <p class="text-offwhite text-[14px] font-semibold">Clinton Ofoedu</p>
-          <p class="text-gray-500 text-[12px]">Founder, KAINE.io</p>
+    <div class="mt-14 max-w-[780px] mx-auto relative">
+      <!-- Frosted glass card — curvy and sleek -->
+      <div class="relative rounded-[28px] p-8 md:p-10 text-center overflow-hidden"
+           style="background: rgba(17, 24, 39, 0.6); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(212, 168, 67, 0.15); box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);">
+
+        <!-- Subtle inner glow -->
+        <div class="absolute inset-0 rounded-[28px]" style="background: radial-gradient(ellipse at 50% 0%, rgba(212,168,67,0.06) 0%, transparent 60%); pointer-events: none;"></div>
+
+        <!-- Quote mark -->
+        <svg class="w-7 h-7 text-amber/25 mx-auto mb-5 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+        </svg>
+
+        <!-- Quote text -->
+        <p class="text-[16px] md:text-[18px] text-offwhite/90 leading-[1.7] italic relative z-10 max-w-[640px] mx-auto">
+          KAINE was built because too many e-commerce founders in Nigeria and Africa are making expensive decisions in the dark — not because they don't care about their numbers, but because nobody had built something accessible, honest, and built for their actual market. We exist to change that — one business at a time.
+        </p>
+
+        <!-- Attribution -->
+        <div class="mt-6 flex items-center justify-center gap-3 relative z-10">
+          <div class="w-10 h-10 rounded-full bg-amber/20 border border-amber/30 flex items-center justify-center flex-shrink-0">
+            <span class="text-amber font-bold text-sm">CO</span>
+          </div>
+          <div class="text-left">
+            <p class="text-offwhite text-[14px] font-semibold">Clinton Ofoedu</p>
+            <p class="text-gray-500 text-[12px]">Founder, KAINE</p>
+          </div>
         </div>
       </div>
     </div>
