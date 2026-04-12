@@ -62,6 +62,84 @@
       .float-animate { animation: floatUp 4s ease-in-out infinite; }
       .float-animate-slow { animation: floatUp 6s ease-in-out infinite; }
       .bg-glow { animation: pulseGlow 4s ease-in-out infinite; }
+
+      :root {
+        --bg-primary: #0A0A0A;
+        --bg-mid: #111827;
+        --bg-offwhite: #F5F4F0;
+        --text-primary: #F5F4F0;
+        --text-muted: #9CA3AF;
+        --border-subtle: rgba(255,255,255,0.08);
+        --card-bg: #111827;
+        --card-bg-light: #FFFFFF;
+        --section-alt: #F5F4F0;
+      }
+      html.light {
+        --bg-primary: #F5F4F0;
+        --bg-mid: #E8E7E3;
+        --bg-offwhite: #0A0A0A;
+        --text-primary: #0A0A0A;
+        --text-muted: #4B5563;
+        --border-subtle: rgba(0,0,0,0.08);
+        --card-bg: #FFFFFF;
+        --card-bg-light: #F5F4F0;
+        --section-alt: #0A0A0A;
+      }
+
+      /* Smooth mode transition */
+      html { transition: background-color 0.3s ease, color 0.3s ease; }
+      body { transition: background-color 0.3s ease; }
+
+      /* Light mode overrides */
+      html.light body { background-color: #F5F4F0; }
+      html.light .bg-kaine-black { background-color: #F5F4F0 !important; }
+      html.light .bg-mid { background-color: #E8E7E3 !important; }
+      html.light .bg-offwhite { background-color: #0F172A !important; }
+      html.light .text-offwhite { color: #0A0A0A !important; }
+      html.light .text-kaine-gray { color: #4B5563 !important; }
+      html.light .text-gray-400 { color: #4B5563 !important; }
+      html.light .text-gray-500 { color: #6B7280 !important; }
+      html.light .text-gray-300 { color: #374151 !important; }
+      html.light .border-gray-800\/30 { border-color: rgba(0,0,0,0.1) !important; }
+      html.light .border-gray-800\/50 { border-color: rgba(0,0,0,0.12) !important; }
+      html.light .bg-kaine-black\/80 { background-color: rgba(245,244,240,0.85) !important; }
+      html.light .bg-kaine-black\/50 { background-color: rgba(245,244,240,0.6) !important; }
+      html.light .bg-kaine-black\/40 { background-color: rgba(245,244,240,0.5) !important; }
+      html.light .bg-mid\/80 { background-color: rgba(232,231,227,0.8) !important; }
+      html.light .bg-mid\/50 { background-color: rgba(232,231,227,0.5) !important; }
+      html.light .bg-mid\/60 { background-color: rgba(232,231,227,0.6) !important; }
+      html.light .border-offwhite\/30 { border-color: rgba(10,10,10,0.2) !important; }
+      html.light header { background-color: rgba(245,244,240,0.85) !important; }
+      html.light .text-offwhite\/80 { color: rgba(10,10,10,0.7) !important; }
+      html.light .text-offwhite\/90 { color: rgba(10,10,10,0.85) !important; }
+
+      /* Light mode — mirror section cards */
+      html.light .bg-white { background-color: #FFFFFF !important; }
+      html.light .border-gray-100 { border-color: #E5E7EB !important; }
+      html.light .text-kaine-black { color: #0A0A0A !important; }
+      html.light .text-gray-600 { color: #4B5563 !important; }
+
+      /* Light mode — service cards */
+      html.light .from-\[\#161f2e\] { --tw-gradient-from: #E8E7E3 !important; }
+
+      /* Light mode dot grid color inversion */
+      html.light .bg-glow { opacity: 0.08 !important; }
+
+      /* Card animation */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .card-animate {
+        opacity: 0;
+        animation: fadeInUp 0.5s ease forwards;
+      }
+      .card-animate.visible { opacity: 1; }
+
+      @media (max-width: 768px) {
+        .bg-glow { opacity: 0.03 !important; }
+        .float-animate, .float-animate-slow { display: none !important; }
+      }
     </style>
   </head>
   <body class="bg-kaine-black font-sans">
@@ -105,6 +183,21 @@
           <a href="contact.html" class="text-offwhite/80 font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">
             Contact
           </a>
+          <!-- Dark/Light mode toggle -->
+          <button
+            id="theme-toggle"
+            aria-label="Toggle light/dark mode"
+            class="ml-2 w-8 h-8 rounded-full flex items-center justify-center text-offwhite/70 hover:text-amber hover:bg-gray-800/50 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none"
+          >
+            <!-- Moon icon (shown in dark mode) -->
+            <svg id="icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+            <!-- Sun icon (shown in light mode, hidden by default) -->
+            <svg id="icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </button>
         </nav>
 
         <!-- Mobile: Hamburger button -->
@@ -150,6 +243,18 @@
           <a href="contact.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">
             Contact
           </a>
+          <button
+            id="theme-toggle-mobile"
+            class="flex items-center gap-3 text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200"
+          >
+            <svg id="icon-moon-mobile" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+            <svg id="icon-sun-mobile" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <span id="theme-label-mobile">Light Mode</span>
+          </button>
         </nav>
       </div>
     </header>
@@ -578,7 +683,7 @@
         HOW WE WORK
       </p>
       <h2 class="text-kaine-black font-bold text-[28px] md:text-[36px] leading-[1.2]">
-        From question to clarity in 5 steps
+        From question to clarity in 6 steps
       </h2>
     </div>
 
@@ -745,9 +850,33 @@
 
 <!-- ========== THE DIAGNOSTIC FORM SECTION ========== -->
 <section id="start" class="bg-kaine-black py-16 md:py-24 relative" aria-label="Get Started">
-  <!-- Subtle background pattern -->
-  <div class="absolute inset-0 opacity-[0.02]">
-    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #D4A843 1px, transparent 0); background-size: 32px 32px;"></div>
+  <!-- Background — matches hero visual language, kept subtle -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <!-- Dot grid -->
+    <div class="absolute inset-0 bg-glow" style="background-image: radial-gradient(circle at 1px 1px, #D4A843 1px, transparent 0); background-size: 48px 48px; opacity: 0.04;"></div>
+    <!-- Floating nodes — sparse, left side only so they don't compete with form -->
+    <div class="absolute top-[25%] left-[3%] float-animate hidden lg:block">
+      <div class="w-2.5 h-2.5 rounded-full bg-amber/20 border border-amber/30"></div>
+    </div>
+    <div class="absolute top-[55%] left-[6%] float-animate-slow hidden lg:block" style="animation-delay: 1.2s;">
+      <div class="w-2 h-2 rounded-full bg-amber/15 border border-amber/20"></div>
+    </div>
+    <div class="absolute bottom-[20%] left-[2%] float-animate hidden lg:block" style="animation-delay: 2s;">
+      <div class="w-1.5 h-1.5 rounded-full bg-amber/20"></div>
+    </div>
+    <!-- Ambient glow — bottom right only, away from form -->
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-amber/[0.03] rounded-full blur-3xl hidden lg:block"></div>
+    <!-- Subtle SVG data connection — far left edge only -->
+    <svg class="absolute left-0 top-0 h-full w-32 hidden lg:block" viewBox="0 0 128 600" fill="none" style="opacity: 0.04;" preserveAspectRatio="xMinYMid meet">
+      <circle cx="30" cy="120" r="10" stroke="#D4A843" stroke-width="1"/>
+      <circle cx="70" cy="300" r="7" stroke="#D4A843" stroke-width="1"/>
+      <circle cx="20" cy="460" r="6" stroke="#D4A843" stroke-width="1"/>
+      <line x1="30" y1="120" x2="70" y2="300" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="4 4"/>
+      <line x1="70" y1="300" x2="20" y2="460" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="4 4"/>
+      <circle cx="30" cy="120" r="2" fill="#D4A843" opacity="0.4"/>
+      <circle cx="70" cy="300" r="1.5" fill="#D4A843" opacity="0.4"/>
+      <circle cx="20" cy="460" r="1.5" fill="#D4A843" opacity="0.4"/>
+    </svg>
   </div>
   
   <div class="max-w-[1280px] mx-auto px-6 relative z-10">
@@ -865,116 +994,126 @@
 </section>
 <!-- ========== END THE DIAGNOSTIC FORM SECTION ========== -->
 
-<!-- ========== TRUST SIGNALS SECTION ========== -->
-<section class="bg-offwhite py-16 md:py-20" aria-label="Why KAINE.io">
-  <div class="max-w-[1280px] mx-auto px-6">
-    <div class="text-center mb-12">
-      <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-amber mb-3">
-        WHY KAINE
-      </p>
-      <h2 class="text-kaine-black font-bold text-[28px] md:text-[36px] leading-[1.2]">
-        Built by a founder. For founders.
+<!-- ========== WHY KAINE SECTION ========== -->
+<section class="bg-offwhite py-20 md:py-28 relative overflow-hidden" aria-label="Why KAINE">
+
+  <!-- Decorative background for light sections -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-amber/[0.04] rounded-full blur-3xl hidden lg:block"></div>
+    <div class="absolute bottom-0 left-0 w-72 h-72 bg-amber/[0.03] rounded-full blur-3xl hidden lg:block"></div>
+  </div>
+
+  <div class="max-w-[1280px] mx-auto px-6 relative z-10">
+
+    <!-- Section header -->
+    <div class="text-center mb-16">
+      <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-amber mb-3">WHY KAINE</p>
+      <h2 class="text-kaine-black font-bold text-[28px] md:text-[40px] leading-[1.2] max-w-[680px] mx-auto">
+        Seven reasons growth-stage founders choose us
       </h2>
+      <p class="mt-4 text-gray-500 text-[15px] leading-[1.6] max-w-[520px] mx-auto">
+        Not because we're the only option. Because we're the right one for your market, your data, and your stage.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <!-- 7 Cards grid with staggered animation -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="why-kaine-grid">
 
-      <!-- Card 1: Speed of turnaround -->
-      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+      <!-- Card 1 -->
+      <article class="why-card group relative bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden opacity-0">
         <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
-          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <div class="w-12 h-12 rounded-xl bg-amber/10 flex items-center justify-center mb-5 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-6 h-6 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         </div>
-        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">7–10 day turnaround</h3>
-        <p class="text-gray-600 text-[13px] leading-[1.6]">Most analytics projects take weeks or months. We deliver a complete business diagnostic with ranked recommendations in under two weeks — without cutting corners.</p>
+        <h3 class="text-kaine-black text-[17px] font-semibold leading-[1.4] mb-3">7–10 day turnaround</h3>
+        <p class="text-gray-600 text-[14px] leading-[1.65]">Most analytics projects drag for weeks. We deliver a complete diagnostic with ranked recommendations in under two weeks — without cutting corners on depth.</p>
       </article>
 
-      <!-- Card 2: Built for Nigeria/Africa -->
-      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+      <!-- Card 2 -->
+      <article class="why-card group relative bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden opacity-0">
         <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
-          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0110.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+        <div class="w-12 h-12 rounded-xl bg-amber/10 flex items-center justify-center mb-5 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-6 h-6 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0110.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
         </div>
-        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">Built for this market</h3>
-        <p class="text-gray-600 text-[13px] leading-[1.6]">We understand Paystack exports, Bumpa reports, Instagram storefronts, and WhatsApp order threads. We work with the exact tools Nigerian e-commerce founders use — not generic Western frameworks.</p>
+        <h3 class="text-kaine-black text-[17px] font-semibold leading-[1.4] mb-3">Built for this market</h3>
+        <p class="text-gray-600 text-[14px] leading-[1.65]">We understand Paystack exports, Bumpa reports, Instagram storefronts, and WhatsApp order threads. We work with the exact tools Nigerian and African e-commerce founders use.</p>
       </article>
 
-      <!-- Card 3: Not dashboards — decisions -->
-      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+      <!-- Card 3 -->
+      <article class="why-card group relative bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden opacity-0">
         <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
-          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <div class="w-12 h-12 rounded-xl bg-amber/10 flex items-center justify-center mb-5 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-6 h-6 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
-        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">Decisions, not dashboards</h3>
-        <p class="text-gray-600 text-[13px] leading-[1.6]">We don't hand you charts and walk away. Every engagement ends with a ranked list of specific actions — written in plain language so you can act immediately, not interpret endlessly.</p>
+        <h3 class="text-kaine-black text-[17px] font-semibold leading-[1.4] mb-3">Decisions, not dashboards</h3>
+        <p class="text-gray-600 text-[14px] leading-[1.65]">We don't hand you charts and walk away. Every engagement ends with a ranked list of specific actions in plain language — so you act immediately, not interpret endlessly.</p>
       </article>
 
-      <!-- Card 4: Messy data welcome -->
-      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+      <!-- Card 4 -->
+      <article class="why-card group relative bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden opacity-0">
         <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
-          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+        <div class="w-12 h-12 rounded-xl bg-amber/10 flex items-center justify-center mb-5 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-6 h-6 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
         </div>
-        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">Messy data is fine</h3>
-        <p class="text-gray-600 text-[13px] leading-[1.6]">You don't need clean spreadsheets or fancy tools before you can work with us. We clean, structure, and make sense of fragmented records — that's part of what we do.</p>
+        <h3 class="text-kaine-black text-[17px] font-semibold leading-[1.4] mb-3">Messy data is fine</h3>
+        <p class="text-gray-600 text-[14px] leading-[1.65]">You don't need clean spreadsheets or a tech team before we can help. We clean, structure, and make sense of fragmented records — that work is part of what you're paying for.</p>
       </article>
 
-      <!-- Card 5: Confidentiality -->
-      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+      <!-- Card 5 -->
+      <article class="why-card group relative bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden opacity-0">
         <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
-          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        <div class="w-12 h-12 rounded-xl bg-amber/10 flex items-center justify-center mb-5 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-6 h-6 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
         </div>
-        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">Your data stays yours</h3>
-        <p class="text-gray-600 text-[13px] leading-[1.6]">Every engagement is governed by a confidentiality agreement signed before anything is shared. Your business data is never retained, shared, or used beyond the scope of your engagement.</p>
+        <h3 class="text-kaine-black text-[17px] font-semibold leading-[1.4] mb-3">Your data stays yours</h3>
+        <p class="text-gray-600 text-[14px] leading-[1.65]">Every engagement begins with a signed confidentiality agreement. Your business data is never retained, shared, or used outside the scope of your engagement. Full stop.</p>
       </article>
 
-      <!-- Card 6: Priced for SMEs not enterprise -->
-      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+      <!-- Card 6 -->
+      <article class="why-card group relative bg-white rounded-2xl p-7 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden opacity-0">
         <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
-          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <div class="w-12 h-12 rounded-xl bg-amber/10 flex items-center justify-center mb-5 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-6 h-6 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
-        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">Enterprise intelligence, SME pricing</h3>
-        <p class="text-gray-600 text-[13px] leading-[1.6]">Large analytics firms charge ₦5M+ for what we deliver starting at ₦150,000. We exist precisely because that gap — between the cost of good data and what growth-stage businesses can afford — should not exist.</p>
+        <h3 class="text-kaine-black text-[17px] font-semibold leading-[1.4] mb-3">Enterprise intelligence, SME pricing</h3>
+        <p class="text-gray-600 text-[14px] leading-[1.65]">Large analytics firms charge ₦5M+ for what we deliver starting at ₦150,000. That gap — between the cost of good data work and what growing businesses can afford — is exactly why we exist.</p>
       </article>
 
-    </div>
-
-    <!-- Founder quote -->
-    <div class="mt-14 max-w-[780px] mx-auto relative">
-      <!-- Frosted glass card — curvy and sleek -->
-      <div class="relative rounded-[28px] p-8 md:p-10 text-center overflow-hidden"
-           style="background: rgba(17, 24, 39, 0.6); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid rgba(212, 168, 67, 0.15); box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);">
-
-        <!-- Subtle inner glow -->
-        <div class="absolute inset-0 rounded-[28px]" style="background: radial-gradient(ellipse at 50% 0%, rgba(212,168,67,0.06) 0%, transparent 60%); pointer-events: none;"></div>
-
-        <!-- Quote mark -->
-        <svg class="w-7 h-7 text-amber/25 mx-auto mb-5 relative z-10" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-        </svg>
-
-        <!-- Quote text -->
-        <p class="text-[16px] md:text-[18px] text-offwhite/90 leading-[1.7] italic relative z-10 max-w-[640px] mx-auto">
-          KAINE was built because too many e-commerce founders in Nigeria and Africa are making expensive decisions in the dark — not because they don't care about their numbers, but because nobody had built something accessible, honest, and built for their actual market. We exist to change that — one business at a time.
-        </p>
-
-        <!-- Attribution -->
-        <div class="mt-6 flex items-center justify-center gap-3 relative z-10">
-          <div class="w-10 h-10 rounded-full bg-amber/20 border border-amber/30 flex items-center justify-center flex-shrink-0">
-            <span class="text-amber font-bold text-sm">CO</span>
+      <!-- Card 7 — Founder conviction card, spans full width on lg -->
+      <article class="why-card group relative col-span-1 md:col-span-2 lg:col-span-3 overflow-hidden opacity-0"
+               style="background: rgba(17,24,39,0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 24px; border: 1px solid rgba(212,168,67,0.15); box-shadow: 0 8px 40px rgba(0,0,0,0.25);">
+        <div class="absolute inset-0 rounded-[24px]" style="background: radial-gradient(ellipse at 50% 0%, rgba(212,168,67,0.07) 0%, transparent 55%); pointer-events: none;"></div>
+        <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-40"></div>
+        <div class="relative z-10 p-8 md:p-10 flex flex-col lg:flex-row items-start lg:items-center gap-8">
+          <!-- Left: quote content -->
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-12 h-12 rounded-xl bg-amber/15 flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+              </div>
+              <p class="text-amber text-[11px] font-semibold tracking-widest uppercase">Why we built this</p>
+            </div>
+            <p class="text-offwhite/90 text-[16px] md:text-[18px] leading-[1.75] italic max-w-[700px]">
+              "KAINE was built because too many e-commerce founders in Nigeria and Africa are making expensive decisions in the dark — not because they don't care, but because nobody built something accessible, honest, and made for their actual market. We exist to change that — one business at a time."
+            </p>
           </div>
-          <div class="text-left">
-            <p class="text-offwhite text-[14px] font-semibold">Clinton Ofoedu</p>
-            <p class="text-gray-500 text-[12px]">Founder, KAINE</p>
+          <!-- Right: attribution -->
+          <div class="flex items-center gap-4 flex-shrink-0 lg:border-l lg:border-amber/15 lg:pl-8">
+            <div class="w-12 h-12 rounded-full bg-amber/20 border border-amber/30 flex items-center justify-center flex-shrink-0">
+              <span class="text-amber font-bold">CO</span>
+            </div>
+            <div>
+              <p class="text-offwhite text-[15px] font-semibold">Clinton Ofoedu</p>
+              <p class="text-gray-500 text-[13px] mt-0.5">Founder, KAINE</p>
+            </div>
           </div>
         </div>
-      </div>
+      </article>
+
     </div>
   </div>
 </section>
-<!-- ========== END TRUST SIGNALS SECTION ========== -->
+<!-- ========== END WHY KAINE SECTION ========== -->
 
 <!-- ========== FOOTER SECTION ========== -->
 <footer class="bg-kaine-black border-t border-gray-800/50 py-12" aria-label="Footer">
@@ -1077,6 +1216,52 @@
         }
       });
 
+      // Theme toggle
+      const htmlEl = document.documentElement;
+      const moonIcon = document.getElementById('icon-moon');
+      const sunIcon = document.getElementById('icon-sun');
+      const moonIconMobile = document.getElementById('icon-moon-mobile');
+      const sunIconMobile = document.getElementById('icon-sun-mobile');
+      const themeLabelMobile = document.getElementById('theme-label-mobile');
+
+      function applyTheme(isLight) {
+        if (isLight) {
+          htmlEl.classList.add('light');
+          moonIcon.classList.add('hidden');
+          sunIcon.classList.remove('hidden');
+          moonIconMobile.classList.add('hidden');
+          sunIconMobile.classList.remove('hidden');
+          if (themeLabelMobile) themeLabelMobile.textContent = 'Dark Mode';
+          localStorage.setItem('kaine-theme', 'light');
+        } else {
+          htmlEl.classList.remove('light');
+          moonIcon.classList.remove('hidden');
+          sunIcon.classList.add('hidden');
+          moonIconMobile.classList.remove('hidden');
+          sunIconMobile.classList.add('hidden');
+          if (themeLabelMobile) themeLabelMobile.textContent = 'Light Mode';
+          localStorage.setItem('kaine-theme', 'dark');
+        }
+      }
+
+      // Load saved preference
+      const savedTheme = localStorage.getItem('kaine-theme');
+      if (savedTheme === 'light') applyTheme(true);
+
+      const toggleBtn = document.getElementById('theme-toggle');
+      const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          applyTheme(!htmlEl.classList.contains('light'));
+        });
+      }
+      if (toggleBtnMobile) {
+        toggleBtnMobile.addEventListener('click', () => {
+          applyTheme(!htmlEl.classList.contains('light'));
+        });
+      }
+
       // Search functionality
       const searchData = [
         { title: 'The Diagnostic', url: 'the-diagnostic.html', desc: 'Full business diagnostic · ₦150K–₦250K' },
@@ -1161,6 +1346,27 @@
         }, { threshold: 0.3 });
 
         observer.observe(chartContainer);
+      }
+
+      // WHY KAINE — staggered scroll-triggered card animation
+      const whyCards = document.querySelectorAll('.why-card');
+      if (whyCards.length > 0) {
+        const cardObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const cards = entry.target.querySelectorAll('.why-card');
+              cards.forEach((card, i) => {
+                setTimeout(() => {
+                  card.style.animation = `fadeInUp 0.55s ease forwards`;
+                }, i * 110);
+              });
+              cardObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        const whyGrid = document.getElementById('why-kaine-grid');
+        if (whyGrid) cardObserver.observe(whyGrid);
       }
 
       // Form submission handling
