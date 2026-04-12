@@ -479,7 +479,14 @@
 </section>
 <!-- ========== END THE MIRROR SECTION ========== -->
  <!-- ========== WHAT WE DO SECTION ========== -->
-<section class="bg-kaine-black py-16 md:py-24" aria-label="What We Do">
+<section class="bg-kaine-black py-16 md:py-24 relative overflow-hidden" aria-label="What We Do">
+  <!-- Complementary background — cool blue-teal data nodes -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #3B82F6 1px, transparent 0); background-size: 52px 52px; opacity: 0.025;"></div>
+    <div class="absolute top-0 left-[10%] w-72 h-72 bg-blue-500/[0.04] rounded-full blur-3xl hidden lg:block"></div>
+    <div class="absolute bottom-0 right-[10%] w-80 h-80 bg-indigo-500/[0.04] rounded-full blur-3xl hidden lg:block"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/[0.03] rounded-full blur-3xl hidden lg:block"></div>
+  </div>
   <div class="max-w-[1280px] mx-auto px-6">
 
     <!-- Section header -->
@@ -488,7 +495,7 @@
         WHAT WE DO
       </p>
       <h2 class="text-offwhite font-bold text-[28px] md:text-[36px] leading-[1.2] max-w-[600px] mx-auto">
-        Turn your data into decisions
+        We turn your data into informed decisions
       </h2>
       <p class="mt-3 text-[15px] text-gray-400 leading-[1.6] max-w-[500px] mx-auto">
         Three services. One goal: clarity that drives growth.
@@ -578,22 +585,20 @@
     <!-- Horizontal Flowchart -->
     <div class="relative">
       <!-- Connection line (desktop) -->
-      <div class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-amber/20 via-amber to-amber/20"></div>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
-        
+      <div class="hidden lg:block absolute top-12 left-[6%] right-[6%] h-0.5 bg-gradient-to-r from-amber/20 via-amber to-amber/20"></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-3">
+
         <!-- Step 1 -->
         <div class="relative group">
           <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
-            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">
-              1
-            </div>
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">1</div>
             <div class="mt-4 lg:mt-6">
               <div class="flex items-center gap-2 lg:justify-center mb-2">
-                <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <h3 class="text-kaine-black text-[15px] font-semibold">Submit Form</h3>
+                <svg class="w-4 h-4 text-amber flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <h3 class="text-kaine-black text-[14px] font-semibold">You Submit</h3>
               </div>
-              <p class="text-gray-500 text-[13px] leading-[1.5]">3-minute intake. We start here.</p>
+              <p class="text-gray-500 text-[12px] leading-[1.5]">3-minute intake form. This is where we start.</p>
             </div>
           </div>
         </div>
@@ -601,15 +606,13 @@
         <!-- Step 2 -->
         <div class="relative group">
           <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
-            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">
-              2
-            </div>
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">2</div>
             <div class="mt-4 lg:mt-6">
               <div class="flex items-center gap-2 lg:justify-center mb-2">
-                <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                <h3 class="text-kaine-black text-[15px] font-semibold">Human Review</h3>
+                <svg class="w-4 h-4 text-amber flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                <h3 class="text-kaine-black text-[14px] font-semibold">We Review</h3>
               </div>
-              <p class="text-gray-500 text-[13px] leading-[1.5]">No bots. We read within 24hrs.</p>
+              <p class="text-gray-500 text-[12px] leading-[1.5]">A real person reads it. Response within 24hrs.</p>
             </div>
           </div>
         </div>
@@ -617,15 +620,13 @@
         <!-- Step 3 -->
         <div class="relative group">
           <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
-            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">
-              3
-            </div>
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">3</div>
             <div class="mt-4 lg:mt-6">
               <div class="flex items-center gap-2 lg:justify-center mb-2">
-                <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                <h3 class="text-kaine-black text-[15px] font-semibold">Connect Data</h3>
+                <svg class="w-4 h-4 text-amber flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <h3 class="text-kaine-black text-[14px] font-semibold">You Share Data</h3>
               </div>
-              <p class="text-gray-500 text-[13px] leading-[1.5]">Share records. Messy is fine.</p>
+              <p class="text-gray-500 text-[12px] leading-[1.5]">Your records. Messy is fine — we handle it.</p>
             </div>
           </div>
         </div>
@@ -633,15 +634,13 @@
         <!-- Step 4 -->
         <div class="relative group">
           <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
-            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">
-              4
-            </div>
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">4</div>
             <div class="mt-4 lg:mt-6">
               <div class="flex items-center gap-2 lg:justify-center mb-2">
-                <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <h3 class="text-kaine-black text-[15px] font-semibold">AI Analysis</h3>
+                <svg class="w-4 h-4 text-amber flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                <h3 class="text-kaine-black text-[14px] font-semibold">We Analyse</h3>
               </div>
-              <p class="text-gray-500 text-[13px] leading-[1.5]">Patterns found. Insights ranked.</p>
+              <p class="text-gray-500 text-[12px] leading-[1.5]">Patterns found. Revenue story mapped.</p>
             </div>
           </div>
         </div>
@@ -649,15 +648,27 @@
         <!-- Step 5 -->
         <div class="relative group">
           <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
-            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">
-              5
-            </div>
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">5</div>
             <div class="mt-4 lg:mt-6">
               <div class="flex items-center gap-2 lg:justify-center mb-2">
-                <svg class="w-4 h-4 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <h3 class="text-kaine-black text-[15px] font-semibold">Get Report</h3>
+                <svg class="w-4 h-4 text-amber flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <h3 class="text-kaine-black text-[14px] font-semibold">You Get Report</h3>
               </div>
-              <p class="text-gray-500 text-[13px] leading-[1.5]">Clear actions. No jargon.</p>
+              <p class="text-gray-500 text-[12px] leading-[1.5]">Clear findings. Specific actions. No jargon.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="relative group">
+          <div class="lg:flex lg:flex-col lg:items-center lg:text-center">
+            <div class="w-12 h-12 rounded-full bg-amber flex items-center justify-center text-kaine-black font-bold text-lg shadow-lg shadow-amber/30 z-10 relative group-hover:scale-110 transition-transform">6</div>
+            <div class="mt-4 lg:mt-6">
+              <div class="flex items-center gap-2 lg:justify-center mb-2">
+                <svg class="w-4 h-4 text-amber flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+                <h3 class="text-kaine-black text-[14px] font-semibold">We Consult</h3>
+              </div>
+              <p class="text-gray-500 text-[12px] leading-[1.5]">Walkthrough call. We help you act on it.</p>
             </div>
           </div>
         </div>
@@ -866,45 +877,68 @@
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      <article class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-amber/20 transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Card 1: Speed of turnaround -->
+      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         </div>
-        <p class="text-amber text-[11px] font-semibold tracking-wider uppercase mb-1">RED BULL BASEMENT 2026</p>
-        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">
-          Global AI Competition
-        </h3>
-        <p class="text-gray-600 text-[13px] leading-[1.5]">
-          Accepted by Red Bull Basement Nigeria — backed by Microsoft and AMD.
-        </p>
+        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">7–10 day turnaround</h3>
+        <p class="text-gray-600 text-[13px] leading-[1.6]">Most analytics projects take weeks or months. We deliver a complete business diagnostic with ranked recommendations in under two weeks — without cutting corners.</p>
       </article>
 
-      <article class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-amber/20 transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <!-- Card 2: Built for Nigeria/Africa -->
+      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0110.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
         </div>
-        <p class="text-amber text-[11px] font-semibold tracking-wider uppercase mb-1">GI COMPANY FELLOWSHIP</p>
-        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">
-          AI Agent Deployment
-        </h3>
-        <p class="text-gray-600 text-[13px] leading-[1.5]">
-          Applied to the fellowship for builders deploying AI to real business problems.
-        </p>
+        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">Built for this market</h3>
+        <p class="text-gray-600 text-[13px] leading-[1.6]">We understand Paystack exports, Bumpa reports, Instagram storefronts, and WhatsApp order threads. We work with the exact tools Nigerian e-commerce founders use — not generic Western frameworks.</p>
       </article>
 
-      <article class="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-amber/20 transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      <!-- Card 3: Not dashboards — decisions -->
+      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         </div>
-        <p class="text-amber text-[11px] font-semibold tracking-wider uppercase mb-1">DATA CONFIDENTIALITY</p>
-        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">
-          Your Data Stays Yours
-        </h3>
-        <p class="text-gray-600 text-[13px] leading-[1.5]">
-          Every engagement is governed by a service agreement. We never share or sell your data.
-        </p>
+        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">Decisions, not dashboards</h3>
+        <p class="text-gray-600 text-[13px] leading-[1.6]">We don't hand you charts and walk away. Every engagement ends with a ranked list of specific actions — written in plain language so you can act immediately, not interpret endlessly.</p>
       </article>
+
+      <!-- Card 4: Messy data welcome -->
+      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+        </div>
+        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">Messy data is fine</h3>
+        <p class="text-gray-600 text-[13px] leading-[1.6]">You don't need clean spreadsheets or fancy tools before you can work with us. We clean, structure, and make sense of fragmented records — that's part of what we do.</p>
+      </article>
+
+      <!-- Card 5: Confidentiality -->
+      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">Your data stays yours</h3>
+        <p class="text-gray-600 text-[13px] leading-[1.6]">Every engagement is governed by a confidentiality agreement signed before anything is shared. Your business data is never retained, shared, or used beyond the scope of your engagement.</p>
+      </article>
+
+      <!-- Card 6: Priced for SMEs not enterprise -->
+      <article class="group relative bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-amber/30 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-amber to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 group-hover:bg-amber/20 group-hover:scale-110 transition-all duration-300">
+          <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-kaine-black text-[16px] font-semibold leading-[1.4] mb-2">Enterprise intelligence, SME pricing</h3>
+        <p class="text-gray-600 text-[13px] leading-[1.6]">Large analytics firms charge ₦5M+ for what we deliver starting at ₦150,000. We exist precisely because that gap — between the cost of good data and what growth-stage businesses can afford — should not exist.</p>
+      </article>
+
     </div>
 
     <!-- Founder quote -->
