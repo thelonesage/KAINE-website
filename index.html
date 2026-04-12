@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KAINE.io | Data Intelligence for E-Commerce</title>
-    <meta name="description" content="KAINE.io is an AI-powered data consultancy helping e-commerce businesses in Nigeria and Africa make smarter decisions with their data." />
+    <meta name="description" content="We are an AI-powered data consultancy helping e-commerce businesses in Nigeria and Africa make smarter decisions with their data." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kaine.io/" />
     <meta property="og:title" content="KAINE.io | Data Intelligence for E-Commerce" />
-    <meta property="og:description" content="KAINE.io runs structured diagnostics on your e-commerce business — powered by AI, interpreted by experts — and tells you exactly what to do next." />
+    <meta property="og:description" content="We run structured diagnostics on your e-commerce business — powered by AI, interpreted by experts — and tells you exactly what to do next." />
     <meta property="og:image" content="https://kaine.io/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@thelonesage" />
     <meta name="twitter:title" content="KAINE.io | Data Intelligence for E-Commerce" />
-    <meta name="twitter:description" content="KAINE.io runs structured diagnostics on your e-commerce business — powered by AI, interpreted by experts — and tells you exactly what to do next." />
+    <meta name="twitter:description" content="We run structured diagnostics on your e-commerce business — powered by AI, interpreted by experts — and tells you exactly what to do next." />
     <meta name="twitter:image" content="https://kaine.io/og-image.png" />
 
     <!-- Inter font -->
@@ -157,39 +157,82 @@
 
     <!-- ========== HERO SECTION ========== -->
     <section class="bg-kaine-black py-16 md:py-24 md:min-h-[85vh] md:flex md:items-center relative overflow-hidden" aria-label="Hero">
-      <!-- Animated background — meaningful data-themed elements -->
+      <!-- Animated background — full-width data-themed elements -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <!-- Pulsing dot grid -->
-        <div class="absolute inset-0 bg-glow" style="background-image: radial-gradient(circle at 1px 1px, #D4A843 1px, transparent 0); background-size: 48px 48px; opacity: 0.04;"></div>
-        
-        <!-- Floating data nodes — top right cluster -->
-        <div class="absolute top-16 right-[8%] float-animate hidden lg:block">
-          <div class="w-3 h-3 rounded-full bg-amber/20 border border-amber/30"></div>
+
+        <!-- Pulsing dot grid — full coverage, slightly more visible -->
+        <div class="absolute inset-0 bg-glow" style="background-image: radial-gradient(circle at 1px 1px, #D4A843 1px, transparent 0); background-size: 48px 48px; opacity: 0.06;"></div>
+
+        <!-- Left cluster -->
+        <div class="absolute top-[20%] left-[4%] float-animate hidden lg:block">
+          <div class="w-3 h-3 rounded-full bg-amber/25 border border-amber/40"></div>
         </div>
-        <div class="absolute top-24 right-[14%] float-animate-slow hidden lg:block" style="animation-delay: 1s;">
+        <div class="absolute top-[45%] left-[7%] float-animate-slow hidden lg:block" style="animation-delay: 0.8s;">
           <div class="w-2 h-2 rounded-full bg-amber/15 border border-amber/20"></div>
         </div>
-        <div class="absolute top-40 right-[6%] float-animate hidden lg:block" style="animation-delay: 2s;">
+        <div class="absolute bottom-[25%] left-[3%] float-animate hidden lg:block" style="animation-delay: 1.5s;">
+          <div class="w-1.5 h-1.5 rounded-full bg-amber/20"></div>
+        </div>
+
+        <!-- Centre-left cluster -->
+        <div class="absolute top-[15%] left-[30%] float-animate-slow hidden lg:block" style="animation-delay: 0.4s;">
+          <div class="w-2 h-2 rounded-full bg-amber/10 border border-amber/15"></div>
+        </div>
+        <div class="absolute bottom-[20%] left-[25%] float-animate hidden lg:block" style="animation-delay: 1.2s;">
+          <div class="w-1.5 h-1.5 rounded-full bg-amber/15"></div>
+        </div>
+
+        <!-- Right cluster -->
+        <div class="absolute top-[18%] right-[8%] float-animate hidden lg:block">
+          <div class="w-3 h-3 rounded-full bg-amber/20 border border-amber/30"></div>
+        </div>
+        <div class="absolute top-[35%] right-[14%] float-animate-slow hidden lg:block" style="animation-delay: 1s;">
+          <div class="w-2 h-2 rounded-full bg-amber/15 border border-amber/20"></div>
+        </div>
+        <div class="absolute top-[55%] right-[5%] float-animate hidden lg:block" style="animation-delay: 2s;">
           <div class="w-1.5 h-1.5 rounded-full bg-amber/25"></div>
         </div>
-        
-        <!-- Connection lines — SVG -->
-        <svg class="absolute top-12 right-[4%] w-48 h-48 hidden lg:block opacity-[0.06]" viewBox="0 0 200 200" fill="none">
-          <circle cx="160" cy="40" r="20" stroke="#D4A843" stroke-width="1"/>
-          <circle cx="60" cy="120" r="12" stroke="#D4A843" stroke-width="1"/>
-          <circle cx="140" cy="150" r="8" stroke="#D4A843" stroke-width="1"/>
-          <line x1="160" y1="40" x2="60" y2="120" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="4 4"/>
-          <line x1="60" y1="120" x2="140" y2="150" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="4 4"/>
-          <line x1="160" y1="40" x2="140" y2="150" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="4 4"/>
-          <circle cx="160" cy="40" r="3" fill="#D4A843" opacity="0.4"/>
-          <circle cx="60" cy="120" r="2" fill="#D4A843" opacity="0.4"/>
-          <circle cx="140" cy="150" r="2" fill="#D4A843" opacity="0.4"/>
+
+        <!-- Full-width SVG network — spans entire section -->
+        <svg class="absolute inset-0 w-full h-full hidden lg:block" viewBox="0 0 1280 700" fill="none" preserveAspectRatio="xMidYMid slice" style="opacity: 0.05;">
+          <!-- Left side nodes -->
+          <circle cx="80" cy="180" r="16" stroke="#D4A843" stroke-width="1"/>
+          <circle cx="200" cy="420" r="10" stroke="#D4A843" stroke-width="1"/>
+          <circle cx="120" cy="560" r="7" stroke="#D4A843" stroke-width="1"/>
+          <!-- Centre nodes -->
+          <circle cx="450" cy="120" r="12" stroke="#D4A843" stroke-width="1"/>
+          <circle cx="640" cy="340" r="8" stroke="#D4A843" stroke-width="1"/>
+          <circle cx="500" cy="580" r="6" stroke="#D4A843" stroke-width="1"/>
+          <!-- Right side nodes -->
+          <circle cx="1100" cy="160" r="14" stroke="#D4A843" stroke-width="1"/>
+          <circle cx="980" cy="380" r="9" stroke="#D4A843" stroke-width="1"/>
+          <circle cx="1150" cy="520" r="6" stroke="#D4A843" stroke-width="1"/>
+          <!-- Connection lines — left to centre -->
+          <line x1="80" y1="180" x2="450" y2="120" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="5 5"/>
+          <line x1="200" y1="420" x2="640" y2="340" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="5 5"/>
+          <line x1="120" y1="560" x2="500" y2="580" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="5 5"/>
+          <!-- Connection lines — centre to right -->
+          <line x1="450" y1="120" x2="1100" y2="160" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="5 5"/>
+          <line x1="640" y1="340" x2="980" y2="380" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="5 5"/>
+          <line x1="500" y1="580" x2="1150" y2="520" stroke="#D4A843" stroke-width="0.5" stroke-dasharray="5 5"/>
+          <!-- Cross connections -->
+          <line x1="80" y1="180" x2="200" y2="420" stroke="#D4A843" stroke-width="0.3" stroke-dasharray="3 7"/>
+          <line x1="450" y1="120" x2="640" y2="340" stroke="#D4A843" stroke-width="0.3" stroke-dasharray="3 7"/>
+          <line x1="1100" y1="160" x2="980" y2="380" stroke="#D4A843" stroke-width="0.3" stroke-dasharray="3 7"/>
+          <!-- Node fill dots -->
+          <circle cx="80" cy="180" r="3" fill="#D4A843" opacity="0.5"/>
+          <circle cx="200" cy="420" r="2" fill="#D4A843" opacity="0.5"/>
+          <circle cx="450" cy="120" r="2.5" fill="#D4A843" opacity="0.5"/>
+          <circle cx="640" cy="340" r="2" fill="#D4A843" opacity="0.5"/>
+          <circle cx="1100" cy="160" r="3" fill="#D4A843" opacity="0.5"/>
+          <circle cx="980" cy="380" r="2" fill="#D4A843" opacity="0.5"/>
         </svg>
 
-        <!-- Bottom left faint glow -->
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-amber/[0.02] rounded-full blur-3xl hidden lg:block"></div>
-        <!-- Top right faint glow -->
-        <div class="absolute top-0 right-0 w-80 h-80 bg-amber/[0.03] rounded-full blur-3xl hidden lg:block"></div>
+        <!-- Ambient glows — spread left and right -->
+        <div class="absolute top-0 left-0 w-72 h-72 bg-amber/[0.04] rounded-full blur-3xl hidden lg:block"></div>
+        <div class="absolute bottom-0 left-[20%] w-56 h-56 bg-amber/[0.03] rounded-full blur-3xl hidden lg:block"></div>
+        <div class="absolute top-0 right-0 w-80 h-80 bg-amber/[0.04] rounded-full blur-3xl hidden lg:block"></div>
+        <div class="absolute bottom-0 right-[15%] w-64 h-64 bg-amber/[0.03] rounded-full blur-3xl hidden lg:block"></div>
       </div>
       
       <div class="max-w-[1280px] mx-auto px-6 relative z-10">
@@ -199,7 +242,7 @@
               Your revenue is inconsistent. Your <span class="text-amber">data</span> knows why.
             </h1>
             <p class="mt-6 max-w-[520px] text-kaine-gray text-[16px] md:text-[18px] leading-[1.7]">
-              AI-powered diagnostics for e-commerce. Get clear answers, not more dashboards.
+              We analyse your sales, marketing, and customer data — and tell you exactly what's happening, why it's happening, and what to do next.
             </p>
             <div class="mt-10 flex flex-col sm:flex-row gap-3">
               <a
@@ -259,9 +302,9 @@
                 </div>
 
                 <!-- Bar chart — taller and wider -->
-                <div class="flex items-end gap-2.5 h-36 relative">
+                <div class="flex items-end gap-2.5 h-40 relative" id="revenue-chart">
                   <!-- Horizontal guide lines -->
-                  <div class="absolute inset-0 flex flex-col justify-between pointer-events-none">
+                  <div class="absolute inset-0 flex flex-col justify-between pointer-events-none pb-5">
                     <div class="w-full h-px bg-gray-800/40"></div>
                     <div class="w-full h-px bg-gray-800/40"></div>
                     <div class="w-full h-px bg-gray-800/40"></div>
@@ -269,75 +312,63 @@
                   </div>
 
                   <!-- Jan -->
-                  <div class="flex-1 flex flex-col items-center gap-1.5 group cursor-pointer relative z-10">
-                    <div class="relative w-full">
-                      <div class="absolute -top-7 left-1/2 -translate-x-1/2 bg-mid border border-gray-700 rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl">
-                        <span class="text-[10px] text-gray-300">Jan</span>
-                        <span class="text-[11px] text-offwhite font-semibold block">₦2.2M</span>
-                      </div>
+                  <div class="flex-1 flex flex-col justify-end items-center gap-1 group cursor-pointer relative z-10 h-full">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-mid border border-gray-700 rounded-md px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl pointer-events-none">
+                      <span class="text-[10px] text-gray-400 block text-center">Jan</span>
+                      <span class="text-[11px] text-offwhite font-semibold block text-center">₦2.2M</span>
                     </div>
-                    <div class="w-full h-[37%] bg-gradient-to-t from-slate-700 to-slate-600 rounded-t-md group-hover:from-amber/50 group-hover:to-amber/35 transition-all duration-300" style="animation: barRise 0.6s ease-out 0.1s both;"></div>
-                    <span class="text-gray-500 text-[10px] font-medium">Jan</span>
+                    <div id="bar-jan" class="w-full bg-gradient-to-t from-slate-700 to-slate-600 rounded-t-md group-hover:from-amber/50 group-hover:to-amber/35 transition-colors duration-300 origin-bottom" style="height: 0%; transition: height 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.1s;"></div>
+                    <span class="text-gray-500 text-[10px] font-medium flex-shrink-0">Jan</span>
                   </div>
 
                   <!-- Feb -->
-                  <div class="flex-1 flex flex-col items-center gap-1.5 group cursor-pointer relative z-10">
-                    <div class="relative w-full">
-                      <div class="absolute -top-7 left-1/2 -translate-x-1/2 bg-mid border border-gray-700 rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl">
-                        <span class="text-[10px] text-gray-300">Feb</span>
-                        <span class="text-[11px] text-offwhite font-semibold block">₦3.2M</span>
-                      </div>
+                  <div class="flex-1 flex flex-col justify-end items-center gap-1 group cursor-pointer relative z-10 h-full">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-mid border border-gray-700 rounded-md px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl pointer-events-none">
+                      <span class="text-[10px] text-gray-400 block text-center">Feb</span>
+                      <span class="text-[11px] text-offwhite font-semibold block text-center">₦3.2M</span>
                     </div>
-                    <div class="w-full h-[53%] bg-gradient-to-t from-slate-700 to-slate-600 rounded-t-md group-hover:from-amber/50 group-hover:to-amber/35 transition-all duration-300" style="animation: barRise 0.6s ease-out 0.2s both;"></div>
-                    <span class="text-gray-500 text-[10px] font-medium">Feb</span>
+                    <div id="bar-feb" class="w-full bg-gradient-to-t from-slate-700 to-slate-600 rounded-t-md group-hover:from-amber/50 group-hover:to-amber/35 transition-colors duration-300 origin-bottom" style="height: 0%; transition: height 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.2s;"></div>
+                    <span class="text-gray-500 text-[10px] font-medium flex-shrink-0">Feb</span>
                   </div>
 
-                  <!-- Mar — RED: unexplained drop -->
-                  <div class="flex-1 flex flex-col items-center gap-1.5 group cursor-pointer relative z-10">
-                    <div class="relative w-full">
-                      <div class="absolute -top-7 left-1/2 -translate-x-1/2 bg-red-950 border border-red-700/50 rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl">
-                        <span class="text-[10px] text-red-400">Mar ↓</span>
-                        <span class="text-[11px] text-red-300 font-semibold block">₦1.7M</span>
-                      </div>
+                  <!-- Mar — RED drop -->
+                  <div class="flex-1 flex flex-col justify-end items-center gap-1 group cursor-pointer relative z-10 h-full">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-red-950 border border-red-700/50 rounded-md px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl pointer-events-none">
+                      <span class="text-[10px] text-red-400 block text-center">Mar ↓</span>
+                      <span class="text-[11px] text-red-300 font-semibold block text-center">₦1.7M</span>
                     </div>
-                    <div class="w-full h-[28%] bg-gradient-to-t from-red-900/60 to-red-700/40 rounded-t-md group-hover:from-red-600/70 group-hover:to-red-500/50 transition-all duration-300" style="animation: barRise 0.6s ease-out 0.3s both;"></div>
-                    <span class="text-red-500 text-[10px] font-medium">Mar</span>
+                    <div id="bar-mar" class="w-full bg-gradient-to-t from-red-900/70 to-red-700/50 rounded-t-md group-hover:from-red-600/80 group-hover:to-red-500/60 transition-colors duration-300 origin-bottom" style="height: 0%; transition: height 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.3s;"></div>
+                    <span class="text-red-500 text-[10px] font-medium flex-shrink-0">Mar</span>
                   </div>
 
                   <!-- Apr -->
-                  <div class="flex-1 flex flex-col items-center gap-1.5 group cursor-pointer relative z-10">
-                    <div class="relative w-full">
-                      <div class="absolute -top-7 left-1/2 -translate-x-1/2 bg-mid border border-gray-700 rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl">
-                        <span class="text-[10px] text-gray-300">Apr</span>
-                        <span class="text-[11px] text-offwhite font-semibold block">₦3.9M</span>
-                      </div>
+                  <div class="flex-1 flex flex-col justify-end items-center gap-1 group cursor-pointer relative z-10 h-full">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-mid border border-gray-700 rounded-md px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl pointer-events-none">
+                      <span class="text-[10px] text-gray-400 block text-center">Apr</span>
+                      <span class="text-[11px] text-offwhite font-semibold block text-center">₦3.9M</span>
                     </div>
-                    <div class="w-full h-[65%] bg-gradient-to-t from-slate-700 to-slate-600 rounded-t-md group-hover:from-amber/50 group-hover:to-amber/35 transition-all duration-300" style="animation: barRise 0.6s ease-out 0.4s both;"></div>
-                    <span class="text-gray-500 text-[10px] font-medium">Apr</span>
+                    <div id="bar-apr" class="w-full bg-gradient-to-t from-slate-700 to-slate-600 rounded-t-md group-hover:from-amber/50 group-hover:to-amber/35 transition-colors duration-300 origin-bottom" style="height: 0%; transition: height 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.4s;"></div>
+                    <span class="text-gray-500 text-[10px] font-medium flex-shrink-0">Apr</span>
                   </div>
 
                   <!-- May -->
-                  <div class="flex-1 flex flex-col items-center gap-1.5 group cursor-pointer relative z-10">
-                    <div class="relative w-full">
-                      <div class="absolute -top-7 left-1/2 -translate-x-1/2 bg-mid border border-gray-700 rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl">
-                        <span class="text-[10px] text-gray-300">May</span>
-                        <span class="text-[11px] text-offwhite font-semibold block">₦2.7M</span>
-                      </div>
+                  <div class="flex-1 flex flex-col justify-end items-center gap-1 group cursor-pointer relative z-10 h-full">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-mid border border-gray-700 rounded-md px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl pointer-events-none">
+                      <span class="text-[10px] text-gray-400 block text-center">May</span>
+                      <span class="text-[11px] text-offwhite font-semibold block text-center">₦2.7M</span>
                     </div>
-                    <div class="w-full h-[45%] bg-gradient-to-t from-slate-700 to-slate-600 rounded-t-md group-hover:from-amber/50 group-hover:to-amber/35 transition-all duration-300" style="animation: barRise 0.6s ease-out 0.5s both;"></div>
-                    <span class="text-gray-500 text-[10px] font-medium">May</span>
+                    <div id="bar-may" class="w-full bg-gradient-to-t from-slate-700 to-slate-600 rounded-t-md group-hover:from-amber/50 group-hover:to-amber/35 transition-colors duration-300 origin-bottom" style="height: 0%; transition: height 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.5s;"></div>
+                    <span class="text-gray-500 text-[10px] font-medium flex-shrink-0">May</span>
                   </div>
 
                   <!-- Jun — AMBER: best month -->
-                  <div class="flex-1 flex flex-col items-center gap-1.5 group cursor-pointer relative z-10">
-                    <div class="relative w-full">
-                      <div class="absolute -top-7 left-1/2 -translate-x-1/2 bg-amber/10 border border-amber/40 rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl">
-                        <span class="text-[10px] text-amber">Jun ↑</span>
-                        <span class="text-[11px] text-amber font-semibold block">₦5M</span>
-                      </div>
+                  <div class="flex-1 flex flex-col justify-end items-center gap-1 group cursor-pointer relative z-10 h-full">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-amber/10 border border-amber/40 rounded-md px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-20 shadow-xl pointer-events-none">
+                      <span class="text-[10px] text-amber block text-center">Jun ↑</span>
+                      <span class="text-[11px] text-amber font-semibold block text-center">₦5M</span>
                     </div>
-                    <div class="w-full h-full bg-gradient-to-t from-amber to-amber/70 rounded-t-md shadow-lg shadow-amber/25 group-hover:shadow-amber/40 transition-all duration-300" style="animation: barRise 0.6s ease-out 0.6s both;"></div>
-                    <span class="text-amber text-[10px] font-semibold">Jun</span>
+                    <div id="bar-jun" class="w-full bg-gradient-to-t from-amber to-amber/70 rounded-t-md shadow-lg shadow-amber/30 group-hover:shadow-amber/50 transition-all duration-300 origin-bottom" style="height: 0%; transition: height 0.7s cubic-bezier(0.34,1.56,0.64,1) 0.6s;"></div>
+                    <span class="text-amber text-[10px] font-semibold flex-shrink-0">Jun</span>
                   </div>
                 </div>
 
@@ -375,7 +406,7 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
                   </div>
-                  <span class="text-[11px] text-amber font-medium">KAINE found it →</span>
+                  <span class="text-[11px] text-amber font-medium">We found it →</span>
                 </div>
               </div>
             </div>
