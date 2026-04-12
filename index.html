@@ -870,7 +870,7 @@
   <div class="max-w-[1280px] mx-auto px-6">
     <div class="text-center mb-12">
       <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-amber mb-3">
-        WHY KAINE.io
+        WHY KAINE
       </p>
       <h2 class="text-kaine-black font-bold text-[28px] md:text-[36px] leading-[1.2]">
         Built by a founder. For founders.
@@ -1129,6 +1129,39 @@
 
       setupSearch('site-search', 'search-results');
       setupSearch('mobile-site-search', 'mobile-search-results');
+
+      // Chart bar animation — triggered on load with IntersectionObserver
+      const chartBars = {
+        'bar-jan': 37,
+        'bar-feb': 53,
+        'bar-mar': 28,
+        'bar-apr': 65,
+        'bar-may': 45,
+        'bar-jun': 100
+      };
+
+      const chartContainer = document.getElementById('revenue-chart');
+      if (chartContainer) {
+        const animateChart = () => {
+          Object.entries(chartBars).forEach(([id, height]) => {
+            const bar = document.getElementById(id);
+            if (bar) {
+              requestAnimationFrame(() => { bar.style.height = height + '%'; });
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setTimeout(animateChart, 100);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+
+        observer.observe(chartContainer);
+      }
 
       // Form submission handling
       document.querySelectorAll('form[action*="formspree"]').forEach(form => {
