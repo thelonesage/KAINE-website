@@ -69,61 +69,153 @@
         --bg-offwhite: #F5F4F0;
         --text-primary: #F5F4F0;
         --text-muted: #9CA3AF;
-        --border-subtle: rgba(255,255,255,0.08);
-        --card-bg: #111827;
-        --card-bg-light: #FFFFFF;
-        --section-alt: #F5F4F0;
-      }
-      html.light {
-        --bg-primary: #F5F4F0;
-        --bg-mid: #E8E7E3;
-        --bg-offwhite: #0A0A0A;
-        --text-primary: #0A0A0A;
-        --text-muted: #4B5563;
-        --border-subtle: rgba(0,0,0,0.08);
-        --card-bg: #FFFFFF;
-        --card-bg-light: #F5F4F0;
-        --section-alt: #0A0A0A;
       }
 
-      /* Smooth mode transition */
       html { transition: background-color 0.3s ease, color 0.3s ease; }
       body { transition: background-color 0.3s ease; }
 
-      /* Light mode overrides */
+      /* ===== LIGHT MODE ===== */
+
       html.light body { background-color: #F5F4F0; }
-      html.light .bg-kaine-black { background-color: #F5F4F0 !important; }
-      html.light .bg-mid { background-color: #E8E7E3 !important; }
-      html.light .bg-offwhite { background-color: #0F172A !important; }
-      html.light .text-offwhite { color: #0A0A0A !important; }
+
+      /* Section backgrounds — CRITICAL: bg-offwhite must stay cream, NOT dark navy */
+      html.light .bg-kaine-black { background-color: #FFFFFF !important; }
+      html.light .bg-mid { background-color: #EDECEA !important; }
+      html.light .bg-offwhite { background-color: #F5F4F0 !important; }
+
+      /* Nav */
+      html.light header { background-color: rgba(255,255,255,0.92) !important; }
+      html.light .bg-kaine-black\/80 { background-color: rgba(255,255,255,0.92) !important; }
+      html.light header .border-b { border-bottom-color: rgba(0,0,0,0.08) !important; }
+
+      /* Nav links */
+      html.light nav a.no-underline { color: rgba(17,24,39,0.7) !important; }
+      html.light nav a.no-underline:hover { color: #D4A843 !important; }
+
+      /* Theme toggle — sun icon must be visible on white nav bg */
+      html.light #theme-toggle { color: #4B5563 !important; }
+      html.light #theme-toggle:hover { color: #D4A843 !important; }
+
+      /* Mobile dropdown — was: dark bg with dark text = invisible. Fix: white bg dark text */
+      html.light #mobile-menu { background-color: rgba(255,255,255,0.97) !important; border-top: 1px solid rgba(0,0,0,0.08) !important; }
+      html.light #mobile-menu a { color: #111827 !important; }
+      html.light #mobile-menu a:hover { color: #D4A843 !important; }
+      html.light #mobile-menu button { color: #111827 !important; }
+      html.light #mobile-menu button:hover { color: #D4A843 !important; }
+      html.light #mobile-menu span { color: #111827 !important; }
+
+      /* Search inputs */
+      html.light #site-search,
+      html.light #mobile-site-search {
+        background-color: rgba(237,236,234,0.85) !important;
+        border-color: rgba(0,0,0,0.12) !important;
+        color: #111827 !important;
+      }
+      html.light #site-search::placeholder,
+      html.light #mobile-site-search::placeholder { color: #9CA3AF !important; }
+      html.light #search-results,
+      html.light #mobile-search-results {
+        background-color: #FFFFFF !important;
+        border-color: rgba(0,0,0,0.1) !important;
+      }
+      html.light #search-results a p:first-child,
+      html.light #mobile-search-results a p:first-child { color: #111827 !important; }
+      html.light #search-results a p:last-child,
+      html.light #mobile-search-results a p:last-child { color: #4B5563 !important; }
+
+      /* Text */
+      html.light .text-offwhite { color: #111827 !important; }
+      html.light .text-offwhite\/80 { color: rgba(17,24,39,0.75) !important; }
+      html.light .text-offwhite\/90 { color: rgba(17,24,39,0.88) !important; }
       html.light .text-kaine-gray { color: #4B5563 !important; }
+      html.light .text-gray-300 { color: #374151 !important; }
       html.light .text-gray-400 { color: #4B5563 !important; }
       html.light .text-gray-500 { color: #6B7280 !important; }
-      html.light .text-gray-300 { color: #374151 !important; }
-      html.light .border-gray-800\/30 { border-color: rgba(0,0,0,0.1) !important; }
-      html.light .border-gray-800\/50 { border-color: rgba(0,0,0,0.12) !important; }
-      html.light .bg-kaine-black\/80 { background-color: rgba(245,244,240,0.85) !important; }
-      html.light .bg-kaine-black\/50 { background-color: rgba(245,244,240,0.6) !important; }
-      html.light .bg-kaine-black\/40 { background-color: rgba(245,244,240,0.5) !important; }
-      html.light .bg-mid\/80 { background-color: rgba(232,231,227,0.8) !important; }
-      html.light .bg-mid\/50 { background-color: rgba(232,231,227,0.5) !important; }
-      html.light .bg-mid\/60 { background-color: rgba(232,231,227,0.6) !important; }
-      html.light .border-offwhite\/30 { border-color: rgba(10,10,10,0.2) !important; }
-      html.light header { background-color: rgba(245,244,240,0.85) !important; }
-      html.light .text-offwhite\/80 { color: rgba(10,10,10,0.7) !important; }
-      html.light .text-offwhite\/90 { color: rgba(10,10,10,0.85) !important; }
-
-      /* Light mode — mirror section cards */
-      html.light .bg-white { background-color: #FFFFFF !important; }
-      html.light .border-gray-100 { border-color: #E5E7EB !important; }
-      html.light .text-kaine-black { color: #0A0A0A !important; }
       html.light .text-gray-600 { color: #4B5563 !important; }
 
-      /* Light mode — service cards */
-      html.light .from-\[\#161f2e\] { --tw-gradient-from: #E8E7E3 !important; }
+      /* Borders */
+      html.light .border-gray-800\/30 { border-color: rgba(0,0,0,0.08) !important; }
+      html.light .border-gray-800\/50 { border-color: rgba(0,0,0,0.12) !important; }
+      html.light .border-gray-800 { border-color: rgba(0,0,0,0.12) !important; }
+      html.light .border-offwhite\/30 { border-color: rgba(17,24,39,0.2) !important; }
+      html.light .border-gray-700\/60 { border-color: rgba(0,0,0,0.1) !important; }
+      html.light .border-gray-700\/40 { border-color: rgba(0,0,0,0.08) !important; }
+      html.light .border-gray-700\/50 { border-color: rgba(0,0,0,0.1) !important; }
 
-      /* Light mode dot grid color inversion */
-      html.light .bg-glow { opacity: 0.08 !important; }
+      /* Background opacity variants */
+      html.light .bg-kaine-black\/50 { background-color: rgba(255,255,255,0.8) !important; }
+      html.light .bg-kaine-black\/40 { background-color: rgba(255,255,255,0.65) !important; }
+      html.light .bg-mid\/80 { background-color: rgba(237,236,234,0.88) !important; }
+      html.light .bg-mid\/50 { background-color: rgba(237,236,234,0.65) !important; }
+      html.light .bg-mid\/60 { background-color: rgba(237,236,234,0.75) !important; }
+      html.light .bg-mid\/90 { background-color: rgba(237,236,234,0.95) !important; }
+
+      /* WHAT WE DO — service cards */
+      html.light [aria-label="What We Do"] article {
+        background-color: #F0EEE9 !important;
+        border-color: rgba(0,0,0,0.1) !important;
+      }
+      html.light [aria-label="What We Do"] article .text-white { color: #111827 !important; }
+      html.light [aria-label="What We Do"] article [style*="A8B3C4"] { color: #374151 !important; }
+      html.light [aria-label="What We Do"] article [style*="6B7280"] { color: #4B5563 !important; }
+
+      /* HOW WE WORK — bg-offwhite section now stays cream, so no text color conflict */
+      html.light [aria-label="How We Work"] .text-kaine-black { color: #0A0A0A !important; }
+      html.light [aria-label="How We Work"] .text-gray-500 { color: #4B5563 !important; }
+
+      /* WHO THIS IS FOR */
+      html.light #about { background-color: #EDECEA !important; }
+      html.light #about .text-offwhite { color: #111827 !important; }
+      html.light #about .text-gray-400 { color: #4B5563 !important; }
+
+      /* GET STARTED section and form */
+      html.light #start { background-color: #FFFFFF !important; }
+      html.light #start .text-offwhite { color: #111827 !important; }
+      html.light #start .text-gray-400 { color: #4B5563 !important; }
+      html.light #start label { color: #6B7280 !important; }
+      html.light #start input,
+      html.light #start select,
+      html.light #start textarea {
+        background-color: rgba(255,255,255,0.95) !important;
+        color: #111827 !important;
+        border-color: rgba(0,0,0,0.15) !important;
+      }
+      html.light #start input::placeholder,
+      html.light #start textarea::placeholder { color: #9CA3AF !important; }
+      html.light #start .bg-kaine-black\/50 { background-color: rgba(255,255,255,0.9) !important; }
+      html.light #start .bg-kaine-black\/40 { background-color: rgba(255,255,255,0.75) !important; border-color: rgba(0,0,0,0.1) !important; }
+      html.light #start .bg-mid\/50 { background-color: rgba(237,236,234,0.65) !important; border-color: rgba(0,0,0,0.1) !important; }
+
+      /* WHY KAINE — bg-offwhite stays cream; white cards stay white */
+      html.light [aria-label="Why KAINE"] .text-kaine-black { color: #0A0A0A !important; }
+      html.light [aria-label="Why KAINE"] .text-gray-600 { color: #374151 !important; }
+      html.light [aria-label="Why KAINE"] .text-gray-500 { color: #4B5563 !important; }
+
+      /* SOUND FAMILIAR — bg-offwhite stays cream; text stays dark = correct contrast */
+      html.light [aria-label="The Mirror"] .text-kaine-black { color: #0A0A0A !important; }
+      html.light [aria-label="The Mirror"] .text-gray-500 { color: #374151 !important; }
+
+      /* Chart card (hero) */
+      html.light .bg-mid\/80 { background-color: rgba(237,236,234,0.9) !important; }
+
+      /* FOOTER — stays dark in light mode. Deliberate visual anchor. */
+      html.light footer { background-color: #0A0A0A !important; }
+      html.light footer .text-offwhite { color: #F5F4F0 !important; }
+      html.light footer .text-gray-400 { color: #9CA3AF !important; }
+      html.light footer .text-gray-500 { color: #6B7280 !important; }
+      html.light footer a { color: #9CA3AF !important; }
+      html.light footer a:hover { color: #D4A843 !important; }
+      html.light footer .bg-gray-800\/50 { background-color: rgba(255,255,255,0.08) !important; }
+      html.light footer .border-gray-800\/50 { border-color: rgba(255,255,255,0.1) !important; }
+
+      /* Dot grid — slightly more visible on light backgrounds */
+      html.light .bg-glow { opacity: 0.05 !important; }
+
+      /* Mobile/minimized window — suppress decorative motion elements */
+      @media (max-width: 768px) {
+        .bg-glow { opacity: 0.03 !important; }
+        .float-animate, .float-animate-slow { display: none !important; }
+      }
 
       /* Card animation */
       @keyframes fadeInUp {
@@ -187,7 +279,7 @@
           <button
             id="theme-toggle"
             aria-label="Toggle light/dark mode"
-            class="ml-2 w-8 h-8 rounded-full flex items-center justify-center text-offwhite/70 hover:text-amber hover:bg-gray-800/50 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none"
+            class="ml-2 w-8 h-8 rounded-full flex items-center justify-center text-gray-500 hover:text-amber hover:bg-gray-800/50 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none"
           >
             <!-- Moon icon (shown in dark mode) -->
             <svg id="icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
