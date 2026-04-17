@@ -146,14 +146,31 @@
       html.light [aria-label="Services Hero"] .text-\[#9CA3AF\] { color: #4B5563 !important; }
 
       /* CORE PACKAGES — bg-offwhite stays cream; white cards stay white */
-      html.light [aria-label="Core Packages"] { background-color: #F5F4F0 !important; }
+      html.light [aria-label="Core Packages"] { background-color: #EDE6D5 !important; }
+      html.light [aria-label="Core Packages"] .shadow-\[0_2px_20px_rgba\(0\,0\,0\,0\.08\)\] { box-shadow: 0 2px 20px rgba(0,0,0,0.06) !important; }
+      html.light [aria-label="Core Packages"] .bg-white { background-color: #FFFFFF !important; }
+      html.light [aria-label="Core Packages"] .bg-offwhite { background-color: #F5F4F0 !important; }
       html.light [aria-label="Core Packages"] .text-kaine-black { color: #0A0A0A !important; }
       html.light [aria-label="Core Packages"] .text-gray-500,
       html.light [aria-label="Core Packages"] .text-\[#6B7280\] { color: #4B5563 !important; }
-      html.light [aria-label="Core Packages"] .bg-white { background-color: #FFFFFF !important; }
-      html.light [aria-label="Core Packages"] .bg-offwhite { background-color: #EDECEA !important; }
       html.light [aria-label="Core Packages"] .text-\[#6B7280\] { color: #4B5563 !important; }
-      html.light [aria-label="Core Packages"] .shadow-\[0_2px_20px_rgba\(0\,0\,0\,0\.08\)\] { box-shadow: 0 2px 20px rgba(0,0,0,0.06) !important; }
+
+      /* DATA FLOW CARD — keep dark in light mode (premium dark card on light bg) */
+      html.light .data-flow-card {
+        background: rgba(17, 24, 39, 0.92) !important;
+        border-color: rgba(212, 168, 67, 0.2) !important;
+      }
+      html.light .data-flow-card .text-offwhite { color: #F5F4F0 !important; }
+      html.light .data-flow-card p.text-offwhite { color: #F5F4F0 !important; }
+      html.light .data-flow-card .text-gray-500 { color: #9CA3AF !important; }
+      html.light .data-flow-card .text-gray-400 { color: #CBD5E1 !important; }
+      html.light .data-flow-card .text-amber { color: #D4A843 !important; }
+      html.light .data-flow-card .bg-kaine-black\/40 { background: rgba(0,0,0,0.35) !important; }
+      html.light .data-flow-card .bg-amber\/8 { background: rgba(212,168,67,0.12) !important; }
+      html.light .data-flow-card .border-amber\/15 { border-color: rgba(212,168,67,0.25) !important; }
+      html.light .data-flow-card .bg-mid { background: rgba(17,24,39,0.6) !important; }
+      html.light .data-flow-card .border-gray-800\/50 { border-color: rgba(255,255,255,0.08) !important; }
+      html.light .data-flow-card .w-px { background-color: rgba(212,168,67,0.4) !important; }
 
       /* DATA ANALYTICS — bg-mid on light becomes #EDECEA; card bg-kaine-black stays dark for contrast */
       html.light [aria-label="Data Analytics"] { background-color: #EDECEA !important; }
@@ -341,7 +358,7 @@
           <div class="lg:w-[45%] hidden md:block">
             <div class="relative">
               <!-- Data flow diagram -->
-              <div class="bg-mid/70 backdrop-blur-sm rounded-2xl border border-gray-800/50 p-6 shadow-2xl">
+              <div class="data-flow-card bg-mid/70 backdrop-blur-sm rounded-2xl border border-gray-800/50 p-6 shadow-2xl">
                 <p class="text-amber text-[10px] font-semibold tracking-widest uppercase mb-5">How your data becomes a decision</p>
 
                 <!-- Step 1 -->
@@ -409,7 +426,7 @@
           CORE PACKAGES
         </p>
         <h2 class="text-kaine-black font-bold text-[28px] md:text-[40px] leading-[1.2] max-w-[820px]">
-          Three ways to engage KAINE — depending on where you are and what you need.
+          Three ways to engage KAINE, depending on where you are and what you need.
         </h2>
 
         <!-- Package Cards -->
@@ -486,7 +503,7 @@
                   ₦80,000 – ₦120,000 · Per Month · Retainer
                 </p>
                 <h3 class="mt-3 text-kaine-black font-bold text-[26px] leading-[1.3]">
-                  Ongoing intelligence — so you always know what is happening and why.
+                  Ongoing intelligence, so you always know what is happening and why.
                 </h3>
                 <p class="mt-4 text-[16px] text-[#6B7280] leading-[1.7]">
                   A monthly retainer that keeps your data continuously monitored. Every month, we pull your latest transaction, marketing, and customer data, run our diagnostic process, and deliver a structured Pulse Report. You see what changed, what caused it, what to watch, and what to act on. No guesswork. No surprises. Just a clear monthly read on your business.
