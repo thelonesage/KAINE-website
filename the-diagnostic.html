@@ -231,6 +231,9 @@
 
       html.light .bg-glow { opacity: 0.05 !important; }
 
+      /* Services link is amber on all service pages (not on contact page) */
+      a[href="services.html"] { color: #D4A843 !important; }
+
       @media (max-width: 768px) {
         .bg-glow { opacity: 0.03 !important; }
         .float-animate, .float-animate-slow { display: none !important; }
@@ -260,9 +263,9 @@
         </div>
 
         <nav class="hidden md:flex items-center gap-6 flex-shrink-0">
-          <a href="services.html" class="text-amber font-semibold text-[13px] transition-colors duration-200 no-underline">Services</a>
-          <a href="about.html" class="text-offwhite/80 font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">About</a>
-          <a href="contact.html" class="text-offwhite/80 font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">Contact</a>
+          <a href="services.html" class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">Services</a>
+          <a href="about.html" class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">About</a>
+          <a href="contact.html" class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">Contact</a>
           <button id="theme-toggle" aria-label="Toggle light/dark mode" class="ml-2 w-8 h-8 rounded-full flex items-center justify-center text-gray-500 hover:text-amber hover:bg-gray-800/50 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none">
             <svg id="icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
@@ -289,7 +292,7 @@
             </svg>
             <div id="mobile-search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-gray-800 rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
           </div>
-          <a href="services.html" class="text-amber font-semibold text-[14px] transition-colors duration-200 no-underline">Services</a>
+          <a href="services.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">Services</a>
           <a href="about.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">About</a>
           <a href="contact.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">Contact</a>
           <button id="theme-toggle-mobile" class="flex items-center gap-3 text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200">
@@ -381,7 +384,7 @@
             <div class="relative h-[400px] flex items-center justify-center perspective">
               <!-- 3D floating card -->
               <div class="diag-3d-float relative w-full max-w-sm">
-                <div class="bg-mid/70 backdrop-blur-sm rounded-2xl border border-gray-800/50 p-8 shadow-2xl" style="transform: perspective(900px) rotateY(-7deg) rotateX(3deg);">
+                <div class="diag-3d-card-bg bg-mid/70 backdrop-blur-sm rounded-2xl border border-gray-800/50 p-8 shadow-2xl" style="transform: perspective(900px) rotateY(-7deg) rotateX(3deg);">
                   <div class="mb-6">
                     <p class="text-amber text-[12px] font-semibold tracking-widest uppercase mb-4">Inside Your Diagnostic</p>
                     <div class="h-1 bg-gradient-to-r from-amber to-amber/20 rounded-full diag-progress-bar"></div>

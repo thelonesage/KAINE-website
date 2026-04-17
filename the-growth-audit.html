@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Growth Audit | KAINE.io</title>
-    <meta name="description" content="A comprehensive growth strategy engagement for e-commerce businesses ready to scale with evidence. ₦300,000 – ₦450,000." />
+    <title>The Growth Audit | KAINE</title>
+    <meta name="description" content="A comprehensive strategic audit of your e-commerce business. KAINE maps your customer journey, identifies growth opportunities, and delivers a full data-backed strategy." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://kaine.io/the-growth-audit" />
-    <meta property="og:title" content="The Growth Audit | KAINE.io" />
-    <meta property="og:description" content="A comprehensive growth strategy engagement for e-commerce businesses ready to scale with evidence. ₦300,000 – ₦450,000." />
+    <meta property="og:title" content="The Growth Audit | KAINE" />
+    <meta property="og:description" content="A comprehensive strategic audit of your e-commerce business. KAINE maps your customer journey, identifies growth opportunities, and delivers a full data-backed strategy." />
     <meta property="og:image" content="https://kaine.io/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@thelonesage" />
-    <meta name="twitter:title" content="The Growth Audit | KAINE.io" />
-    <meta name="twitter:description" content="A comprehensive growth strategy engagement for e-commerce businesses ready to scale with evidence. ₦300,000 – ₦450,000." />
+    <meta name="twitter:title" content="The Growth Audit | KAINE" />
+    <meta name="twitter:description" content="A comprehensive strategic audit of your e-commerce business. KAINE maps your customer journey, identifies growth opportunities, and delivers a full data-backed strategy." />
     <meta name="twitter:image" content="https://kaine.io/og-image.png" />
 
     <!-- Inter font -->
@@ -32,11 +32,9 @@
               'offwhite': '#F5F4F0',
               'mid': '#111827',
               'amber': '#D4A843',
-              'gray': '#9CA3AF',
+              'kaine-gray': '#9CA3AF',
             },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
+            fontFamily: { sans: ['Inter', 'sans-serif'] },
           },
         },
       };
@@ -44,6 +42,188 @@
 
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      @keyframes floatUp {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.03; }
+        50% { opacity: 0.06; }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes auditFloat {
+        0%, 100% { transform: perspective(900px) rotateY(-5deg) rotateX(2deg) translateY(0px); }
+        50% { transform: perspective(900px) rotateY(-5deg) rotateX(2deg) translateY(-12px); }
+      }
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .float-animate { animation: floatUp 4s ease-in-out infinite; }
+      .float-animate-slow { animation: floatUp 6s ease-in-out infinite; }
+      .bg-glow { animation: pulseGlow 4s ease-in-out infinite; }
+      .audit-3d-float { animation: auditFloat 4s ease-in-out infinite; }
+      .scale-in-animate { animation: scaleIn 0.6s ease-out forwards; }
+
+      :root {
+        --bg-primary: #0A0A0A;
+        --bg-mid: #111827;
+        --bg-offwhite: #F5F4F0;
+        --text-primary: #F5F4F0;
+        --text-muted: #9CA3AF;
+      }
+      html { transition: background-color 0.3s ease, color 0.3s ease; }
+      body { transition: background-color 0.3s ease; }
+
+      /* ===== LIGHT MODE ===== */
+      html.light body { background-color: #F5F4F0; }
+      html.light .bg-kaine-black { background-color: #FFFFFF !important; }
+      html.light .bg-mid { background-color: #EDECEA !important; }
+      html.light .bg-offwhite { background-color: #F5F4F0 !important; }
+
+      /* Hamburger visibility in light mode */
+      html.light #menu-btn span { background-color: #111827 !important; }
+
+      /* Nav */
+      html.light header { background-color: rgba(255,255,255,0.92) !important; }
+      html.light .bg-kaine-black\/80 { background-color: rgba(255,255,255,0.92) !important; }
+      html.light nav a.no-underline { color: rgba(17,24,39,0.7) !important; }
+      html.light nav a.no-underline:hover { color: #D4A843 !important; }
+      html.light #theme-toggle { color: #4B5563 !important; }
+      html.light #theme-toggle:hover { color: #D4A843 !important; }
+      html.light #mobile-menu { background-color: rgba(255,255,255,0.97) !important; border-top: 1px solid rgba(0,0,0,0.08) !important; }
+      html.light #mobile-menu a { color: #111827 !important; }
+      html.light #mobile-menu a:hover { color: #D4A843 !important; }
+      html.light #mobile-menu button { color: #111827 !important; }
+      html.light #mobile-menu span { color: #111827 !important; }
+
+      /* Search */
+      html.light #site-search, html.light #mobile-site-search {
+        background-color: rgba(237,236,234,0.85) !important;
+        border-color: rgba(0,0,0,0.12) !important;
+        color: #111827 !important;
+      }
+      html.light #site-search::placeholder, html.light #mobile-site-search::placeholder { color: #9CA3AF !important; }
+      html.light #search-results, html.light #mobile-search-results {
+        background-color: #FFFFFF !important;
+        border-color: rgba(0,0,0,0.1) !important;
+      }
+      html.light #search-results a p:first-child, html.light #mobile-search-results a p:first-child { color: #111827 !important; }
+      html.light #search-results a p:last-child, html.light #mobile-search-results a p:last-child { color: #4B5563 !important; }
+
+      /* Text */
+      html.light .text-offwhite { color: #111827 !important; }
+      html.light .text-offwhite\/80 { color: rgba(17,24,39,0.75) !important; }
+      html.light .text-kaine-gray { color: #4B5563 !important; }
+      html.light .text-gray-300 { color: #374151 !important; }
+      html.light .text-gray-400 { color: #4B5563 !important; }
+      html.light .text-gray-500 { color: #6B7280 !important; }
+      html.light .text-gray-600 { color: #4B5563 !important; }
+
+      /* Borders */
+      html.light .border-gray-800\/30 { border-color: rgba(0,0,0,0.08) !important; }
+      html.light .border-gray-800\/50 { border-color: rgba(0,0,0,0.12) !important; }
+      html.light .border-gray-800 { border-color: rgba(0,0,0,0.12) !important; }
+      html.light .border-offwhite { border-color: rgba(17,24,39,0.25) !important; }
+      html.light .border-offwhite\/30 { border-color: rgba(17,24,39,0.2) !important; }
+      html.light .border-\[#E5E7EB\] { border-color: #D1D5DB !important; }
+
+      /* Background variants */
+      html.light .bg-kaine-black\/50 { background-color: rgba(255,255,255,0.8) !important; }
+      html.light .bg-kaine-black\/40 { background-color: rgba(255,255,255,0.65) !important; }
+      html.light .bg-mid\/80 { background-color: rgba(237,236,234,0.88) !important; }
+      html.light .bg-mid\/50 { background-color: rgba(237,236,234,0.65) !important; }
+
+      /* HERO SECTION */
+      html.light [aria-label="The Growth Audit Hero"] { background-color: #FFFFFF !important; }
+      html.light [aria-label="The Growth Audit Hero"] .text-offwhite { color: #111827 !important; }
+      html.light [aria-label="The Growth Audit Hero"] .text-\[#9CA3AF\] { color: #4B5563 !important; }
+      html.light [aria-label="The Growth Audit Hero"] .text-\[#6B7280\] { color: #4B5563 !important; }
+      html.light [aria-label="The Growth Audit Hero"] .border-offwhite { border-color: rgba(17,24,39,0.3) !important; }
+
+      /* 3D VISUAL CARD — keep dark in light mode */
+      html.light .audit-3d-card-bg {
+        background: rgba(17, 24, 39, 0.92) !important;
+        border-color: rgba(212, 168, 67, 0.2) !important;
+      }
+      html.light .audit-3d-card-bg .text-offwhite { color: #F5F4F0 !important; }
+      html.light .audit-3d-card-bg .text-gray-500 { color: #9CA3AF !important; }
+      html.light .audit-3d-card-bg .text-gray-400 { color: #CBD5E1 !important; }
+      html.light .audit-3d-card-bg .text-amber { color: #D4A843 !important; }
+
+      /* PROBLEM SECTION — bg-offwhite stays cream */
+      html.light [aria-label="The Problem We Solve"] { background-color: #F5F4F0 !important; }
+      html.light [aria-label="The Problem We Solve"] .text-kaine-black { color: #0A0A0A !important; }
+      html.light [aria-label="The Problem We Solve"] .text-\[#6B7280\] { color: #374151 !important; }
+      html.light [aria-label="The Problem We Solve"] .border-amber { border-color: #D4A843 !important; }
+
+      /* WHAT YOU RECEIVE SECTION — bg-mid */
+      html.light [aria-label="What You Receive"] { background-color: #EDECEA !important; }
+      html.light [aria-label="What You Receive"] .text-offwhite { color: #111827 !important; }
+      html.light [aria-label="What You Receive"] .text-\[#9CA3AF\] { color: #4B5563 !important; }
+      html.light [aria-label="What You Receive"] .bg-kaine-black { background-color: #FFFFFF !important; }
+      html.light [aria-label="What You Receive"] .bg-kaine-black .text-offwhite { color: #111827 !important; }
+      html.light [aria-label="What You Receive"] .bg-kaine-black .text-\[#9CA3AF\] { color: #4B5563 !important; }
+      html.light [aria-label="What You Receive"] .border-amber { border-color: #D4A843 !important; }
+
+      /* PROCESS SECTION — bg-offwhite stays cream */
+      html.light [aria-label="How It Works"] { background-color: #F5F4F0 !important; }
+      html.light [aria-label="How It Works"] .text-kaine-black { color: #0A0A0A !important; }
+      html.light [aria-label="How It Works"] .text-\[#6B7280\] { color: #374151 !important; }
+      html.light [aria-label="How It Works"] .bg-\[#E5E7EB\] { background-color: #D1D5DB !important; }
+
+      /* PRICING SECTION — bg-kaine-black */
+      html.light [aria-label="Pricing and Requirements"] { background-color: #FFFFFF !important; }
+      html.light [aria-label="Pricing and Requirements"] .text-offwhite { color: #111827 !important; }
+      html.light [aria-label="Pricing and Requirements"] .text-\[#9CA3AF\] { color: #4B5563 !important; }
+
+      /* FORM SECTION — bg-offwhite */
+      html.light [aria-label="Get Started"] { background-color: #F5F4F0 !important; }
+      html.light [aria-label="Get Started"] .text-kaine-black { color: #0A0A0A !important; }
+      html.light [aria-label="Get Started"] .text-\[#6B7280\] { color: #374151 !important; }
+      html.light [aria-label="Get Started"] .bg-white { background-color: #FFFFFF !important; }
+      html.light [aria-label="Get Started"] .border-\[#E5E7EB\] { border-color: #D1D5DB !important; }
+      html.light [aria-label="Get Started"] input,
+      html.light [aria-label="Get Started"] select,
+      html.light [aria-label="Get Started"] textarea {
+        background-color: #FFFFFF !important;
+        color: #111827 !important;
+        border-color: #D1D5DB !important;
+      }
+      html.light [aria-label="Get Started"] input::placeholder,
+      html.light [aria-label="Get Started"] textarea::placeholder { color: #9CA3AF !important; }
+
+      /* FOOTER */
+      html.light footer {
+        background-color: rgba(245,244,240,0.88) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-top-color: rgba(0,0,0,0.08) !important;
+      }
+      html.light footer .text-offwhite { color: #111827 !important; }
+      html.light footer .text-gray-400 { color: #374151 !important; }
+      html.light footer .text-gray-500 { color: #4B5563 !important; }
+      html.light footer .text-\[#6B7280\] { color: #4B5563 !important; }
+      html.light footer .text-\[#9CA3AF\] { color: #374151 !important; }
+      html.light footer a { color: #374151 !important; }
+      html.light footer a:hover { color: #D4A843 !important; }
+
+      html.light .bg-glow { opacity: 0.05 !important; }
+
+      /* Services link is amber on all service pages (not on contact page) */
+      a[href="services.html"] { color: #D4A843 !important; }
+
+      @media (max-width: 768px) {
+        .bg-glow { opacity: 0.03 !important; }
+        .float-animate, .float-animate-slow { display: none !important; }
+        .audit-3d-float { animation: none; transform: none; }
+      }
+    </style>
   </head>
   <body class="bg-kaine-black font-sans">
 
@@ -51,23 +231,14 @@
     <header class="sticky top-0 z-50 w-full bg-kaine-black/80 backdrop-blur-xl border-b border-gray-800/30" style="-webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);">
       <div class="max-w-[1280px] mx-auto px-6 py-2.5 md:py-3 flex items-center justify-between gap-4">
 
-        <!-- Left: KAINE Logo -->
         <a href="index.html" class="flex flex-col items-start gap-0.5 no-underline flex-shrink-0">
-          <span class="text-offwhite font-bold uppercase tracking-widest text-lg leading-none">
-            KAINE
-          </span>
-          <span class="block h-0.5 bg-amber w-[40%]"></span>
+          <span class="text-offwhite font-bold uppercase tracking-widest text-lg leading-none">KAINE</span>
+          <span class="block h-[2px] bg-amber w-[40%]"></span>
         </a>
 
-        <!-- Center: Search Bar (Desktop) -->
         <div class="hidden md:flex flex-1 max-w-[280px] mx-6">
           <div class="relative w-full">
-            <input
-              type="text"
-              id="site-search"
-              placeholder="Search services, pages..."
-              class="w-full bg-mid/60 border border-gray-800/50 rounded-full px-4 py-1.5 pl-9 text-offwhite text-[13px] placeholder:text-gray-500 focus:border-amber/50 focus:outline-none transition-colors duration-200"
-            />
+            <input type="text" id="site-search" placeholder="Search..." class="w-full bg-mid/60 border border-gray-800/50 rounded-full px-4 py-1.5 pl-9 text-offwhite text-[13px] placeholder:text-gray-500 focus:border-amber/50 focus:outline-none transition-colors duration-200" />
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
@@ -75,114 +246,164 @@
           </div>
         </div>
 
-        <!-- Right: Desktop Navigation Links -->
         <nav class="hidden md:flex items-center gap-6 flex-shrink-0">
-          <a
-            href="services.html"
-            class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline"
-          >
-            Services
-          </a>
-          <a
-            href="about.html"
-            class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline"
-          >
-            About
-          </a>
-          <a
-            href="contact.html"
-            class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline"
-          >
-            Contact
-          </a>
+          <a href="services.html" class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">Services</a>
+          <a href="about.html" class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">About</a>
+          <a href="contact.html" class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline">Contact</a>
+          <button id="theme-toggle" aria-label="Toggle light/dark mode" class="ml-2 w-8 h-8 rounded-full flex items-center justify-center text-gray-500 hover:text-amber hover:bg-gray-800/50 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none">
+            <svg id="icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+            <svg id="icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </button>
         </nav>
 
-        <!-- Mobile: Hamburger button -->
-        <button
-          id="menu-btn"
-          class="md:hidden flex flex-col gap-1.5 p-1 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none"
-          aria-label="Toggle menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
-          <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
-          <span class="block w-6 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1 p-1 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="block w-5 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
+          <span class="block w-5 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
+          <span class="block w-5 h-0.5 bg-offwhite rounded transition-all duration-200"></span>
         </button>
       </div>
 
-      <!-- Mobile Dropdown Menu -->
-      <div
-        id="mobile-menu"
-        class="md:hidden bg-kaine-black/95 backdrop-blur-xl overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
-        aria-hidden="true"
-        inert
-      >
-        <nav class="flex flex-col px-6 pb-6 gap-5">
-          <!-- Mobile Search -->
+      <div id="mobile-menu" class="md:hidden bg-kaine-black/95 backdrop-blur-xl overflow-hidden max-h-0 transition-all duration-300 ease-in-out" aria-hidden="true" inert>
+        <nav class="flex flex-col px-6 pb-4 gap-4">
           <div class="relative">
-            <input
-              type="text"
-              id="mobile-site-search"
-              placeholder="Search..."
-              class="w-full bg-mid/80 border border-[#1F2937] rounded-full px-4 py-3 pl-10 text-offwhite text-[14px] placeholder:text-[#6B7280] focus:border-amber focus:outline-none transition-colors duration-200"
-            />
-            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <input type="text" id="mobile-site-search" placeholder="Search..." class="w-full bg-mid/60 border border-gray-800/50 rounded-full px-4 py-2.5 pl-10 text-offwhite text-[14px] placeholder:text-gray-500 focus:border-amber/50 focus:outline-none transition-colors duration-200" />
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
-            <div id="mobile-search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-[#1F2937] rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
+            <div id="mobile-search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-gray-800 rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
           </div>
-          <a
-            href="services.html"
-            class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline"
-          >
-            Services
-          </a>
-          <a
-            href="about.html"
-            class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline"
-          >
-            About
-          </a>
-          <a
-            href="contact.html"
-            class="text-offwhite font-medium text-[13px] hover:text-amber transition-colors duration-200 no-underline"
-          >
-            Contact
-          </a>
+          <a href="services.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">Services</a>
+          <a href="about.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">About</a>
+          <a href="contact.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">Contact</a>
+          <button id="theme-toggle-mobile" class="flex items-center gap-3 text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200">
+            <svg id="icon-moon-mobile" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+            <svg id="icon-sun-mobile" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <span id="theme-label-mobile">Light Mode</span>
+          </button>
         </nav>
       </div>
     </header>
     <!-- ========== END NAVIGATION BAR ========== -->
 
     <!-- ========== HERO SECTION ========== -->
-    <section class="bg-kaine-black py-16 md:py-20" aria-label="The Growth Audit Hero">
-      <div class="max-w-[1280px] mx-auto px-6">
-        <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber mb-2">
-          THE GROWTH AUDIT
-        </p>
-        <p class="text-[14px] text-[#6B7280] mb-4">
-          ₦300,000 – ₦450,000 · Fixed Fee · 3–4 week engagement
-        </p>
-        <h1 class="text-offwhite font-bold text-[32px] md:text-[48px] leading-[1.2] tracking-[-0.02em] max-w-[800px]">
-          For founders who are done guessing at scale.
-        </h1>
-        <p class="mt-6 text-[17px] text-[#9CA3AF] leading-[1.6] max-w-[580px]">
-          The Growth Audit is our most comprehensive engagement. We map your entire business, identify every significant growth lever, model the scenarios, and deliver a full strategy — built entirely from your own data.
-        </p>
-        <div class="mt-8 flex flex-col md:flex-row gap-4">
-          <a
-            href="#start-form"
-            class="inline-flex items-center justify-center px-8 py-4 rounded text-[13px] font-semibold bg-amber text-kaine-black transition-all duration-200 hover:bg-[#E5BC5D] hover:-translate-y-0.5 no-underline"
-          >
-            Book The Growth Audit
-          </a>
-          <a
-            href="contact.html"
-            class="inline-flex items-center justify-center px-8 py-4 rounded text-[13px] font-semibold border border-offwhite text-offwhite hover:border-amber hover:text-amber transition-all duration-200 no-underline"
-          >
-            Talk to us first
-          </a>
+    <section class="bg-kaine-black py-16 md:py-24 relative overflow-hidden" aria-label="The Growth Audit Hero">
+
+      <!-- Animated background -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute inset-0 bg-glow" style="background-image: radial-gradient(circle at 1px 1px, #D4A843 1px, transparent 0); background-size: 48px 48px; opacity: 0.05;"></div>
+
+        <!-- Left cluster -->
+        <div class="absolute top-[20%] left-[3%] float-animate hidden lg:block">
+          <div class="w-3 h-3 rounded-full bg-amber/20 border border-amber/30"></div>
+        </div>
+        <div class="absolute top-[55%] left-[6%] float-animate-slow hidden lg:block" style="animation-delay: 0.8s;">
+          <div class="w-2 h-2 rounded-full bg-amber/15 border border-amber/20"></div>
+        </div>
+        <div class="absolute bottom-[20%] left-[2%] float-animate hidden lg:block" style="animation-delay: 1.5s;">
+          <div class="w-1.5 h-1.5 rounded-full bg-amber/20"></div>
+        </div>
+
+        <!-- Right cluster -->
+        <div class="absolute top-[15%] right-[5%] float-animate-slow hidden lg:block" style="animation-delay: 0.4s;">
+          <div class="w-2.5 h-2.5 rounded-full bg-amber/20 border border-amber/30"></div>
+        </div>
+        <div class="absolute top-[50%] right-[8%] float-animate hidden lg:block" style="animation-delay: 1s;">
+          <div class="w-2 h-2 rounded-full bg-amber/15 border border-amber/20"></div>
+        </div>
+
+        <!-- Ambient glows -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-amber/[0.03] rounded-full blur-3xl hidden lg:block"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-amber/[0.03] rounded-full blur-3xl hidden lg:block"></div>
+      </div>
+
+      <div class="max-w-[1280px] mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-20">
+
+          <!-- Left: Text content -->
+          <div class="lg:w-[55%]">
+            <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber mb-4">THE GROWTH AUDIT</p>
+            <h1 class="text-offwhite font-bold text-[32px] md:text-[48px] leading-[1.2] tracking-[-0.02em] max-w-[720px]">
+              For founders who are done guessing at scale.
+            </h1>
+            <p class="mt-6 text-[17px] text-gray-400 leading-[1.6] max-w-[560px]">
+              The Growth Audit is our most comprehensive engagement. We map your entire business, identify every significant growth lever, model the scenarios, and deliver a full strategy. Built entirely from your own data.
+            </p>
+            <div class="mt-8 flex flex-col md:flex-row gap-4">
+              <a href="#start-form" class="inline-flex items-center justify-center px-8 py-4 rounded-full text-[13px] font-semibold bg-amber text-kaine-black transition-all duration-200 hover:bg-[#E5BC5D] hover:-translate-y-0.5 no-underline">
+                Book Your Growth Audit
+              </a>
+              <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 rounded-full text-[13px] font-semibold border border-offwhite text-offwhite hover:border-amber hover:text-amber transition-all duration-200 no-underline">
+                Talk to us first
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: 3D element -->
+          <div class="lg:w-[45%] hidden md:block">
+            <div class="relative h-[400px] flex items-center justify-center perspective">
+              <!-- 3D floating card -->
+              <div class="audit-3d-float relative w-full max-w-sm">
+                <div class="audit-3d-card-bg bg-mid/70 backdrop-blur-sm rounded-2xl border border-gray-800/50 p-8 shadow-2xl" style="transform: perspective(900px) rotateY(-5deg) rotateX(2deg);">
+                  <div class="mb-6">
+                    <p class="text-amber text-[12px] font-semibold tracking-widest uppercase mb-4">Strategy Framework</p>
+                    <div class="space-y-3">
+                      <div class="scale-in-animate" style="animation-delay: 0s;">
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="w-2 h-2 rounded-full bg-amber"></div>
+                          <span class="text-offwhite text-[12px]">Full Business Audit</span>
+                        </div>
+                        <div class="h-1 bg-gray-800/50 rounded-full overflow-hidden">
+                          <div class="h-full bg-gradient-to-r from-amber to-amber/40" style="width: 100%;"></div>
+                        </div>
+                      </div>
+                      <div class="scale-in-animate" style="animation-delay: 0.15s;">
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="w-2 h-2 rounded-full bg-amber"></div>
+                          <span class="text-offwhite text-[12px]">LTV & Funnel Analysis</span>
+                        </div>
+                        <div class="h-1 bg-gray-800/50 rounded-full overflow-hidden">
+                          <div class="h-full bg-gradient-to-r from-amber to-amber/40" style="width: 88%;"></div>
+                        </div>
+                      </div>
+                      <div class="scale-in-animate" style="animation-delay: 0.3s;">
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="w-2 h-2 rounded-full bg-amber"></div>
+                          <span class="text-offwhite text-[12px]">Scenario Modelling</span>
+                        </div>
+                        <div class="h-1 bg-gray-800/50 rounded-full overflow-hidden">
+                          <div class="h-full bg-gradient-to-r from-amber to-amber/40" style="width: 95%;"></div>
+                        </div>
+                      </div>
+                      <div class="scale-in-animate" style="animation-delay: 0.45s;">
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class="w-2 h-2 rounded-full bg-amber"></div>
+                          <span class="text-offwhite text-[12px]">90-Day Action Plan</span>
+                        </div>
+                        <div class="h-1 bg-gray-800/50 rounded-full overflow-hidden">
+                          <div class="h-full bg-gradient-to-r from-amber to-amber/40" style="width: 100%;"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Bottom info -->
+                  <div class="mt-6 pt-6 border-t border-gray-800/50">
+                    <p class="text-[11px] text-gray-400">
+                      <span class="text-amber font-semibold">₦300,000 to ₦450,000</span> · 3-4 weeks · Full strategy
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -223,7 +444,7 @@
               You have no model for what growth actually looks like
             </h3>
             <p class="mt-2 text-[13px] text-[#6B7280] leading-[1.6]">
-              What happens to your margin if you 2x revenue? Which channel can scale and which will break? These questions need models, not guesses.
+              What happens to your margin if you 2x revenue. Which channel can scale and which will break. These questions need models, not guesses.
             </p>
           </div>
 
@@ -247,7 +468,7 @@
           WHAT YOU RECEIVE
         </p>
         <h2 class="text-offwhite font-bold text-[28px] md:text-[36px] leading-[1.2] max-w-[820px]">
-          A complete, evidence-backed growth strategy — built from your own numbers.
+          A complete, evidence-backed growth strategy, built from your own numbers.
         </h2>
 
         <!-- Deliverable Cards -->
@@ -257,7 +478,7 @@
               Full Business Data Audit
             </h3>
             <p class="mt-3 text-[13px] text-[#9CA3AF] leading-[1.6]">
-              A complete audit of every data source — transactions, customers, products, marketing — cleaned, structured, and mapped.
+              A complete audit of every data source. Transactions, customers, products, marketing. Cleaned, structured, and mapped.
             </p>
           </article>
 
@@ -275,7 +496,7 @@
               Full Funnel Mapping
             </h3>
             <p class="mt-3 text-[13px] text-[#9CA3AF] leading-[1.6]">
-              Every stage of your customer journey analysed — from awareness to first purchase to repeat. Where you're winning and where you're losing.
+              Every stage of your customer journey analysed. From awareness to first purchase to repeat. Where you win and where you lose.
             </p>
           </article>
 
@@ -284,7 +505,7 @@
               Revenue Scenario Modelling
             </h3>
             <p class="mt-3 text-[13px] text-[#9CA3AF] leading-[1.6]">
-              Three modelled scenarios: conservative, base, and optimistic growth paths based on different strategic choices — with the assumptions and data behind each.
+              Three modelled scenarios: conservative, base, and optimistic growth paths based on different strategic choices.
             </p>
           </article>
 
@@ -293,7 +514,7 @@
               90-Day Growth Action Plan
             </h3>
             <p class="mt-3 text-[13px] text-[#9CA3AF] leading-[1.6]">
-              A prioritised, specific plan for the next 90 days — built around the highest-impact actions your data supports.
+              A prioritised, specific plan for the next 90 days. Built around the highest-impact actions your data supports.
             </p>
           </article>
 
@@ -317,7 +538,7 @@
           HOW IT WORKS
         </p>
         <h2 class="text-kaine-black font-bold text-[28px] md:text-[36px] leading-[1.2] max-w-[820px]">
-          A 3–4 week deep engagement.
+          A 3-4 week deep engagement.
         </h2>
 
         <!-- Steps -->
@@ -350,7 +571,7 @@
                 Full data collection
               </h3>
               <p class="mt-2 text-[13px] text-[#6B7280] leading-[1.6]">
-                We collect all data sources — transactions, customers, marketing, operations. We clean and structure everything.
+                We collect all data sources. Transactions, customers, marketing, operations. We clean and structure everything.
               </p>
             </div>
           </div>
@@ -382,7 +603,7 @@
                 Strategy development
               </h3>
               <p class="mt-2 text-[13px] text-[#6B7280] leading-[1.6]">
-                Week three we build the growth strategy — recommendations, action plan, and the reasoning behind every decision.
+                Week three we build the growth strategy. Recommendations, action plan, and the reasoning behind every decision.
               </p>
             </div>
           </div>
@@ -451,7 +672,7 @@
               </li>
               <li class="flex items-start gap-3 text-[13px] text-[#9CA3AF]">
                 <span class="text-amber">✓</span>
-                3–4 week turnaround
+                3-4 week turnaround
               </li>
             </ul>
           </div>
@@ -462,7 +683,7 @@
               WHAT WE NEED FROM YOU
             </p>
             <p class="text-[13px] text-[#9CA3AF] leading-[1.7]">
-              You do not need a clean spreadsheet. You do not need a website. You do not need to know anything about data. You need: at least 6 months of transaction records (Paystack exports, order sheets, anything), some record of your marketing spend and channels, and 15 minutes to fill in our intake form and brief us on your situation. For the Growth Audit, we'll also need access to any additional operational data you have — customer lists, product catalogues, and any historical marketing performance data.
+              You do not need a clean spreadsheet. You do not need a website. You do not need to know anything about data. You need: at least 6 months of transaction records (Paystack exports, order sheets, anything), some record of your marketing spend and channels, and 15 minutes to fill in our intake form and brief us on your situation. For the Growth Audit, we'll also need access to any additional operational data you have. Customer lists, product catalogues, and any historical marketing performance data.
             </p>
           </div>
 
@@ -478,7 +699,7 @@
           GET STARTED
         </p>
         <h2 class="text-kaine-black font-bold text-[28px] md:text-[36px] leading-[1.2] max-w-[820px]">
-          Book The Growth Audit
+          Book Your Growth Audit
         </h2>
         <p class="mt-4 text-[17px] text-[#6B7280] leading-[1.6] max-w-[520px]">
           Start with the form below. We'll schedule a discovery call to confirm scope and timeline.
@@ -529,8 +750,8 @@
           </div>
 
           <div class="pt-2">
-            <button type="submit" class="w-full md:w-auto inline-flex items-center justify-center px-12 py-4 rounded text-[13px] font-semibold bg-amber text-kaine-black hover:bg-[#E5BC5D] hover:-translate-y-0.5 transition-all duration-200">
-              Submit — Book The Growth Audit
+            <button type="submit" class="w-full md:w-auto inline-flex items-center justify-center px-12 py-4 rounded-full text-[13px] font-semibold bg-amber text-kaine-black hover:bg-[#E5BC5D] hover:-translate-y-0.5 transition-all duration-200">
+              Submit. Book Your Growth Audit
             </button>
             <p class="mt-4 text-[13px] italic text-[#6B7280] leading-[1.6]">
               We review every submission personally. No automated responses. No spam. Your data stays confidential.
@@ -542,94 +763,69 @@
     <!-- ========== END FORM SECTION ========== -->
 
     <!-- ========== FOOTER SECTION ========== -->
-    <footer class="bg-kaine-black border-t border-[#1F2937] py-12 md:py-16" aria-label="Footer">
+    <footer class="bg-kaine-black border-t border-gray-800/50 py-12" aria-label="Footer">
       <div class="max-w-[1280px] mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
           <div>
             <a href="index.html" class="inline-flex flex-col items-start gap-0.5 no-underline">
               <span class="text-offwhite font-bold uppercase tracking-widest text-lg leading-none">KAINE</span>
-              <span class="block h-0.5 bg-amber w-8"></span>
+              <span class="block h-[2px] bg-amber w-8"></span>
             </a>
-            <p class="mt-3 text-[13px] text-[#6B7280]">
+            <p class="mt-3 text-[12px] text-gray-400 max-w-[200px]">
               Data Consultancy for E-Commerce Businesses in Africa.
             </p>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12">
             <div class="space-y-2">
-              <p class="text-[12px] font-medium tracking-[0.08em] uppercase text-[#6B7280]">SERVICES</p>
-              <a href="the-diagnostic.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">The Diagnostic</a>
-              <a href="the-monthly-pulse.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">The Monthly Pulse</a>
-              <a href="the-growth-audit.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">The Growth Audit</a>
-              <a href="services.html#data-analytics" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Data Analytics</a>
-              <a href="services.html#business-intelligence" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Business Intelligence</a>
-              <a href="services.html#consultation" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Consultation</a>
+              <p class="text-[11px] font-semibold tracking-[0.08em] uppercase text-gray-500 mb-3">SERVICES</p>
+              <a href="the-diagnostic.html" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">The Diagnostic</a>
+              <a href="the-monthly-pulse.html" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">The Monthly Pulse</a>
+              <a href="the-growth-audit.html" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">The Growth Audit</a>
             </div>
-
             <div class="space-y-2">
-              <p class="text-[12px] font-medium tracking-[0.08em] uppercase text-[#6B7280]">COMPANY</p>
-              <a href="about.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">About</a>
-              <a href="index.html#start" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Start</a>
-              <a href="contact.html" class="block text-[14px] text-[#9CA3AF] hover:text-amber transition-colors duration-200 no-underline">Contact</a>
+              <p class="text-[11px] font-semibold tracking-[0.08em] uppercase text-gray-500 mb-3">COMPANY</p>
+              <a href="about.html" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">About</a>
+              <a href="index.html#start" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">Start</a>
+              <a href="contact.html" class="block text-[13px] text-gray-400 hover:text-amber transition-colors no-underline">Contact</a>
             </div>
-
             <div class="space-y-2">
-              <p class="text-[12px] font-medium tracking-[0.08em] uppercase text-[#6B7280]">CONNECT</p>
-              <div class="flex flex-row gap-4 mt-3">
-                <a href="https://wa.me/2347049262141" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="WhatsApp">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366">
-                    <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.44 21.52 10.19 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.22-.45-4.56-1.24l-.32-.19-3.01.8.81-2.95-.21-.33C3.46 15.25 3 13.67 3 12 3 7.03 7.03 3 12 3s9 4.03 9 9-4.03 9-9 9zm4.93-6.44c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.68.87-.83 1.05-.15.18-.31.2-.57.07-.27-.13-1.13-.42-2.15-1.33-.8-.71-1.33-1.59-1.49-1.85-.15-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.46-.82-2-.22-.52-.44-.45-.6-.46-.16 0-.34-.02-.52-.02s-.47.07-.72.34c-.24.27-.93.91-.93 2.22s.95 2.57 1.08 2.75c.13.18 1.87 2.86 4.54 4.01.63.27 1.13.44 1.51.56.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.27.22-.62.22-1.16.15-1.27-.06-.11-.24-.18-.51-.31z"/>
-                  </svg>
+              <p class="text-[11px] font-semibold tracking-[0.08em] uppercase text-gray-500 mb-3">CONNECT</p>
+              <div class="flex flex-row gap-3">
+                <a href="https://wa.me/2347049262141" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-800/50 hover:bg-amber/20 transition-colors" aria-label="WhatsApp">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.35C8.44 21.52 10.19 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.66 0-3.22-.45-4.56-1.24l-.32-.19-3.01.8.81-2.95-.21-.33C3.46 15.25 3 13.67 3 12 3 7.03 7.03 3 12 3s9 4.03 9 9-4.03 9-9 9zm4.93-6.44c-.27-.13-1.58-.78-1.82-.87-.24-.09-.42-.13-.6.13-.18.27-.68.87-.83 1.05-.15.18-.31.2-.57.07-.27-.13-1.13-.42-2.15-1.33-.8-.71-1.33-1.59-1.49-1.85-.15-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.46-.82-2-.22-.52-.44-.45-.6-.46-.16 0-.34-.02-.52-.02s-.47.07-.72.34c-.24.27-.93.91-.93 2.22s.95 2.57 1.08 2.75c.13.18 1.87 2.86 4.54 4.01.63.27 1.13.44 1.51.56.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.27.22-.62.22-1.16.15-1.27-.06-.11-.24-.18-.51-.31z"/></svg>
                 </a>
-                <a href="https://linkedin.com/in/clinton-ofoedu-a47476274" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="LinkedIn">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#0A66C2">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
+                <a href="https://linkedin.com/in/clinton-ofoedu-a47476274" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-800/50 hover:bg-amber/20 transition-colors" aria-label="LinkedIn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </a>
-                <a href="https://x.com/thelonesage" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="X/Twitter">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#F5F4F0">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
+                <a href="https://x.com/thelonesage" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-800/50 hover:bg-amber/20 transition-colors" aria-label="X/Twitter">
+                  <svg class="footer-x-icon" width="16" height="16" viewBox="0 0 24 24" fill="#F5F4F0"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="Facebook">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#1877F2">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="Instagram">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#E1306C">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                </a>
-                <a href="mailto:ofoeduclinton17@gmail.com" class="flex items-center justify-center w-10 h-10 text-[#9CA3AF] hover:text-amber transition-colors duration-200" aria-label="Email">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#EA4335">
-                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.910 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
-                  </svg>
+                <a href="mailto:ofoeduclinton17@gmail.com" class="flex items-center justify-center w-9 h-9 rounded-full bg-gray-800/50 hover:bg-amber/20 transition-colors" aria-label="Email">
+                  <svg class="footer-email-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="mt-12 pt-8 border-t border-[#1F2937] flex flex-col md:flex-row items-center md:justify-between gap-4">
-          <p class="text-[13px] text-[#6B7280]">© 2026 KAINE.io. All rights reserved.</p>
-          <p class="text-[13px] text-[#6B7280]">Built in Nigeria.</p>
+        <div class="mt-10 pt-6 border-t border-gray-800/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p class="text-[11px] text-gray-500">© 2026 KAINE. All rights reserved.</p>
+          <p class="text-[11px] text-gray-500">Lagos, Nigeria</p>
         </div>
       </div>
     </footer>
     <!-- ========== END FOOTER SECTION ========== -->
 
     <script>
-      if (window.lucide) {
-        lucide.createIcons();
-      }
+      if (window.lucide) { lucide.createIcons(); }
 
+      // Hamburger menu toggle
       const menuBtn = document.getElementById('menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
 
       menuBtn.addEventListener('click', () => {
         const isOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== '0px';
-
         if (isOpen) {
           mobileMenu.style.maxHeight = '0px';
           menuBtn.setAttribute('aria-expanded', 'false');
@@ -652,8 +848,7 @@
         });
       });
 
-      const mdBreakpoint = window.matchMedia('(min-width: 768px)');
-      mdBreakpoint.addEventListener('change', (e) => {
+      window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
         if (e.matches) {
           mobileMenu.style.maxHeight = '0px';
           menuBtn.setAttribute('aria-expanded', 'false');
@@ -662,17 +857,53 @@
         }
       });
 
-      // Search functionality
+      // Theme toggle
+      const htmlEl = document.documentElement;
+      const moonIcon = document.getElementById('icon-moon');
+      const sunIcon = document.getElementById('icon-sun');
+      const moonIconMobile = document.getElementById('icon-moon-mobile');
+      const sunIconMobile = document.getElementById('icon-sun-mobile');
+      const themeLabelMobile = document.getElementById('theme-label-mobile');
+
+      function applyTheme(isLight) {
+        if (isLight) {
+          htmlEl.classList.add('light');
+          moonIcon.classList.add('hidden');
+          sunIcon.classList.remove('hidden');
+          moonIconMobile.classList.add('hidden');
+          sunIconMobile.classList.remove('hidden');
+          if (themeLabelMobile) themeLabelMobile.textContent = 'Dark Mode';
+          localStorage.setItem('kaine-theme', 'light');
+        } else {
+          htmlEl.classList.remove('light');
+          moonIcon.classList.remove('hidden');
+          sunIcon.classList.add('hidden');
+          moonIconMobile.classList.remove('hidden');
+          sunIconMobile.classList.add('hidden');
+          if (themeLabelMobile) themeLabelMobile.textContent = 'Light Mode';
+          localStorage.setItem('kaine-theme', 'dark');
+        }
+      }
+
+      const savedTheme = localStorage.getItem('kaine-theme');
+      if (savedTheme === 'light') applyTheme(true);
+
+      const toggleBtn = document.getElementById('theme-toggle');
+      const toggleBtnMobile = document.getElementById('theme-toggle-mobile');
+      if (toggleBtn) toggleBtn.addEventListener('click', () => { applyTheme(!htmlEl.classList.contains('light')); });
+      if (toggleBtnMobile) toggleBtnMobile.addEventListener('click', () => { applyTheme(!htmlEl.classList.contains('light')); });
+
+      // Search
       const searchData = [
         { title: 'The Diagnostic', url: 'the-diagnostic.html', desc: 'Full business diagnostic · ₦150K–₦250K' },
         { title: 'The Monthly Pulse', url: 'the-monthly-pulse.html', desc: 'Ongoing data intelligence · ₦80K–₦120K/mo' },
         { title: 'The Growth Audit', url: 'the-growth-audit.html', desc: 'Strategic growth audit · ₦300K–₦450K' },
-        { title: 'All Services', url: 'services.html', desc: 'View all KAINE.io services' },
+        { title: 'All Services', url: 'services.html', desc: 'View all KAINE services' },
         { title: 'Data Analytics', url: 'services.html#data-analytics', desc: 'Transform raw data into insights' },
-        { title: 'Business Intelligence', url: 'services.html#business-intelligence', desc: 'Dashboards & reporting systems' },
+        { title: 'Business Intelligence', url: 'services.html#business-intelligence', desc: 'Dashboards and reporting systems' },
         { title: 'Consultation', url: 'services.html#consultation', desc: 'Strategic data consulting' },
         { title: 'About KAINE', url: 'about.html', desc: 'Our story and mission' },
-        { title: 'Contact Us', url: 'contact.html', desc: 'Get in touch with KAINE.io' },
+        { title: 'Contact Us', url: 'contact.html', desc: 'Get in touch with KAINE' },
         { title: 'Start Free Diagnostic', url: 'index.html#start', desc: 'Begin your free business diagnostic' },
       ];
 
@@ -680,17 +911,10 @@
         const input = document.getElementById(inputId);
         const results = document.getElementById(resultsId);
         if (!input || !results) return;
-
         input.addEventListener('input', (e) => {
           const query = e.target.value.toLowerCase().trim();
-          if (query.length < 2) {
-            results.classList.add('hidden');
-            return;
-          }
-          const matches = searchData.filter(item => 
-            item.title.toLowerCase().includes(query) || 
-            item.desc.toLowerCase().includes(query)
-          );
+          if (query.length < 2) { results.classList.add('hidden'); return; }
+          const matches = searchData.filter(item => item.title.toLowerCase().includes(query) || item.desc.toLowerCase().includes(query));
           if (matches.length === 0) {
             results.innerHTML = '<p class="px-4 py-3 text-[14px] text-[#6B7280]">No results found</p>';
           } else {
@@ -703,13 +927,8 @@
           }
           results.classList.remove('hidden');
         });
-
-        input.addEventListener('blur', () => {
-          setTimeout(() => results.classList.add('hidden'), 200);
-        });
-        input.addEventListener('focus', () => {
-          if (input.value.trim().length >= 2) results.classList.remove('hidden');
-        });
+        input.addEventListener('blur', () => { setTimeout(() => results.classList.add('hidden'), 200); });
+        input.addEventListener('focus', () => { if (input.value.trim().length >= 2) results.classList.remove('hidden'); });
       }
 
       setupSearch('site-search', 'search-results');
