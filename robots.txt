@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /start
+Disallow: /404
+
+Sitemap: https://kaine.io/sitemap.xml

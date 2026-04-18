@@ -21,6 +21,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kaine.io/about.html" />
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -32,7 +38,7 @@
               'offwhite': '#F5F4F0',
               'mid': '#111827',
               'amber': '#D4A843',
-              'gray': '#9CA3AF',
+              'kaine-gray': '#9CA3AF',
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
@@ -44,8 +50,91 @@
 
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Light Mode CSS -->
+    <style>
+      html.light {
+        --bg-primary: #F5F4F0 !important;
+        --bg-secondary: #FFFFFF !important;
+        --text-primary: #0A0A0A !important;
+        --text-secondary: #6B7280 !important;
+        --border-color: #E5E7EB !important;
+      }
+
+      html.light body {
+        background-color: #F5F4F0 !important;
+        color: #0A0A0A !important;
+      }
+
+      html.light header {
+        background-color: rgba(245, 244, 240, 0.8) !important;
+        border-color: rgba(229, 231, 235, 0.3) !important;
+      }
+
+      html.light header a,
+      html.light header button {
+        color: #0A0A0A !important;
+      }
+
+      html.light header a:hover,
+      html.light button:hover {
+        color: #D4A843 !important;
+      }
+
+      html.light input,
+      html.light textarea,
+      html.light select {
+        background-color: #FFFFFF !important;
+        color: #0A0A0A !important;
+        border-color: #E5E7EB !important;
+      }
+
+      html.light section,
+      html.light main {
+        background-color: #F5F4F0 !important;
+        color: #0A0A0A !important;
+      }
+
+      html.light footer {
+        background-color: #FFFFFF !important;
+        color: #0A0A0A !important;
+        border-color: #E5E7EB !important;
+      }
+
+      html.light footer a {
+        color: #6B7280 !important;
+      }
+
+      html.light footer a:hover {
+        color: #D4A843 !important;
+      }
+
+      html.light .bg-offwhite {
+        background-color: #F5F4F0 !important;
+      }
+
+      html.light .bg-mid {
+        background-color: #FFFFFF !important;
+      }
+
+      html.light .text-offwhite {
+        color: #0A0A0A !important;
+      }
+
+      html.light .border-gray-800 {
+        border-color: #E5E7EB !important;
+      }
+
+      html.light .placeholder\:text-gray-500::placeholder {
+        color: #6B7280 !important;
+      }
+    </style>
   </head>
   <body class="bg-kaine-black font-sans">
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-amber focus:text-kaine-black focus:rounded focus:font-semibold">
+      Skip to main content
+    </a>
 
     <!-- ========== NAVIGATION BAR ========== -->
     <header class="sticky top-0 z-50 w-full bg-kaine-black/80 backdrop-blur-xl border-b border-gray-800/30" style="-webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);">
@@ -71,7 +160,7 @@
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
-            <div id="search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-gray-800 rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
+            <div id="search-results" aria-live="polite" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-gray-800 rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
           </div>
         </div>
 
@@ -95,12 +184,24 @@
           >
             Contact
           </a>
+          <button
+            id="theme-toggle"
+            aria-label="Toggle light/dark mode"
+            class="ml-2 w-8 h-8 rounded-full flex items-center justify-center text-gray-500 hover:text-amber hover:bg-gray-800/50 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none"
+          >
+            <svg id="icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+            <svg id="icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </button>
         </nav>
 
         <!-- Mobile: Hamburger button -->
         <button
           id="menu-btn"
-          class="md:hidden flex flex-col gap-1.5 p-1 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none"
+          class="md:hidden flex flex-col gap-1 p-1 focus-visible:ring-2 focus-visible:ring-amber focus-visible:outline-none"
           aria-label="Toggle menu"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -131,7 +232,7 @@
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7280]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
-            <div id="mobile-search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-[#1F2937] rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
+            <div id="mobile-search-results" aria-live="polite" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-[#1F2937] rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
           </div>
           <a
             href="services.html"
@@ -151,12 +252,25 @@
           >
             Contact
           </a>
+          <button
+            id="theme-toggle-mobile"
+            class="flex items-center gap-3 text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200"
+          >
+            <svg id="icon-moon-mobile" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+            <svg id="icon-sun-mobile" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+            <span id="theme-label-mobile">Light Mode</span>
+          </button>
         </nav>
       </div>
     </header>
     <!-- ========== END NAVIGATION BAR ========== -->
 
-    <!-- ========== HERO SECTION ========== -->
+    <main id="main-content">
+      <!-- ========== HERO SECTION ========== -->
     <section class="bg-kaine-black py-20" aria-label="About KAINE.io Hero">
       <div class="max-w-[1280px] mx-auto px-6">
         <p class="text-[13px] font-medium tracking-[0.08em] uppercase text-amber mb-4">
@@ -334,6 +448,7 @@
       </div>
     </section>
     <!-- ========== END CTA SECTION ========== -->
+    </main>
 
     <!-- ========== FOOTER SECTION ========== -->
     <footer class="bg-kaine-black border-t border-[#1F2937] py-12 md:py-16" aria-label="Footer">
@@ -414,6 +529,52 @@
     <!-- ========== END FOOTER SECTION ========== -->
 
     <script>
+      // Theme Toggle Functionality
+      function initThemeToggle() {
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const moonIcon = document.getElementById('icon-moon');
+        const sunIcon = document.getElementById('icon-sun');
+        const moonIconMobile = document.getElementById('icon-moon-mobile');
+        const sunIconMobile = document.getElementById('icon-sun-mobile');
+        const themeLabelMobile = document.getElementById('theme-label-mobile');
+
+        // Check saved theme preference or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.classList.toggle('light', savedTheme === 'light');
+        updateThemeIcons(savedTheme === 'light');
+
+        function updateThemeIcons(isLight) {
+          if (isLight) {
+            moonIcon?.classList.add('hidden');
+            sunIcon?.classList.remove('hidden');
+            moonIconMobile?.classList.add('hidden');
+            sunIconMobile?.classList.remove('hidden');
+            if (themeLabelMobile) themeLabelMobile.textContent = 'Dark Mode';
+          } else {
+            moonIcon?.classList.remove('hidden');
+            sunIcon?.classList.add('hidden');
+            moonIconMobile?.classList.remove('hidden');
+            sunIconMobile?.classList.add('hidden');
+            if (themeLabelMobile) themeLabelMobile.textContent = 'Light Mode';
+          }
+        }
+
+        function toggleTheme() {
+          const isLight = html.classList.contains('light');
+          html.classList.toggle('light');
+          const newTheme = isLight ? 'dark' : 'light';
+          localStorage.setItem('theme', newTheme);
+          updateThemeIcons(!isLight);
+        }
+
+        themeToggle?.addEventListener('click', toggleTheme);
+        themeToggleMobile?.addEventListener('click', toggleTheme);
+      }
+
+      initThemeToggle();
+
       if (window.lucide) {
         lucide.createIcons();
       }

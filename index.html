@@ -1,3 +1,27 @@
+<!--
+  ========== GA4 DEPLOYMENT WARNING ==========
+  IMPORTANT: Before deploying to production, ensure:
+  1. Google Analytics 4 tracking ID is configured (if not already present)
+  2. Track conversion events for diagnostic bookings and service inquiries
+  3. Test tracking in development environment using GA4 DebugView
+  4. Verify data is flowing to GA4 property after deployment
+  5. Set up custom dimensions for: page_type, service_name, user_tier
+  ==========================================
+-->
+
+<!--
+  ========== OG-IMAGE DEPLOYMENT CHECKLIST ==========
+  IMPORTANT: Before deploying to production, complete this checklist:
+  1. [ ] Create og-image.png (1200x630px recommended size)
+  2. [ ] Optimize file size (aim for < 200KB)
+  3. [ ] Ensure file is placed in: /public/og-image.png
+  4. [ ] Update meta tags in all HTML files to point to correct URL path
+  5. [ ] Test OG image preview on: https://www.opengraph.xyz/
+  6. [ ] Verify image displays correctly on social platforms (LinkedIn, Twitter, Facebook)
+  7. [ ] Create specific OG images for each service page (optional but recommended)
+  =================================================
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,6 +44,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kaine.io/" />
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -280,8 +310,40 @@
         animation: slideUp 0.4s ease forwards;
       }
     </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Business",
+      "name": "KAINE.io",
+      "url": "https://kaine.io/",
+      "logo": "https://kaine.io/logo.svg",
+      "description": "We are an AI-powered data consultancy helping e-commerce businesses in Nigeria and Africa make smarter decisions with their data.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Benin City",
+        "addressRegion": "Edo State",
+        "addressCountry": "NG"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "email": "ofoeduclinton17@gmail.com"
+      },
+      "sameAs": [
+        "https://linkedin.com/in/clinton-ofoedu-a47476274",
+        "https://x.com/thelonesage",
+        "https://wa.me/2347049262141"
+      ]
+    }
+    </script>
   </head>
   <body class="bg-kaine-black font-sans">
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-amber focus:text-kaine-black focus:rounded focus:font-semibold">
+      Skip to main content
+    </a>
 
     <!-- ========== NAVIGATION BAR ========== -->
     <header class="sticky top-0 z-50 w-full bg-kaine-black/80 backdrop-blur-xl border-b border-gray-800/30" style="-webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);">
@@ -307,7 +369,7 @@
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
-            <div id="search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-gray-800 rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
+            <div id="search-results" aria-live="polite" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-gray-800 rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
           </div>
         </div>
 
@@ -371,7 +433,7 @@
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
             </svg>
-            <div id="mobile-search-results" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-gray-800 rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
+            <div id="mobile-search-results" aria-live="polite" class="absolute top-full left-0 right-0 mt-2 bg-mid border border-gray-800 rounded-lg shadow-xl overflow-hidden hidden z-50"></div>
           </div>
           <a href="services.html" class="text-offwhite font-medium text-[14px] hover:text-amber transition-colors duration-200 no-underline">
             Services
@@ -399,7 +461,8 @@
     </header>
     <!-- ========== END NAVIGATION BAR ========== -->
 
-    <!-- ========== HERO SECTION ========== -->
+    <main id="main-content">
+      <!-- ========== HERO SECTION ========== -->
     <section class="bg-kaine-black py-16 md:py-24 md:min-h-[85vh] md:flex md:items-center relative overflow-hidden" aria-label="Hero">
       <!-- Animated background — full-width data-themed elements -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -1283,6 +1346,7 @@
   </div>
 </section>
 <!-- ========== END WHY KAINE SECTION ========== -->
+    </main>
 
 <!-- ========== FOOTER SECTION ========== -->
 <footer class="bg-kaine-black border-t border-gray-800/50 py-12" aria-label="Footer">
@@ -1333,9 +1397,9 @@
       </div>
     </div>
 
-    <div class="mt-10 pt-6 border-t border-gray-800/50 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-[11px] text-gray-500">© 2026 KAINE.io. All rights reserved.</p>
-      <p class="text-[11px] text-gray-500">Lagos, Nigeria</p>
+    <div class="mt-12 pt-8 border-t border-[#1F2937] flex flex-col md:flex-row items-center md:justify-between gap-4">
+      <p class="text-[13px] text-[#6B7280]">© 2026 KAINE.io. All rights reserved.</p>
+      <p class="text-[13px] text-[#6B7280]">Built in Nigeria.</p>
     </div>
   </div>
 </footer>
